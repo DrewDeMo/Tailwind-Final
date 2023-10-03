@@ -16,7 +16,7 @@
 
 <body>
     <div class="flex flex-wrap overflow-hidden">
-        <div class="w-full bg-white pl-0 lg:pl-64 min-h-screen">
+        <div class="w-full bg-white pl-0 lg:pl-64 min-h-screen mb-12">
             <div id="main-nav"
                 class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
                 <!-- Logo -->
@@ -99,7 +99,7 @@
 
 
 
-        <div class="flex flex-col bg-white shadow-lg rounded-lg border border-gray-200 h-[400px] p-6" style="flex: 1;">
+        <div class="flex flex-col bg-white shadow-lg rounded-lg border border-gray-200 h-[400px] p-2" style="flex: 1;">
             <div class="flex justify-between items-center bg-gray-100 p-2 rounded-lg">
                 <div class="flex items-center">
                     <svg class="m-2" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
