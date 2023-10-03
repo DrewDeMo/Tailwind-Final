@@ -17,12 +17,10 @@
 <body>
     <div class="flex flex-wrap overflow-hidden">
         <div class="w-full bg-slate-50 pl-0 lg:pl-64 min-h-screen">
-            <div id="main-nav"
-                class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
+            <div id="main-nav" class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
                 <!-- Logo -->
                 <div class="w-full h-20 flex px-4 items-center mb-16 mt-8 justify-center">
-                    <img src="img/TCL_Logo_Black.svg" alt="TCL Logo"
-                        class="w-40 h-40 mt-6 rounded-full opacity-25 hover:opacity-80 transition-opacity duration-700 ease-in-out">
+                    <img src="img/TCL_Logo_Black.svg" alt="TCL Logo" class="w-40 h-40 mt-6 rounded-full opacity-25 hover:opacity-80 transition-opacity duration-700 ease-in-out">
                 </div>
 
                 <!--Nav Start-->
@@ -51,8 +49,7 @@
                         </div>
 
                         <!-- Badge -->
-                        <div
-                            class="p-1 px-2 mt-2 rounded-lg bg-slate-100 bg-opacity-80 shadow-sm text-slate-800 font-medium w-fit">
+                        <div class="p-1 px-2 mt-2 rounded-lg bg-slate-100 bg-opacity-80 shadow-sm text-slate-800 font-medium w-fit">
                             Full-Service Client
                         </div>
 
@@ -71,8 +68,7 @@
                         <!-- Owners and Users -->
                         <div class="flex flex-col items-start w-full gap-2">
                             <!-- Owners Label -->
-                            <div
-                                class="rounded-lg mx-auto w-4/5 text-center py-1 px-1 border text-xs border-slate-50 text-slate-100 border-opacity-10 font-bold">
+                            <div class="rounded-lg mx-auto w-4/5 text-center py-1 px-1 border text-xs border-slate-50 text-slate-100 border-opacity-10 font-bold">
                                 Owners
                             </div>
 
@@ -104,8 +100,7 @@
                 <!-- Client and Account Information -->
                 <section class="relative rounded-lg shadow-md border border-gray-300 overflow-hidden">
                     <!-- Background Image and Overlay -->
-                    <div class="absolute top-0 left-0 right-0 h-24 bg-cover bg-center z-0"
-                        style="background-image: url('img/photos/clients.webp');">
+                    <div class="absolute top-0 left-0 right-0 h-24 bg-cover bg-center z-0" style="background-image: url('img/photos/clients.webp');">
                         <div class="absolute inset-0 bg-slate-700 opacity-90 rounded-t-lg"></div>
                     </div>
 
@@ -129,8 +124,7 @@
                                     Mayhew</span>
                             </div>
                             <div>
-                                <button type="button"
-                                    class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mt-4 w-full">View
+                                <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mt-4 w-full">View
                                     Budget</button>
                             </div>
                         </div>
@@ -142,8 +136,7 @@
                 <!-- Owner Operator Information -->
                 <section class="relative rounded-lg shadow-md border border-gray-300 overflow-hidden">
                     <!-- Background Image and Overlay -->
-                    <div class="absolute top-0 left-0 right-0 h-24 bg-cover bg-center z-0"
-                        style="background-image: url('img/photos/clients.webp');">
+                    <div class="absolute top-0 left-0 right-0 h-24 bg-cover bg-center z-0" style="background-image: url('img/photos/clients.webp');">
                         <div class="absolute inset-0 bg-slate-700 opacity-90 rounded-t-lg"></div>
                     </div>
 
