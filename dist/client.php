@@ -49,13 +49,41 @@
 
 
         </div>
-        <div class="flex flex-grow flex-col justify-center space-y-4 w-2/3 ml-4 pl-4">
+        <div class="flex flex-grow flex-col justify-center space-y-4 w-2/3 ml-4 pl-4 mb-6">
+            <div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 ">
+                <ul class="flex flex-wrap -mb-px">
+                    <li class="mr-2">
+                        <a href="#"
+                            class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active "
+                            aria-current="page">Dashboard</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="#"
+                            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 ">Offers</a>
+                    </li>
+
+                    <li class="mr-2">
+                        <a href="#"
+                            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 ">Creative</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="#"
+                            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 ">Tracking</a>
+                    </li>
+                    <li>
+                        <a class="inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed ">Disabled</a>
+                    </li>
+                </ul>
+            </div>
 
         </div>
 
 
         <!--First Row-->
         <main class="mx-auto pb-4 grid grid-cols-1 md:grid-cols-2 gap-4 px-8">
+
+
+
             <!-- Owner Operator Information -->
             <?php include 'client/client_owners.php'; ?>
             <!-- County Map/Owner Image -->
@@ -239,20 +267,66 @@
                 <h2 class="text-xl font-semibold mb-4">Global Revisions</h2>
                 <div class="p-1 pt-4 pb-4 rounded-lg z-10">
 
-                    <div>
-                        <strong>Client Code</strong> Alt
+                    <!-- Alert Box -->
+                    <div class="flex items-center p-4 text-sm text-gray-800 border border-gray-300 rounded-lg bg-gray-50 relative"
+                        role="alert">
+                        <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        </svg>
+                        <span class="sr-only">Info</span>
+                        <div class="">
+                            <span class="text-sm font-medium">9/11/2023</span> Change Saturday hours to by appointment
+                            only
+                        </div>
+                        <!-- Clickable Icon -->
+                        <button id="popup-toggle" class="ml-auto">
+                            <svg class="w-6 h-6 text-gray-500 hover:text-gray-700 cursor-pointer" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                    d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                        <!-- Popup Card -->
+                        <div id="popup-card"
+                            class="hidden absolute top-0 right-0 mt-12 w-64 p-4 bg-white border border-gray-300 rounded shadow-lg">
+                            <h4 class="text-lg font-semibold mb-2">Details</h4>
+                            <p>Change Saturday hours to by appointment only starting from 9/11/2023.</p>
+
+                            <span
+                                class="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-1 py-1 rounded mr-2 my-2  border border-gray-300">
+                                <svg class="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z" />
+                                </svg>
+                                3 days ago
+                            </span>
+                        </div>
+
                     </div>
-                    <div>
-                        <strong>Acct. Manager</strong> <span class="text-slate-600">Carl Mayhew</span>
-                    </div>
+
+                    <!-- JavaScript for toggling the popup -->
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const toggleButton = document.getElementById('popup-toggle');
+                        const popupCard = document.getElementById('popup-card');
+
+                        toggleButton.addEventListener('click', function() {
+                            popupCard.classList.toggle('hidden');
+                        });
+                    });
+                    </script>
+
+
                 </div>
+
+
             </div>
 
-
         </div>
-
-    </div>
-    <!--Content Under Logo -->
+        <!--Content Under Logo -->
 
 
 
