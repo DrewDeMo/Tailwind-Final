@@ -12,7 +12,22 @@
     <!-- New Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <!--End External CSS-->
+
+    <!--Better Icons?-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--End Stylesheet linking-->
 </head>
+
+<style>
+/* You'll still need these lines to handle the icon swapping */
+.group:hover .icon {
+    display: none !important;
+}
+
+.group:hover .icon-hover {
+    display: block !important;
+}
+</style>
 
 <body>
     <div class="flex flex-wrap overflow-hidden">
@@ -30,294 +45,214 @@
             </div>
             <?php include 'navbar.php'; ?>
             <!--Nav Stop-->
+            <?php include 'client/client_header.php'; ?>
 
-
-            <!--Content Start-->
-            <div class="flex flex-wrap mb-8 bg-slate-800">
-                <?php include 'breadcrumbs.php'; ?>
-
-                <!-- Container -->
-                <div class="w-full flex flex-row">
-                    <!-- Logo Box -->
-                    <div class="flex-none p-4 m-4">
-                        <img class="h-40" src="img/logos/ww_white.svg" alt="Logo" />
-                    </div>
-
-                    <!-- Main Content -->
-                    <div class="flex flex-grow flex-col justify-center space-y-4 max-w-md">
-                        <!-- Text -->
-                        <div class="text-4xl text-slate-100 text-opacity-90 font-bold">
-                            Altoona
-                        </div>
-
-                        <!-- Badge -->
-                        <div
-                            class="p-1 px-2 mt-2 rounded-lg bg-slate-100 bg-opacity-80 shadow-sm text-slate-800 font-medium w-fit">
-                            Full-Service Client
-                        </div>
-
-                        <!-- Location -->
-                        <div class="flex items-center text-slate-100">
-                            <img class="h-4 align-middle mr-2" src="img/icons/loc_white.svg" alt="Location Icon" />
-                            114 Vision Dr., Duncansville, PA 16635
-                        </div>
-
-                        <!-- Phone -->
-                        <div class="flex items-center text-slate-100">
-                            <img class="h-4 align-middle mr-2" src="img/icons/phone_white.svg" alt="Phone Icon" />
-                            123-123-1324
-                        </div>
-
-                        <!-- Owners and Users -->
-                        <div class="flex flex-col items-start w-full gap-2">
-                            <!-- Owners Label -->
-                            <div
-                                class="rounded-lg ml-4 w-4/5 text-center py-1 px-1 border text-xs border-slate-50 text-slate-100 border-opacity-10 font-bold">
-                                Owners
-                            </div>
-
-                            <!-- Users -->
-                            <div class="flex gap-4 flex-row text-sm mw-12 pb-4">
-                                <div class="flex items-center text-slate-100">
-                                    <img class="h-4 align-middle mr-2" src="img/icons/user_white.svg" alt="User Icon" />
-                                    Emily Johnson
-                                </div>
-                                <div class="flex items-center gap-1 text-slate-100">
-                                    <img class="h-4 align-middle mr-2" src="img/icons/user_white.svg" alt="User Icon" />
-                                    Mark Thompson
-                                </div>
-                                <div class="flex items-center gap-1 text-slate-100">
-                                    <img class="h-4 align-middle mr-2" src="img/icons/user_white.svg" alt="User Icon" />
-                                    Laura Williams
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-grow flex-col justify-center space-y-4 w-2/3 ml-4 pl-4">
-
-            </div>
-
-
-            <main class="mx-auto pb-4 grid grid-cols-1 md:grid-cols-2 gap-4 px-8">
-                <!-- Owner Operator Information -->
-                <section class="relative rounded-lg shadow-md border border-gray-300 overflow-hidden">
-                    <!-- Background Image and Overlay -->
-                    <div class="relative top-0 left-0 right-0 h-24 bg-cover bg-center z-0"
-                        style="background-image: url('img/photos/clients.webp');">
-                        <div class="absolute inset-0 bg-slate-700 opacity-90 rounded-t-lg"></div>
-
-                        <!-- Headline -->
-                        <h2
-                            class="px-4 drop-shadow-md absolute inset-x-0 bottom-0 h-full flex  items-center text-2xl font-bold text-slate-100 shadow-md z-10">
-                            Client & Account
-                        </h2>
-                    </div>
-
-                    <!-- Content Container -->
-                    <div class="p-4 z-10 relative rounded-lg mt-1">
-                        <!-- Other Content -->
-                        <div class="p-1 pt-4 pb-4 rounded-lg z-10">
-
-                            <div>
-                                <strong>Client Code</strong> Alt
-                            </div>
-                            <div>
-                                <strong>Acct. Manager</strong> <span class="text-slate-600">Carl Mayhew</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-
-                <!-- Owner Operator Information -->
-                <section class="relative rounded-lg shadow-md border border-gray-300 overflow-hidden">
-                    <!-- Background Image and Overlay -->
-                    <div class="relative top-0 left-0 right-0 h-24 bg-cover bg-center z-0"
-                        style="background-image: url('img/photos/clients.webp');">
-                        <div class="absolute inset-0 bg-slate-700 opacity-90 rounded-t-lg"></div>
-
-                        <!-- Headline -->
-                        <h2
-                            class="px-4 drop-shadow-md absolute inset-x-0 bottom-0 h-full flex  items-center text-2xl font-bold text-slate-100 shadow-md z-10">
-                            Owner/Operators
-                        </h2>
-                    </div>
-
-                    <!-- Content Container -->
-                    <div class="p-4 z-10 relative rounded-lg mt-1">
-                        <!-- Other Content -->
-                        <div class="p-1 pt-4 pb-4 rounded-lg z-10">
-                            <div class="flex flex-grow flex-row w-full">
-                                <!-- User Start-->
-                                <div class="basis-1/3 text-center my-4 border-r border-gray-200">
-
-                                    <img class="m-auto h-10 opacity-60 hover:opacity-80"
-                                        src="img/icons/user_client.svg" />
-                                    <div class="my-1 font-medium text-slate-900">Emily Johnson</div>
-                                    <div class="my-1 text-xs text-blue-500 bg-blue-100 rounded-lg p-1 m-auto w-fit">
-                                        Owner
-                                    </div>
-                                    <div class="my-1 text-xs text-blue-500 hover:text-blue-600"><a
-                                            href="#">e.johnson@windowworld.com</a></div>
-                                    <div class="flex flex-row justify-between align-middle w-full mt-4">
-                                        <button
-                                            class="border border-slate-200 rounded text-xs p-1 px-2 text-slate-500 mx-6 hover:bg-slate-100">Copy</button>
-                                        <button
-                                            class="bg-blue-400 text-white p-1 text-xs mx-6 px-2 rounded hover:bg-blue-500 ">Mail</button>
-                                    </div>
-                                </div>
-                                <!-- User Stop-->
-
-                                <!-- User Start-->
-                                <div class="basis-1/3 text-center my-4 border-r border-gray-200">
-
-                                    <img class="m-auto h-10 opacity-60 hover:opacity-80"
-                                        src="img/icons/user_client.svg" />
-                                    <div class="my-1 font-medium text-slate-900">Mark Thompson</div>
-                                    <div class="my-1 text-xs text-blue-500 bg-blue-100 rounded-lg p-1 m-auto w-fit">
-                                        Owner
-                                    </div>
-                                    <div class="my-1 text-xs text-blue-500 hover:text-blue-600"><a
-                                            href="#">m.thompson@windowworld.com</a></div>
-                                    <div class="flex flex-row justify-between align-middle w-full mt-4">
-                                        <button
-                                            class="border border-slate-200 rounded text-xs p-1 px-2 text-slate-500 mx-6 hover:bg-slate-100">Copy</button>
-                                        <button
-                                            class="bg-blue-400 text-white p-1 text-xs mx-6 px-2 rounded hover:bg-blue-500 ">Mail</button>
-                                    </div>
-                                </div>
-                                <!-- User Stop-->
-
-                                <!-- User Start-->
-                                <div class="basis-1/3 text-center my-4">
-
-                                    <img class="m-auto h-10 opacity-60 hover:opacity-80"
-                                        src="img/icons/user_client.svg" />
-                                    <div class="my-1 font-medium text-slate-900">Sarah Williams</div>
-                                    <div class="my-1 text-xs text-blue-500 bg-blue-100 rounded-lg p-1 m-auto w-fit">
-                                        Owner
-                                    </div>
-                                    <div class="my-1 text-xs text-blue-500 hover:text-blue-600"><a
-                                            href="#">s.williams@windowworld.com</a></div>
-                                    <div class="flex flex-row justify-between align-middle w-full mt-4">
-                                        <button
-                                            class="border border-slate-200 rounded text-xs p-1 px-2 text-slate-500 mx-6 hover:bg-slate-100">Copy</button>
-                                        <button
-                                            class="bg-blue-400 text-white p-1 text-xs mx-6 px-2 rounded hover:bg-blue-500 ">Mail</button>
-                                    </div>
-                                </div>
-                                <!-- User Stop-->
-
-
-
-                            </div>
-                            <button
-                                class="flex align-middle justify-center w-[90%] m-auto text-sm bg-blue-500 hover:bg-blue-600 text-slate-100 rounded py-1 mt-4 font-extrabold ">Mail
-                                All</button>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-
-            <!-- Store Location -->
-            <div class="flex flex-row w-full gap-4 mx-8 pr-16 mb-8">
-                <div class="bg-white rounded-lg shadow p-6 w-1/4 border border-gray-200">
-                    <h2 class=" text-xl font-semibold mb-2">Store Location</h2>
-                    <address class="text-sm space-y-1">
-                        <p class="text-gray-700">Phone: <a href="tel:814-693-0133"
-                                class="text-blue-500">814-693-0133</a></p>
-                        <p class="text-gray-700">Street: 114 Vision Dr.</p>
-                        <p class="text-gray-700">City: Duncansville</p>
-                        <p class="text-gray-700">State: PA</p>
-                        <p class="text-gray-700">ZIP: 55555</p>
-                        <p class="text-gray-700">Full: 114 Vision Dr., Duncansville, PA</p>
-                    </address>
-                </div>
-
-                <!-- Landing Pages -->
-                <div class="bg-white rounded-lg shadow-lg p-6 w-1/4 border border-gray-200">
-                    <h2 class="text-xl font-semibold mb-2">Landing Pages</h2>
-                    <ul class="text-sm list-inside space-y-1">
-                        <div class="my-2 pt-2 border-b border-gray-100">
-                            <li>
-                                <div class="flex flex-row items-center gap-2 w-full mb-2">
-                                    <a href="http://fb.windowworlddeals.com/altoona"
-                                        class="flex gap-2 items-center text-blue-500 ">
-                                        <span class="bg-blue-100 text-blue-600 p-1 rounded-full text-xs px-4 ">FB</span>
-                                        <span>Windows LP</span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="flex flex-row items-center gap-2 w-full mb-2">
-                                    <a href="http://fb.windowworlddeals.com/altoona-2"
-                                        class="flex gap-2 items-center text-blue-500 ">
-                                        <span class="bg-blue-100 text-blue-600 p-1 rounded-full text-xs px-4 ">FB</span>
-                                        <span>Siding & Doors LP</span>
-                                    </a>
-                                </div>
-                            </li>
-                        </div>
-                        <li>
-                            <div class="flex flex-row items-center gap-2 w-full mb-2">
-                                <a href="http://ppc.windowworlddeals.com/altoona"
-                                    class="flex gap-2 items-center text-blue-500 ">
-                                    <span
-                                        class="bg-yellow-100 text-yellow-600 p-1 rounded-full text-xs px-3 ">PPC</span>
-                                    <span>Branded LP</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex flex-row items-center gap-2 w-full mb-2">
-                                <a href="http://ppc.windowworlddeals.com/altoona-nb"
-                                    class="flex gap-2 items-center text-blue-500 ">
-                                    <span
-                                        class="bg-yellow-100 text-yellow-600 p-1 rounded-full text-xs px-3 ">PPC</span>
-                                    <span>Non-Branded LP</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex flex-row items-center gap-2 w-full mb-2">
-                                <a href="http://ppc.windowworlddeals.com/altoona-comp"
-                                    class="flex gap-2 items-center text-blue-500 ">
-                                    <span
-                                        class="bg-yellow-100 text-yellow-600 p-1 rounded-full text-xs px-3 ">PPC</span>
-                                    <span>Competitor Branded LP</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Organic -->
-                <div class="bg-white rounded-lg shadow-lg p-6 w-1/4 border border-gray-200">
-                    <h2 class="text-xl font-semibold mb-2">Organic</h2>
-                    <p class="text-sm"><a href="https://www.windowworldaltoona.com"
-                            class="text-blue-500">www.windowworldaltoona.com</a></p>
-                </div>
-
-                <!-- Business Pages -->
-                <div class="bg-white rounded-lg shadow-lg p-6 w-1/4 border border-gray-200">
-                    <h2 class="text-xl font-semibold mb-2">Business Pages</h2>
-                    <ul class="text-sm list-disc list-inside space-y-1">
-                        <li><a href="https://www.facebook.com/WindowWorldAltoona" class="text-blue-500">FB
-                                Business</a></li>
-                        <li><a href="https://www.google.com/search?q=Window+World+of+Altoona"
-                                class="text-blue-500">Google Business Page</a></li>
-                    </ul>
-                </div>
-            </div>
 
         </div>
-        <!--Content Under Logo -->
+        <div class="flex flex-grow flex-col justify-center space-y-4 w-2/3 ml-4 pl-4">
+
+        </div>
+
+
+        <!--First Row-->
+        <main class="mx-auto pb-4 grid grid-cols-1 md:grid-cols-2 gap-4 px-8">
+            <!-- Owner Operator Information -->
+            <?php include 'client/client_owners.php'; ?>
+            <!-- County Map/Owner Image -->
+            <?php include 'client/client_countymap.php'; ?>
+        </main>
+        <!--First Row End-->
+
+
+        <!-- Store Location -->
+        <div class="flex flex-row w-full gap-4 mx-8 pr-16 mb-8">
+            <div class="bg-white rounded-lg  p-6 w-1/4 border border-gray-300">
+                <h2 class="text-xl font-semibold mb-4">Location</h2>
+
+                <div class="flex flex-row mt-2">
+                    <div class="basis-1/3">
+                        <p class="text-slate-600 font-light text-sm">Phone</p> <a href="tel:814-693-0133"
+                            class="text-blue-500">814-693-0133</a>
+                    </div>
+                    <div class="basis-1/3">
+                        <p class="text-slate-600 font-light text-sm">Street</p>
+                        <p class=" text-slate-900">114 Vision Dr.</p>
+                    </div>
+                    <div class="basis-1/3">
+                        <p class="text-slate-600 font-light text-sm">City</p>
+                        <p class=" text-slate-900"> Duncansville</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-row mt-4">
+                    <div class="basis-1/3">
+                        <p class="text-slate-600 font-light text-sm">State</p>
+                        <p class=" text-slate-900">PA</p>
+                    </div>
+                    <div class="basis-1/3">
+                        <p class="text-slate-600 font-light text-sm">ZIP</p>
+                        <p class=" text-slate-900">55555</p>
+                    </div>
+
+                    <div class="basis-1/3">
+                        &nbsp;
+                    </div>
+                </div>
+                <div
+                    class="text-center w-full border border-slate-300 py-2 rounded-lg mt-4 duration-500 hover:bg-gray-100">
+                    <p class="text-slate-600 font-light text-sm">Full</p>
+                    <p class="text-lg text-slate-900">114 Vision Dr.,
+                        Duncansville, PA</p>
+                </div>
+            </div>
+
+
+            <!-- Landing Pages -->
+            <div class="bg-white rounded-lg p-6 w-1/4 border border-gray-300">
+                <h2 class="text-xl font-semibold mb-4">Landing Pages</h2>
+                <ul class="text-sm list-inside space-y-1">
+                    <div class="my-2 pt-2 border-b border-gray-100">
+                        <li>
+                            <div class="flex flex-row items-center gap-2 w-full mb-2">
+                                <a href="http://fb.windowworlddeals.com/altoona"
+                                    class="flex gap-2 items-center text-blue-500 ">
+                                    <span class="bg-blue-100 text-blue-600 p-1 rounded-full text-xs px-4 ">FB</span>
+                                    <span>Windows LP</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex flex-row items-center gap-2 w-full mb-2">
+                                <a href="http://fb.windowworlddeals.com/altoona-2"
+                                    class="flex gap-2 items-center text-blue-500 ">
+                                    <span class="bg-blue-100 text-blue-600 p-1 rounded-full text-xs px-4 ">FB</span>
+                                    <span>Siding & Doors LP</span>
+                                </a>
+                            </div>
+                        </li>
+                    </div>
+                    <li>
+                        <div class="flex flex-row items-center gap-2 w-full mb-2">
+                            <a href="http://ppc.windowworlddeals.com/altoona"
+                                class="flex gap-2 items-center text-blue-500 ">
+                                <span class="bg-yellow-100 text-yellow-600 p-1 rounded-full text-xs px-3 ">PPC</span>
+                                <span>Branded LP</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex flex-row items-center gap-2 w-full mb-2">
+                            <a href="http://ppc.windowworlddeals.com/altoona-nb"
+                                class="flex gap-2 items-center text-blue-500 ">
+                                <span class="bg-yellow-100 text-yellow-600 p-1 rounded-full text-xs px-3 ">PPC</span>
+                                <span>Non-Branded LP</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex flex-row items-center gap-2 w-full mb-2">
+                            <a href="http://ppc.windowworlddeals.com/altoona-comp"
+                                class="flex gap-2 items-center text-blue-500 ">
+                                <span class="bg-yellow-100 text-yellow-600 p-1 rounded-full text-xs px-3 ">PPC</span>
+                                <span>Competitor Branded LP</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Business Pages -->
+            <div class="bg-white rounded-lg border p-6 w-1/4  border-gray-300">
+                <h2 class="text-xl font-semibold mb-4">Business Pages</h2>
+                <ul class="text-sm list-inside space-y-1">
+                    <li>
+                        <div
+                            class="flex flex-row items-center gap-4 w-full mb-2 p-2 rounded cursor-pointer duration-500 hover:bg-slate-100">
+                            <a href="https://www.facebook.com/WindowWorldAltoona"
+                                class="flex gap-4 items-center text-blue-500 align-middle justify-center">
+                                <span
+                                    class="icon-container bg-emerald-100 text-emerald-600 p-1 duration-500 rounded text-xs w-10 h-10 flex items-center justify-center group-hover:bg-emerald-200">
+                                    <img class="icon w-full h-full object-cover group-hover:hidden"
+                                        src="img/icons/green_leaf.svg" />
+                                    <img class="icon-hover w-full h-full object-cover hidden group-hover:block"
+                                        src="img/icons/green_leaf_d.svg" />
+                                </span>
+                                <span class="text-black font-medium group-hover:font-semibold duration-800">Organic
+                                    Website</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="group">
+                        <div
+                            class="flex flex-row items-center gap-4 w-full mb-2 p-2 rounded cursor-pointer duration-500 hover:bg-slate-100">
+                            <a href="https://www.facebook.com/WindowWorldAltoona"
+                                class="flex gap-4 items-center text-blue-500 align-middle justify-center">
+                                <span
+                                    class="bg-blue-500 text-blue-600 p-1 rounded text-xs w-10 h-10 flex items-center justify-center duration-500 group-hover:bg-blue-600">
+                                    <img src="img/logos/social_facebook.svg" />
+                                </span>
+                                <span class="text-black font-medium group-hover:font-semibold duration-800">Facebook
+                                    Business Page
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="group">
+                        <div
+                            class="flex flex-row items-center gap-4 w-full mb-2 p-2 rounded cursor-pointer duration-500 hover:bg-slate-100">
+                            <a href="https://www.facebook.com/WindowWorldAltoona"
+                                class="flex gap-4 items-center text-blue-500 align-middle justify-center">
+                                <span
+                                    class="bg-gray-200 text-blue-600 p-1 rounded text-xs w-10 h-10 flex items-center justify-center duration-500 group-hover:bg-gray-300">
+                                    <img class="duration-500 opacity-70 group-hover:opacity-100"
+                                        src="img\logos\Google_G.svg" />
+                                </span>
+                                <span class="text-black font-medium group-hover:font-semibold duration-800">Google
+                                    Business
+                                    Page</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Organic -->
+            <div class="bg-white rounded-lg g p-6 w-1/4 border border-gray-300">
+                <h2 class="text-xl font-semibold mb-4">Global Revisions</h2>
+                <div class="p-1 pt-4 pb-4 rounded-lg z-10">
+
+                    <div>
+                        <strong>Client Code</strong> Alt
+                    </div>
+                    <div>
+                        <strong>Acct. Manager</strong> <span class="text-slate-600">Carl Mayhew</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!--Content Under Logo -->
 
 
 
@@ -330,6 +265,38 @@
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.js"></script>
     <!-- ApexCharts JS -->
     <script src="assets/apex_charts/apexcharts.js"></script>
+    <!--Box Icons-->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!--Custom Script-->
+    <script>
+    let dropdownOpen = false;
+
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown');
+        const arrowIcon = document.getElementById('arrowIcon');
+
+        if (dropdownOpen) {
+            dropdown.style.transition = 'all 0.2s ease-in-out';
+            dropdown.classList.add('translate-y-[-4rem]', 'opacity-0');
+            setTimeout(() => {
+                dropdown.classList.add('hidden');
+            }, 200);
+            arrowIcon.style.transition = 'transform 0.2s ease-in-out';
+            arrowIcon.classList.remove('rotate-180');
+        } else {
+            dropdown.classList.remove('hidden');
+            setTimeout(() => {
+                dropdown.style.transition = 'all 0.2s ease-in-out';
+                dropdown.classList.remove('translate-y-[-4rem]', 'opacity-0');
+                dropdown.classList.add('translate-y-0', 'opacity-100');
+            }, 10);
+            arrowIcon.style.transition = 'transform 0.2s ease-in-out';
+            arrowIcon.classList.add('rotate-180');
+        }
+
+        dropdownOpen = !dropdownOpen;
+    }
+    </script>
     <!-- Loading End -->
     <!--Custom-->
 </body>
