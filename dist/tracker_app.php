@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="css/scrollbar.css">
 
 <div class="flex flex-row gap-4 w-full pr-8 mb-8">
-    <div class="basis-1/6 shadow border border-gray-300 rounded-lg p-4 min-h-[300px] bg-slate-800">
+    <div class="basis-1/6  border border-gray-300 rounded-lg p-4 min-h-[300px] bg-slate-800">
         <!-- Total Time at the top -->
         <div class="mb-1">
             <div class="font-medium text-slate-200">Total Time</div>
@@ -76,9 +76,8 @@
                 <tbody>
                     <tr>
 
-                        <th scope="row"
-                            class="gap-2 inline-flex px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 justify-center align-middle">
-                            <img class="w-10 h-10 rounded-full" src="img/logos/TCL_Logo_White.svg" />
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50">
+
                             TCL
                             Marketing
                         </th>
@@ -105,7 +104,7 @@
                         <td class="px-6 py-4">Project X</td>
                         <td class="px-6 py-4 bg-gray-50">
                             <div class="flex items-center h-full">
-                                <span class="flex-shrink-0">Short ad for Product X</span>
+                                <span class="flex-shrink-0">Short ad</span>
                                 <div class="relative group hover:opacity-100 opacity-75 cursor-pointer">
                                     <div data-tooltip-target="tooltip-yellow"
                                         class="ml-2 h-[25px] w-[25px] bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0"

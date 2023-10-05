@@ -11,9 +11,9 @@
 
 <body>
     <div class="flex flex-wrap">
-        <div class="w-full bg-white pl-0 lg:pl-64 min-h-screen">
-            <div id="main-nav"
-                 class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
+        <div class=" w-full bg-gray-100 pl-0 lg:pl-64 min-h-screen ">
+            <div id=" main-nav"
+                class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
                 <!-- Logo -->
                 <div class="w-full h-20 flex px-4 items-center mb-8 justify-center">
                     <div class="rounded-full bg-gray-300 w-16 h-16 mt-6"></div>
@@ -25,26 +25,26 @@
 
             <?php include 'navbar.php'; ?>
 
-<!--Content Start-->
+            <!--Content Start-->
 
+            <div class="bg-white border border-gray-200 rounded-lg w-[90%] m-auto p-4 my-8">
+                <div class="text-gray-800 font-2xl">E-mail List</div>
+            </div>
 
-
-<!--Content Stop-->
+            <!--Content Stop-->
         </div>
-        
-        
-        
+
+
+
     </div>
 
-    
-</div>
 
-</div>
+    </div>
 
-<!--Script Start-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.js"></script>
-<!--Script Stop-->
+    </div>
+
+    <!--Script Start-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.js"></script>
+    <!--Script Stop-->
 
 </body>
-
-

@@ -1,4 +1,4 @@
-<div class="flex flex-col bg-white shadow-lg rounded-lg border border-gray-200 h-[400px]" style="flex: 1;">
+<div class="flex flex-col bg-white rounded-lg border border-gray-200 h-[400px]" style="flex: 1;">
     <div class="flex-grow p-4">
 
 
