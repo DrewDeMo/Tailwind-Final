@@ -2,16 +2,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drew Tailwind Test</title>
-    <!-- ApexCharts CSS -->
-    <link rel="stylesheet" href="assets/apex_charts/apexcharts.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="output.css">
-    <!-- FontAwesome Icon Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- New Font -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <!--End External CSS-->
+    <!--All heading link files below-->
+    <?php include 'head_links.php'; ?>
+    <!--End heading links-->
 </head>
 
 <body>
