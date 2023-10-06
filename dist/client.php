@@ -10,9 +10,11 @@
 </head>
 <style>
 :root {
-    --clientNav-active-color: #007BFF;
+    --clientNav-active-color: #3B82F6;
     --clientNav-hover-color: #555;
     --clientNav-track-color: #E5E7EB;
+    --clientNav-hover-line-color: #bfdbfe;
+    /* Lighter blue for hover state */
 }
 
 .clientNav-tab-nav {
@@ -22,19 +24,44 @@
 }
 
 .clientNav-tab-link {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.75rem;
+    /* Increased padding at the bottom */
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s, font-weight 0.3s;
     position: relative;
     z-index: 2;
+    color: text-gray-600;
+    /* Inactive color */
+    font-weight: normal;
 }
 
 .clientNav-tab-link:hover {
-    color: var(--clientNav-hover-color);
+    color: text-gray-900;
+    /* Hover color */
+    font-weight: medium;
+}
+
+.clientNav-tab-link:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--clientNav-hover-line-color);
+    /* Light blue line on hover */
+    z-index: 1;
 }
 
 .clientNav-tab-link.clientNav-active {
-    /* Active styles (if any) go here */
+    color: text-gray-900;
+    /* Active text color */
+    font-weight: medium;
+}
+
+.clientNav-tab-link.clientNav-active i {
+    color: var(--clientNav-active-color);
+    /* Icon color to blue when active */
 }
 
 .clientNav-tab-nav::before {
@@ -69,6 +96,11 @@
 
 .clientNav-tab-pane.clientNav-active {
     display: block;
+}
+
+.clientNav-tab-link {
+    display: flex;
+    align-items: flex-end;
 }
 </style>
 
