@@ -14,8 +14,8 @@
     <div class="clientNav-tab-content">
         <div class="clientNav-tab-pane clientNav-active" id="clientNav-tab1"><?php include 'client/sub_dash.php'; ?>
         </div>
-        <div class="clientNav-tab-pane" id="clientNav-tab2">Content for Page 2</div>
-        <div class="clientNav-tab-pane" id="clientNav-tab3">Content for Page 3</div>
-        <div class="clientNav-tab-pane" id="clientNav-tab4">Content for Page 4</div>
+        <div class="clientNav-tab-pane" id="clientNav-tab2"></div>
+        <div class="clientNav-tab-pane" id="clientNav-tab3"><?php include 'client/sub_offers.php'; ?></div>
+        <div class="clientNav-tab-pane" id="clientNav-tab4"></div>
     </div>
 </div>
