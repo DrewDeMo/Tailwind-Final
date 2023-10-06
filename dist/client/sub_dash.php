@@ -1,8 +1,21 @@
-<div
-    class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
-    <div class="flex">
-        <div class="basis-1/2">01</div>
-        <div class="basis-1/2">02</div>
-        <div class="">03</div>
+<div class="flex flex-row justify-between w-full gap-4 mt-4">
+    <!--Owners box left-->
+    <?php include 'client/client_owners.php'; ?>
+    <!--Owners box right-->
+    <?php include 'client/client_countymap.php'; ?>
+</div>
+
+<!--Second row - 3 cards-->
+<div class="flex flex-row justify-between w-full gap-4 mt-4">
+    <div class="basis-1/3 border rounded-lg border-gray-200 bg-white w-full p-4">
+        Location box
+    </div>
+
+    <div class="basis-1/3 border rounded-lg border-gray-200 bg-white w-full p-4">
+        Location box
+    </div>
+
+    <div class="basis-1/3 border rounded-lg border-gray-200 bg-white w-full p-4">
+        Location box
     </div>
 </div>

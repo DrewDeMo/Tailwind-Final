@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +9,66 @@
     <!--End heading links-->
 </head>
 <style>
-.tab-content {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    padding: 0;
-    transition: opacity 0.5s ease, height 0.5s ease, padding 0.5s ease;
+:root {
+    --clientNav-active-color: #007BFF;
+    --clientNav-hover-color: #555;
+    --clientNav-track-color: #E5E7EB;
 }
 
-.tab-content.active {
-    opacity: 1;
-    height: auto;
-    padding: 15px;
-    /* This can be adjusted based on your preference or set to 0 if unnecessary */
+.clientNav-tab-nav {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.clientNav-tab-link {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.clientNav-tab-link:hover {
+    color: var(--clientNav-hover-color);
+}
+
+.clientNav-tab-link.clientNav-active {
+    /* Active styles (if any) go here */
+}
+
+.clientNav-tab-nav::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--clientNav-track-color);
+    z-index: 1;
+}
+
+.clientNav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+    height: 2px;
+    background-color: var(--clientNav-active-color);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.clientNav-tab-content {
+    transition: opacity 0.3s;
+}
+
+.clientNav-tab-pane {
+    display: none;
+}
+
+.clientNav-tab-pane.clientNav-active {
+    display: block;
 }
 </style>
 
@@ -40,55 +89,9 @@
             <?php include 'navbar.php'; ?>
             <!--Nav Stop-->
             <?php include 'client/client_header.php'; ?>
-
-            <?php include 'client/client_subheader.php'; ?>
-
-            <!--Content Start-->
-            <div class="flex flex-col space-y-16 px-16">
-                <!--Dashboard-->
-                <div class="tab-content active" id="content-dashboard"><?php include 'client/sub_dash.php'; ?></div>
-                <div class="tab-content" id="content-profile">PLACEHOLDER</div>
-                <div class="tab-content" id="content-settings">Settings Content</div>
-                <div class="tab-content" id="content-contacts">Contacts Content</div>
+            <div class="w-[90%] mx-auto">
+                <?php include 'client/client_body.php'; ?>
             </div>
-
-
-
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                let tabs = document.querySelectorAll(".flex.flex-wrap > li");
-                let contents = document.querySelectorAll(".tab-content");
-
-                tabs.forEach((tab, index) => {
-                    tab.addEventListener("click", function() {
-                        // Hide all content areas
-                        contents.forEach(content => {
-                            content.classList.remove("active");
-                        });
-
-                        // Construct the ID for the content section based on the tab's text content
-                        let targetId =
-                            `content-${tab.textContent.trim().toLowerCase().replace(/ /g, '-')}`;
-                        let targetContent = document.getElementById(targetId);
-
-                        if (targetContent) {
-                            // Show the clicked tab's content
-                            targetContent.classList.add("active");
-                        } else {
-                            console.warn(`Element with ID ${targetId} not found.`);
-                        }
-
-                        // Remove active styles from all tabs
-                        tabs.forEach(innerTab => {
-                            innerTab.querySelector("a").classList.remove("active");
-                        });
-
-                        // Add active styles to clicked tab
-                        this.querySelector("a").classList.add("active");
-                    });
-                });
-            });
-            </script>
         </div>
     </div>
     </div>
@@ -96,5 +99,41 @@
     <!--Script Start-->
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.js"></script>
     <!--Custom-->
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script>
+    const clientNavTabs = document.querySelectorAll(".clientNav-tab-link");
+    const clientNavContentPanes = document.querySelectorAll(".clientNav-tab-pane");
+    const clientNavIndicator = document.querySelector(".clientNav-indicator");
+
+    function adjustClientNavIndicator(activeTab) {
+        let leftPos = activeTab.offsetLeft;
+        let width = activeTab.offsetWidth;
+        clientNavIndicator.style.left = `${leftPos}px`;
+        clientNavIndicator.style.width = `${width}px`;
+    }
+
+    // Initialize the indicator position
+    adjustClientNavIndicator(document.querySelector('.clientNav-tab-link.clientNav-active'));
+
+    clientNavTabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            let target = this.dataset.tab;
+            let targetContent = document.getElementById(target);
+
+            // Manage active classes for tabs
+            clientNavTabs.forEach(t => t.classList.remove("clientNav-active"));
+            this.classList.add("clientNav-active");
+
+            // Manage active classes for content
+            clientNavContentPanes.forEach(pane => pane.classList.remove("clientNav-active"));
+            targetContent.classList.add("clientNav-active");
+
+            // Adjust the indicator
+            adjustClientNavIndicator(this);
+        });
+    });
+    </script>
 </body>
+
+</html>
