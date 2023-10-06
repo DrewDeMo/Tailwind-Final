@@ -1,3 +1,23 @@
+<style>
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 3px #34D399, 0 0 5px #34D399;
+    }
+
+    50% {
+        box-shadow: 0 0 6px #34D399, 0 0 8px #34D399;
+    }
+
+    100% {
+        box-shadow: 0 0 3px #34D399, 0 0 5px #34D399;
+    }
+}
+
+.glow-dot {
+    animation: glowing 1.5s infinite alternate;
+}
+</style>
+
 <div class="flex flex-col mb-6 bg-slate-800 p-5 pb-6" style="background-image: 
         url('img/logos/gradient.svg'), 
         radial-gradient(circle, rgba(255,255,255,0.1), transparent), 
@@ -19,11 +39,12 @@
         </div>
 
         <!-- Details -->
-        <div class="w-1/2 border-l border-opacity-50 border-white pl-8">
+        <div class="w-1/2  border-opacity-50 border-white pl-8">
             <h1 class="mb-2 text-6xl font-extrabold text-white">Altoona</h1>
 
             <div
-                class="p-1 my-4 w-2/3 text-sm font-medium rounded-full text-slate-800 bg-white border border-white border-opacity-50 text-center">
+                class="flex items-center justify-center w-2/3 px-4 py-1 text-center bg-gray-700 border border-gray-500 border-opacity-50 rounded-lg text-sm font-medium text-white">
+                <div class="mr-2 bg-green-500 w-2 h-2 rounded-full glow-dot"></div>
                 Full Service Customer
             </div>
 
