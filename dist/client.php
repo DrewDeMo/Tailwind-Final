@@ -45,8 +45,9 @@
 
             <!--Content Start-->
             <div class="flex flex-col space-y-16 px-16">
-                <div class="tab-content" id="content-profile">Profile Content</div>
-                <div class="tab-content active" id="content-dashboard">Dashboard Content</div>
+                <!--Dashboard-->
+                <div class="tab-content active" id="content-dashboard"><?php include 'client/sub_dash.php'; ?></div>
+                <div class="tab-content" id="content-profile">PLACEHOLDER</div>
                 <div class="tab-content" id="content-settings">Settings Content</div>
                 <div class="tab-content" id="content-contacts">Contacts Content</div>
             </div>

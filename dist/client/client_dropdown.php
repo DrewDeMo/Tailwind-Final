@@ -1,20 +1,21 @@
 <div class="flex">
     <button id="states-button" data-dropdown-toggle="dropdown-states"
-        class="flex-shrink-0 pr-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+        class="flex-shrink-0 pr-0 z-10 inline-flex items-center py-2 px-2 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
         type="button">
-        <img class="rounded-full h-10 mr-1" src="img\logos\circlew_blue.svg" />
+        <img class="rounded-full h-10 ml-[-8px] mr-1" src="img\logos\circlew_blue.svg" />
         Window World <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 10 6">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="m1 1 4 4 4-4" />
         </svg>
     </button>
+
     <div id="dropdown-states"
-        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-        <ul class="py-2  text-sm text-gray-700 dark:text-gray-200" aria-labelledby="states-button">
+        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 h-36 dark:bg-gray-700">
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="states-button">
             <li>
                 <button type="button"
-                    class="inline-flex w-full px-4 py-2  text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
+                    class="inline-flex w-full px-4 py-1 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
                     <div class="inline-flex items-center">
                         <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full mr-2" xmlns="http://www.w3.org/2000/svg"
                             id="flag-icon-css-us" viewBox="0 0 512 512">
@@ -65,7 +66,7 @@
     </div>
     <label for="states" class="sr-only">Choose a location</label>
     <select id="states"
-        class="bg-gray-50 border  border-gray-300 text-gray-900  rounded-r-lg border-l-gray-100 dark:border-l-gray-700 border-l-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-r-lg border-l-gray-100 dark:border-l-gray-700 border-l-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         <option selected>Altoona</option>
         <option value="CA">Binghamton</option>
         <option value="TX">Carolinas</option>
