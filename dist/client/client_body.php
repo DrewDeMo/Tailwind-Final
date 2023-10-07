@@ -12,6 +12,9 @@
             <a href="#" data-tab="clientNav-tab4" class="clientNav-tab-link pr-1"><i
                     class="las las la-file-archive text-xl mr-1"
                     style="line-height: 1; vertical-align: bottom;"></i>Assets</a>
+            <a href="#" data-tab="clientNav-tab5" class="clientNav-tab-link pr-1"><i
+                    class="las la-bullseye text-xl mr-1"
+                    style="line-height: 1; vertical-align: bottom;"></i>Tracking</a>
 
             <span class="clientNav-indicator"></span>
         </nav>
@@ -21,6 +24,7 @@
         </div>
         <div class="clientNav-tab-pane" id="clientNav-tab2"><?php include 'client/sub_globalrev.php'; ?></div>
         <div class="clientNav-tab-pane" id="clientNav-tab3"><?php include 'client/sub_offers.php'; ?></div>
-        <div class="clientNav-tab-pane" id="clientNav-tab4"></div>
+        <div class="clientNav-tab-pane" id="clientNav-tab4">Coming Soon...</div>
+        <div class="clientNav-tab-pane" id="clientNav-tab5"><?php include 'client/sub_tracking.php'; ?></div>
     </div>
 </div>
