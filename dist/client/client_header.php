@@ -35,7 +35,13 @@
             <img class="h-40 px-8 mb-1" src="img/logos/ww_white.svg" alt="Logo" />
 
             <!-- Dropdown -->
-            <?php include 'client_dropdown.php'; ?>
+            <div class="flex flex-row gap-2">
+                <?php include 'client_dropdown.php'; ?>
+                <!--Search button-->
+                <button
+                    class="border border-gray-600 duration-500 text-white bg-gray-700 h-[38px] w-[38px] rounded-lg hover:bg-gray-600"><i
+                        class="las la-search text-xl text-gray-300 p-2 "></i></button>
+            </div>
         </div>
 
         <!-- Details -->
