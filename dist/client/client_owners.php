@@ -87,12 +87,11 @@
         </div>
     </div>
     <div class="p-2 flex-grow">
-        <div class="w-full flex justify-end items-center mt-4 mb-auto">
-            <button class="bg-blue-500 text-white text-sm font-medium px-3 py-2 mr-2 rounded-lg hover:bg-blue-400">
-
-                Mail All Owners
-
-                <i class="las la-mail-bulk text-white text-xl ml-1"></i>
+        <div class="w-full flex justify-end items-center mt-4 mb-auto mb-1 mr-1">
+            <button type="button"
+                class="ml-2 px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                <i class="las la-mail-bulk text-xl mr-2"></i>
+                Mail All
             </button>
         </div>
     </div>

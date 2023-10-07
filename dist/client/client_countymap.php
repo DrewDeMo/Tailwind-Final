@@ -24,51 +24,47 @@
 
             <div class="flex items-center space-x-2">
                 <!-- Grouped user icon and name -->
-                <div
-                    class="h-16 w-10 px-1 bg-gray-100 rounded-lg mr-2 flex items-center justify-center relative hover:bg-gray-200">
-                    <p class="text-xs text-gray-700 font-medium p-1 transition-opacity duration-300 hover:opacity-0">
-                        .SVG</p>
-                    <i
-                        class="las la-icon-name text-xs text-gray-700 font-medium p-1 absolute opacity-0 transition-opacity duration-300 hover:opacity-100"></i>
+                <h3 class="font-medium">County Map</h3>
+            </div>
+
+            <div class="flex space-x-2">
+                <!-- Two buttons grouped on the right -->
+                <div class="h-16 w-10 px-1 bg-green-400 rounded-lg mr-2 flex items-center justify-center relative ">
+                    <p class=" font-medium p-1 transition-opacity duration-300 hover:opacity-0">
+                        <i class="lab la-google-drive text-white text-xl"></i>
+                    </p>
+
+                </div>
+                <div class="h-16 w-10 px-1 text-xs bg-gray-100 rounded-lg mr-2 flex items-center justify-center relative >
+                    <p class=" text-xs text-gray-700 font-medium p-1 transition-opacity duration-300">
+                    .SVG</p>
+
                 </div>
                 <div class="h-16 w-10 px-1 bg-gray-100 rounded-lg mr-2 flex items-center justify-center">
                     <p class="text-xs text-gray-700 font-medium p-1">.PNG</i>
                 </div>
-                <h3 class="font-medium ml-4">County Map</h3>
-            </div>
-
-            <div class="flex space-x-2">
-                <!-- Two buttons grouped on the right -->
-                <button><i
-                        class="las la-copy text-gray-600 font-lg border border-gray-200 hover:bg-gray-100 p-1.5 rounded-lg"></i></button>
-                <button><i
-                        class="las la-envelope text-white font-lg bg-blue-500 hover:bg-blue-600 p-1.5 rounded-lg"></i></button>
             </div>
 
         </div>
     </div>
 
-    <!--Item 1-->
+    <!--Item 2-->
     <div class="p-2 mt-2">
         <div class="flex items-center justify-between w-full hover:bg-gray-50 duration-400 rounded-lg p-2">
 
-            <div class="flex items-center space-x-2">
-                <!-- Grouped user icon and name -->
-                <div class="h-16 w-10 px-1 border border-gray-200 rounded-lg mr-2 flex items-center justify-center">
-                    <p class="text-xs text-gray-200 font-medium text-center p-2">NO<BR>IMAGE</i>
-                </div>
-                <h3 class="font-medium ml-4">Owner Images</h3>
-            </div>
+            <!-- Text all the way on the left -->
+            <h3 class="font-light italic text-gray-300">No Owner Images</h3>
 
-            <div class="flex space-x-2">
-                <!-- Two buttons grouped on the right -->
-                <button><i
-                        class="las la-copy text-gray-600 font-lg border border-gray-200 hover:bg-gray-100 p-1.5 rounded-lg"></i></button>
-                <button><i
-                        class="las la-envelope text-white font-lg bg-blue-500 hover:bg-blue-600 p-1.5 rounded-lg"></i></button>
+            <!-- No image card all the way on the right -->
+            <div class="flex items-center space-x-2">
+                <div class="h-16 w-10 px-1 border border-gray-100 rounded-lg flex items-center justify-center">
+                    <p class="text-xl text-gray-200 font-medium text-center p-2"><i class="las la-user-alt-slash"></i>
+                    </p>
+                </div>
             </div>
 
         </div>
     </div>
+
 
 </section>
