@@ -1,103 +1,99 @@
 <!-- Owner Operator Information -->
 <section class="relative rounded-lg border w-full bg-white border-gray-300 overflow-hidden">
     <!-- Background Image and Overlay -->
-    <div class="relative top-0 left-0 right-0 h-24 bg-cover bg-center z-0" style="background-image: url('img/photos/clients.webp');">
-        <div class="absolute inset-0 bg-gray-700 opacity-90 rounded-t-lg"></div>
+    <div class="relative top-0 left-0 right-0 h-16 bg-cover bg-center z-0"
+        style="background-image: url('img/photos/clients.webp');">
+        <div class="absolute inset-0 bg-gray-700 opacity-90"></div>
         <!-- Headline -->
-        <h2 class="px-4 drop-shadow-md absolute inset-x-0 bottom-0 h-full flex items-center text-2xl font-bold text-gray-100 shadow-md z-10">
-            Owner/Operators
+        <h2
+            class="px-4 drop-shadow-md absolute inset-x-0 bottom-0 h-full flex items-center text-2xl font-bold text-gray-100 shadow-md z-10">
+            Owners
         </h2>
     </div>
+
     <!-- Content Container -->
-    <div class="p-4 z-10 relative rounded-lg mt-1 flex flex-col justify-between">
-        <!-- User and Mail All Wrapper -->
-        <div class="flex flex-col justify-between h-full">
-            <!-- Other Content -->
-            <div class="flex flex-row w-full">
-                <!-- User Start-->
-                <div class="flex-1 text-center my-4 border-r border-gray-200 min-w-0">
-                    <img class="m-auto h-10 opacity-60 hover:opacity-80" src="img/icons/user_client.svg" />
-                    <div class="my-1 font-medium text-gray-900">Emily Johnson</div>
-                    <div class="my-1 text-xs text-blue-500 bg-blue-100 rounded-lg p-1 m-auto w-fit">
-                        Owner
-                    </div>
-                    <div class="my-1 text-xs text-blue-500 hover:text-blue-600"><a href="#">e.johnson@windowworld.com</a></div>
-                    <div class="flex flex-row justify-center gap-4 align-middle w-full mt-4 px-4 sm:px-2">
-                        <button class="flex items-center rounded-lg text-sm p-2 px-3 border border-gray-300 text-gray-500 mx-[-0.5] hover:bg-slate-200 ">
-                            <box-icon color='#7c89a8' size='16px' name='copy-alt'></box-icon>
-                            <span class="ml-1">Copy</span>
-                        </button>
-                        <button class="flex items-center border border-blue-500 bg-blue-500 duration-500 rounded-lg text-sm font-semibold p-2 px-3 text-white mx-[-0.5] hover:bg-blue-600">
-                            <box-icon color='#fff' size='16px' name='envelope'></box-icon>
-                            <span class="ml-1">Mail</span>
-                        </button>
-                    </div>
 
+    <!-- User and Mail All Wrapper -->
 
+    <!-- Other Content -->
+    <!-- Card Content Start-->
 
+    <!--Owner 1-->
+    <div class="p-2 mt-2">
+        <div class="flex items-center justify-between w-full hover:bg-gray-50 duration-400 rounded-lg p-2">
+
+            <div class="flex items-center space-x-2">
+                <!-- Grouped user icon and name -->
+                <div class="h-12 w-12 bg-gray-100 rounded-lg mr-2 flex items-center justify-center">
+                    <p class="text-lg text-gray-300 font-bold">BH</i>
                 </div>
-                <!-- User Stop-->
-
-                <!-- User Start-->
-                <div class="flex-1 text-center my-4 border-r border-gray-200 min-w-0">
-
-                    <img class="m-auto h-10 opacity-60 hover:opacity-80" src="img/icons/user_client.svg" />
-                    <div class="my-1 font-medium text-gray-900">Mark Thompson</div>
-                    <div class="my-1 text-xs text-blue-500 bg-blue-100 rounded-lg p-1 m-auto w-fit">
-                        Owner
-                    </div>
-                    <div class="my-1 text-xs text-blue-500 hover:text-blue-600"><a href="#">m.thompson@windowworld.com</a></div>
-                    <div class="flex flex-row justify-center gap-4 align-middle w-full mt-4 px-4 sm:px-2">
-                        <button class="flex items-center rounded-lg text-sm p-2 px-3 border border-gray-300 text-gray-500 mx-[-0.5] hover:bg-slate-200 ">
-                            <box-icon color='#7c89a8' size='16px' name='copy-alt'></box-icon>
-                            <span class="ml-1">Copy</span>
-                        </button>
-                        <button class="flex items-center border border-blue-500 bg-blue-500 duration-500 rounded-lg text-sm font-semibold p-2 px-3 text-white mx-[-0.5] hover:bg-blue-600">
-                            <box-icon color='#fff' size='16px' name='envelope'></box-icon>
-                            <span class="ml-1">Mail</span>
-                        </button>
-                    </div>
-
-
-                </div>
-                <!-- User Stop-->
-
-                <!-- User Start-->
-                <div class="flex-1 text-center my-4 min-w-0">
-
-                    <img class="m-auto h-10 opacity-60 hover:opacity-80" src="img/icons/user_client.svg" />
-                    <div class="my-1 font-medium text-gray-900">Sarah Williams</div>
-                    <div class="my-1 text-xs text-blue-500 bg-blue-100 rounded-lg p-1 m-auto w-fit">
-                        Owner
-                    </div>
-                    <div class="my-1 text-xs text-blue-500 hover:text-blue-600"><a href="#">s.williams@windowworld.com</a></div>
-                    <div class="flex flex-row justify-center gap-4 align-middle w-full mt-4 px-4 sm:px-2">
-                        <button class="flex items-center rounded-lg text-sm p-2 px-3 border border-gray-300 text-gray-500 mx-[-0.5] hover:bg-slate-200 ">
-                            <box-icon color='#7c89a8' size='16px' name='copy-alt'></box-icon>
-                            <span class="ml-1">Copy</span>
-                        </button>
-                        <button class="flex items-center border border-blue-500 bg-blue-500 duration-500 rounded-lg text-sm font-semibold p-2 px-3 text-white mx-[-0.5] hover:bg-blue-600">
-                            <box-icon color='#fff' size='16px' name='envelope'></box-icon>
-                            <span class="ml-1">Mail</span>
-                        </button>
-                    </div>
-
-
-                </div>
-                <!-- User Stop-->
-
-
-
-            </div>
-            <div class="text-center my-4 mb-0 pb-0">
-                <a href="mailto:e.johnson@windowworld.com,m.thompson@windowworld.com,s.williams@windowworld.com">
-                    <button class="flex align-middle justify-center items-center w-[90%] m-auto bg-blue-500 hover:bg-blue-600 text-gray-100 rounded py-4 mt-4 font-bold">
-                        Mail All
-                        <box-icon class="ml-2" color='#fff' size='20px' name='mail-send'></box-icon>
-                    </button>
-                </a>
+                <h3 class="font-medium ml-4">Benjamin Hartley</h3>
             </div>
 
+            <div class="flex space-x-2">
+                <!-- Two buttons grouped on the right -->
+                <button><i
+                        class="las la-copy text-gray-600 font-lg border border-gray-200 hover:bg-gray-100 p-1.5 rounded-lg"></i></button>
+                <button><i
+                        class="las la-envelope text-white font-lg bg-blue-500 hover:bg-blue-600 p-1.5 rounded-lg"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Owner 1-->
+    <div class="p-2">
+        <div class="flex items-center justify-between w-full hover:bg-gray-50 duration-400 rounded-lg p-2">
+
+            <div class="flex items-center space-x-2">
+                <!-- Grouped user icon and name -->
+                <div class="h-12 w-12 bg-gray-100 rounded-lg mr-2 flex items-center justify-center">
+                    <p class="text-lg text-gray-300 font-bold">CJ</i>
+                </div>
+                <h3 class="font-medium ml-4">Clara Jeffries</h3>
+            </div>
+
+            <div class="flex space-x-2">
+                <!-- Two buttons grouped on the right -->
+                <button><i
+                        class="las la-copy text-gray-600 font-lg border border-gray-200 hover:bg-gray-100 p-1.5 rounded-lg"></i></button>
+                <button><i
+                        class="las la-envelope text-white font-lg bg-blue-500 hover:bg-blue-600 p-1.5 rounded-lg"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Owner 1-->
+    <div class="p-2">
+        <div class="flex items-center justify-between w-full hover:bg-gray-50 duration-400 rounded-lg p-2">
+
+            <div class="flex items-center space-x-2">
+                <!-- Grouped user icon and name -->
+                <div class="h-12 w-12 bg-gray-100 rounded-lg mr-2 flex items-center justify-center">
+                    <p class="text-lg text-gray-300 font-bold">TW</i>
+                </div>
+                <h3 class="font-medium ml-4">Thomas Whitfield</h3>
+            </div>
+
+            <div class="flex space-x-2">
+                <!-- Two buttons grouped on the right -->
+                <button><i
+                        class="las la-copy text-gray-600 font-lg border border-gray-200 hover:bg-gray-100 p-1.5 rounded-lg"></i></button>
+                <button><i
+                        class="las la-envelope text-white font-lg bg-blue-500 hover:bg-blue-600 p-1.5 rounded-lg"></i></button>
+            </div>
+
+        </div>
+    </div>
+    <div class="p-2 flex-grow">
+        <div class="w-full flex justify-end items-center mt-4 mb-auto">
+            <button class="bg-blue-500 text-white text-sm font-medium px-3 py-2 mr-2 rounded-lg hover:bg-blue-400">
+
+                Mail All Owners
+
+                <i class="las la-mail-bulk text-white text-xl ml-1"></i>
+            </button>
         </div>
     </div>
 </section>
