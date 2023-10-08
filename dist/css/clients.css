@@ -14,11 +14,11 @@
 
 @keyframes fadeIn {
     from {
-        opacity: 0.4;
+        opacity: 0.6;
     }
 
     to {
-        opacity: 0.9;
+        opacity: 0.8;
     }
 }
 
@@ -28,20 +28,22 @@
 
 .default-search-input {
     transition: transform 0.3s ease-out;
-    /* Smooth transition for the animation */
 }
 
 .default-search-input:focus {
     transform: translateX(-10px);
-    /* Slight shift to the left when active */
     outline: none;
-    /* Remove the default browser outline */
 }
 
 .logo-fade-in {
-    animation: fadeIn 0.3s ease-out forwards;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-out;
 }
 
-.default-search-input:focus~.logo-fade-in {
-    animation-name: fadeIn;
+.default-search-input:focus+.logo-fade-in {
+    opacity: 0.8;
+}
+
+.logo-active {
+    opacity: 0.9;
 }

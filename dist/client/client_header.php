@@ -1,3 +1,4 @@
+<!--Small css stylesheet with glow-dot & logo-fade-in-->
 <link rel="stylesheet" href="css/clients.css" />
 
 <div class="flex flex-col mb-6 bg-slate-800 p-5 pb-6">
@@ -15,7 +16,7 @@
                     <div class="relative flex items-center w-1/2 px-4 py-1 bg-gray-700 border border-gray-500 border-opacity-50 rounded-full text-sm font-medium text-white">
                         <div class="flex items-center justify-center w-full">
                             <!--Logo left fade in-->
-                            <img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-8 h-8 mr-2 opacity-40 logo-fade-in" />
+                            <img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-8 h-8 mr-2 logo-fade-in" />
                             <input type="search" id="default-search" class="default-search-input block w-full p-4 pl-6 text-sm text-white border-0 bg-transparent focus:ring-transparent rounded-full" placeholder="Window World of Altoona" required>
                             <div id="autocomplete-dropdown" class="hidden absolute mt-10 w-full bg-gray-700 border border-gray-500 border-opacity-50 rounded-md shadow-lg">
                             </div>
@@ -98,6 +99,14 @@
                 });
                 dropdown.appendChild(item);
             });
+        });
+
+        document.getElementById('default-search').addEventListener('focus', function() {
+            document.querySelector('.logo-fade-in').classList.add('logo-active');
+        });
+
+        document.getElementById('default-search').addEventListener('blur', function() {
+            document.querySelector('.logo-fade-in').classList.remove('logo-active');
         });
     </script>
 </div>
