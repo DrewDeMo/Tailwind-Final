@@ -31,12 +31,12 @@
 }
 
 .default-search-input:focus {
-    transform: translateX(-10px);
+    transform: translateX(-20px);
     outline: none;
 }
 
 .logo-fade-in {
-    opacity: 0.6;
+    opacity: 0.45;
     transition: opacity 0.3s ease-out;
 }
 
@@ -46,4 +46,20 @@
 
 .logo-active {
     opacity: 0.9;
+}
+
+.default-search-input:focus {
+    transform: translateX(-20px);
+    /* Increased the translateX for more movement to the left */
+    outline: none;
+}
+
+/* New class for the fading border animation */
+.border-fade-in {
+    transition: border-color 0.3s ease-out;
+}
+
+.default-search-input:focus+.border-fade-in {
+    border-color: rgba(226, 232, 240, 1);
+    /* This corresponds to bg-gray-200 */
 }

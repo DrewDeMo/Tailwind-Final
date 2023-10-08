@@ -4,11 +4,16 @@
             <a href="#" data-tab="clientNav-tab1" class="clientNav-tab-link clientNav-active font-medium pr-1">
                 <i class="las la-tachometer-alt text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i> Dash
             </a>
-            <a href="#" data-tab="clientNav-tab3" class="clientNav-tab-link pr-1"><i class="las las la-tag text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i>Offers</a>
-            <a href="#" data-tab="clientNav-tab2" class="clientNav-tab-link pr-1"><i class="las la-bullhorn text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i>Global
+            <a href="#" data-tab="clientNav-tab3" class="clientNav-tab-link pr-1"><i class="las las la-tag text-xl mr-1"
+                    style="line-height: 1; vertical-align: bottom;"></i>Offers</a>
+            <a href="#" data-tab="clientNav-tab2" class="clientNav-tab-link pr-1"><i
+                    class="las la-bullhorn text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i>Global
                 Revisions</a>
-            <a href="#" data-tab="clientNav-tab5" class="clientNav-tab-link pr-1"><i class="las la-bullseye text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i>Tracking</a>
-            <a href="#" data-tab="clientNav-tab6" class="clientNav-tab-link pr-1"><i class="las la-icons text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i>Credentials</a>
+            <a href="#" data-tab="clientNav-tab5" class="clientNav-tab-link pr-1"><i
+                    class="las la-bullseye text-xl mr-1"
+                    style="line-height: 1; vertical-align: bottom;"></i>Tracking</a>
+            <a href="#" data-tab="clientNav-tab6" class="clientNav-tab-link pr-1"><i class="las la-icons text-xl mr-1"
+                    style="line-height: 1; vertical-align: bottom;"></i>Credentials</a>
 
             <span class="clientNav-indicator"></span>
         </nav>
