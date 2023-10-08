@@ -15,6 +15,8 @@
             <a href="#" data-tab="clientNav-tab5" class="clientNav-tab-link pr-1"><i
                     class="las la-bullseye text-xl mr-1"
                     style="line-height: 1; vertical-align: bottom;"></i>Tracking</a>
+            <a href="#" data-tab="clientNav-tab6" class="clientNav-tab-link pr-1"><i class="las la-icons text-xl mr-1"
+                    style="line-height: 1; vertical-align: bottom;"></i>Credentials</a>
 
             <span class="clientNav-indicator"></span>
         </nav>
