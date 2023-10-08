@@ -1,0 +1,47 @@
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 3px #34D399, 0 0 5px #34D399;
+    }
+
+    50% {
+        box-shadow: 0 0 6px #34D399, 0 0 8px #34D399;
+    }
+
+    100% {
+        box-shadow: 0 0 3px #34D399, 0 0 5px #34D399;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 0.9;
+    }
+}
+
+.glow-dot {
+    animation: glowing 1.5s infinite alternate;
+}
+
+.default-search-input {
+    transition: transform 0.3s ease-out;
+    /* Smooth transition for the animation */
+}
+
+.default-search-input:focus {
+    transform: translateX(-10px);
+    /* Slight shift to the left when active */
+    outline: none;
+    /* Remove the default browser outline */
+}
+
+.logo-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.default-search-input:focus~.logo-fade-in {
+    animation-name: fadeIn;
+}
