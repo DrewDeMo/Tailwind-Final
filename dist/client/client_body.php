@@ -28,5 +28,6 @@
         <div class="clientNav-tab-pane" id="clientNav-tab3"><?php include 'client/sub_offers.php'; ?></div>
         <div class="clientNav-tab-pane" id="clientNav-tab4">Coming Soon...</div>
         <div class="clientNav-tab-pane" id="clientNav-tab5"><?php include 'client/sub_tracking.php'; ?></div>
+        <div class="clientNav-tab-pane" id="clientNav-tab6"><?php include 'client/sub_cred.php'; ?></div>
     </div>
 </div>
