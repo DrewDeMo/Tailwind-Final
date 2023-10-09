@@ -1,15 +1,73 @@
 module.exports = {
   darkMode: 'media',
-  content: ['./**/*.{html,php,js}'],
+  content: ['./dist/**/*.{css,php,html,js}'],
+  options: {
+    safelist: [
+      'rwu-red-50', 'rwu-red-100', 'rwu-red-200', 'rwu-red-300', 'rwu-red-400', 'rwu-red-500', 'rwu-red-600', 'rwu-red-700', 'rwu-red-800', 'rwu-red-900', 'rwu-red-950',
+      'rwu-blue-50', 'rwu-blue-100', 'rwu-blue-200', 'rwu-blue-300', 'rwu-blue-400', 'rwu-blue-500', 'rwu-blue-600', 'rwu-blue-700', 'rwu-blue-800', 'rwu-blue-900', 'rwu-blue-950',
+      'ww-blue-50', 'ww-blue-100', 'ww-blue-200', 'ww-blue-300', 'ww-blue-400', 'ww-blue-500', 'ww-blue-600', 'ww-blue-700', 'ww-blue-800', 'ww-blue-900', 'ww-blue-950',
+      'ww-navy-50', 'ww-navy-100', 'ww-navy-200', 'ww-navy-300', 'ww-navy-400', 'ww-navy-500', 'ww-navy-600', 'ww-navy-700', 'ww-navy-800', 'ww-navy-900', 'ww-navy-950',
+    ],
+  },
   theme: {
     extend: {
-      fontFamily: {
-        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      colors: {
+        'rwu-red': {
+          '50': '#fef2f3',
+          '100': '#ffe1e4',
+          '200': '#ffc8ce',
+          '300': '#ffa2ac',
+          '400': '#fd6c7b',
+          '500': '#f63d50',
+          '600': '#e31f33',
+          '700': '#bf1628',
+          '800': '#9d1624',
+          '900': '#831924',
+          '950': '#47080f',
+        },
+        'rwu-blue': {
+          '50': '#e6f6ff',
+          '100': '#d1eeff',
+          '200': '#addcff',
+          '300': '#7bc3ff',
+          '400': '#4897ff',
+          '500': '#1f6cff',
+          '600': '#0046ff',
+          '700': '#0049ff',
+          '800': '#003eda',
+          '900': '#0634a9',
+          '950': '#03154a',
+        },
+        'ww-blue': {
+          '50': '#ebf6ff',
+          '100': '#d1ecff',
+          '200': '#aedeff',
+          '300': '#76cbff',
+          '400': '#35adff',
+          '500': '#0783ff',
+          '600': '#005dff',
+          '700': '#0044ff',
+          '800': '#0037d7',
+          '900': '#0033a1',
+          '950': '#062165',
+        },
+        'ww-navy': {
+          '50': '#f2f6fc',
+          '100': '#e1ebf8',
+          '200': '#cadbf3',
+          '300': '#a6c5ea',
+          '400': '#7ba6df',
+          '500': '#5c88d5',
+          '600': '#486ec8',
+          '700': '#3e5cb7',
+          '800': '#374b96',
+          '900': '#314277',
+          '950': '#1c233d',
+        },
       },
-      // other theme extensions go here
     },
   },
   plugins: [
     require('flowbite/plugin')
-  ]
-}
+  ],
+};

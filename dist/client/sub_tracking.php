@@ -27,12 +27,12 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
                         <button type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-white bg-ww-blue-700 hover:bg-ww-blue-800 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-globe"></i>
                             <span class="sr-only">Website</span>
                         </button>
@@ -47,12 +47,12 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
                         <button type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-white bg-ww-blue-700 hover:bg-ww-blue-800 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-globe"></i>
                             <span class="sr-only">Website</span>
                         </button>
@@ -89,7 +89,7 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
@@ -126,12 +126,12 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
                         <button type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-white bg-ww-blue-700 hover:bg-ww-blue-800 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-globe"></i>
                             <span class="sr-only">Website</span>
                         </button>
@@ -146,12 +146,12 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
                         <button type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-white bg-ww-blue-700 hover:bg-ww-blue-800 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-globe"></i>
                             <span class="sr-only">Website</span>
                         </button>
@@ -166,12 +166,12 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
                         <button type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-white bg-ww-blue-700 hover:bg-ww-blue-800 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-globe"></i>
                             <span class="sr-only">Website</span>
                         </button>
@@ -208,7 +208,7 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
@@ -223,7 +223,7 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
@@ -238,7 +238,7 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
@@ -275,7 +275,7 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
@@ -290,7 +290,7 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
@@ -327,7 +327,7 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>
@@ -364,7 +364,7 @@
                     </td>
                     <td class="px-6 py-4 text-center">
                         <button type="button"
-                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
+                            class="text-gray-600 border border-gray-200 hover:bg-gray-100 duration-400 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 ">
                             <i class="las la-copy"></i>
                             <span class="sr-only">Copy</span>
                         </button>

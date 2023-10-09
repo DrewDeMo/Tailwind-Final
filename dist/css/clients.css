@@ -27,13 +27,20 @@
 }
 
 .default-search-input {
-    transition: transform 0.3s ease-out;
+    transition: transform 0.4s ease-out, width 0.4s ease-out;
+    /* Adjusted transition for smoother animation and added width transition */
+    width: 80%;
+    /* This is the default width. You can adjust if needed. */
 }
 
 .default-search-input:focus {
     transform: translateX(-20px);
+    width: 95%;
+    /* Increase the width when focused */
     outline: none;
 }
+
+
 
 .logo-fade-in {
     opacity: 0.45;
@@ -50,16 +57,159 @@
 
 .default-search-input:focus {
     transform: translateX(-20px);
-    /* Increased the translateX for more movement to the left */
     outline: none;
 }
 
-/* New class for the fading border animation */
 .border-fade-in {
     transition: border-color 0.3s ease-out;
 }
 
 .default-search-input:focus+.border-fade-in {
     border-color: rgba(226, 232, 240, 1);
-    /* This corresponds to bg-gray-200 */
+}
+
+#autocomplete-dropdown {
+    top: calc(100% + 5px); // Adjust the `5px` to your preference if needed.
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    opacity: 0; // For the fade-in effect, set the initial opacity to 0.
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in; // Add transition for smooth appearance.
+    transform: translateY(-10px); // Initial state for slide-down effect.
+}
+
+#autocomplete-dropdown .p-2 {
+    color: #fff; // White color
+}
+
+#autocomplete-dropdown .p-2:hover {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+#autocomplete-dropdown {
+    top: 50%; // This will bring the dropdown closer to the search bar
+    ...
+}
+
+.dropdown-logo {
+    width: calc(1.2 * 16px);
+    /* ~20% larger than original 16px (from w-8) */
+    height: calc(1.2 * 16px);
+    opacity: 0.4;
+    /* starting opacity */
+    transition: opacity 0.15s;
+    /* quick transition for the hover effect */
+}
+
+.dropdown-logo:hover {
+    opacity: 1;
+    /* full opacity on hover */
+}
+
+/* Hide the clear icon in search input for Webkit browsers (Chrome, Safari, etc.) */
+::-webkit-search-clear-button {
+    appearance: none;
+    margin: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Hide the clear icon in search input for Microsoft Edge */
+::-ms-clear {
+    display: none;
+}
+
+:root {
+    --clientNav-active-color: #3B82F6;
+    --clientNav-hover-color: #555;
+    --clientNav-track-color: #E5E7EB;
+    --clientNav-hover-line-color: #bfdbfe;
+    /* Lighter blue for hover state */
+}
+
+.clientNav-tab-nav {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.clientNav-tab-link {
+    padding: 0.5rem 1rem 0.75rem;
+    /* Increased padding at the bottom */
+    cursor: pointer;
+    transition: color 0.3s, font-weight 0.3s;
+    position: relative;
+    z-index: 2;
+    color: text-gray-600;
+    /* Inactive color */
+    font-weight: normal;
+}
+
+.clientNav-tab-link:hover {
+    color: text-gray-900;
+    /* Hover color */
+    font-weight: medium;
+}
+
+.clientNav-tab-link:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--clientNav-hover-line-color);
+    /* Light blue line on hover */
+    z-index: 1;
+}
+
+.clientNav-tab-link.clientNav-active {
+    color: text-gray-900;
+    /* Active text color */
+    font-weight: medium;
+}
+
+.clientNav-tab-link.clientNav-active i {
+    color: var(--clientNav-active-color);
+    /* Icon color to blue when active */
+}
+
+.clientNav-tab-nav::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--clientNav-track-color);
+    z-index: 1;
+}
+
+.clientNav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+    height: 2px;
+    background-color: var(--clientNav-active-color);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.clientNav-tab-content {
+    transition: opacity 0.3s;
+}
+
+.clientNav-tab-pane {
+    display: none;
+}
+
+.clientNav-tab-pane.clientNav-active {
+    display: block;
+}
+
+.clientNav-tab-link {
+    display: flex;
+    align-items: flex-end;
 }

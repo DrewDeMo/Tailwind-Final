@@ -3,7 +3,7 @@
     <!-- Background Image and Overlay -->
     <div class="relative top-0 left-0 right-0 h-16 bg-cover bg-center z-0"
         style="background-image: url('img/photos/clients.webp');">
-        <div class="absolute inset-0 bg-gray-700 opacity-90"></div>
+        <div class="absolute inset-0 bg-ww-navy-700 opacity-90"></div>
         <!-- Headline -->
         <h2
             class="px-4 drop-shadow-md absolute inset-x-0 bottom-0 h-full flex items-center text-2xl font-bold text-gray-100 shadow-md z-10">
@@ -18,11 +18,11 @@
 
             <div class="flex items-center space-x-2">
                 <!-- Grouped user icon and name -->
-                <div class="h-12 w-12 bg-gray-100 rounded-lg mr-2 flex items-center justify-center">
-                    <p class="text-lg text-gray-300 font-bold">BH</i>
+                <div class="h-12 w-12 bg-ww-blue-100 rounded-lg mr-2 flex items-center justify-center">
+                    <p class="text-lg text-ww-blue-300 font-bold">BH</i>
                 </div>
                 <h3 class="font-medium ml-4">Benjamin Hartley</h3><span
-                    class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Owner</span>
+                    class="bg-ww-blue-100 text-ww-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">Owner</span>
             </div>
 
             <div class="flex space-x-2">
@@ -30,7 +30,7 @@
                 <button><i
                         class="las la-copy text-gray-600 font-lg border border-gray-200 hover:bg-gray-100 p-1.5 rounded-lg"></i></button>
                 <button><i
-                        class="las la-envelope text-white font-lg bg-blue-500 hover:bg-blue-600 p-1.5 rounded-lg"></i></button>
+                        class="las la-envelope text-white font-lg bg-ww-blue-600 hover:bg-ww-blue-700 p-1.5 rounded-lg"></i></button>
             </div>
 
         </div>
@@ -42,11 +42,11 @@
 
             <div class="flex items-center space-x-2">
                 <!-- Grouped user icon and name -->
-                <div class="h-12 w-12 bg-gray-100 rounded-lg mr-2 flex items-center justify-center">
-                    <p class="text-lg text-gray-300 font-bold">CJ</p>
+                <div class="h-12 w-12 bg-ww-blue-100 rounded-lg mr-2 flex items-center justify-center">
+                    <p class="text-lg text-ww-blue-300 font-bold">CJ</p>
                 </div>
                 <h3 class="font-medium ml-4">Clara Jeffries</h3><span
-                    class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Owner</span>
+                    class="bg-ww-blue-100 text-ww-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Owner</span>
             </div>
 
             <div class="flex space-x-2">
@@ -54,7 +54,7 @@
                 <button><i
                         class="las la-copy text-gray-600 font-lg border border-gray-200 hover:bg-gray-100 p-1.5 rounded-lg"></i></button>
                 <button><i
-                        class="las la-envelope text-white font-lg bg-blue-500 hover:bg-blue-600 p-1.5 rounded-lg"></i></button>
+                        class="las la-envelope text-white font-lg bg-ww-blue-600 hover:bg-ww-blue-700 p-1.5 rounded-lg"></i></button>
             </div>
 
         </div>
@@ -67,11 +67,11 @@
 
             <div class="flex items-center space-x-2">
                 <!-- Grouped user icon and name -->
-                <div class="h-12 w-12 bg-gray-100 rounded-lg mr-2 flex items-center justify-center">
-                    <p class="text-lg text-gray-300 font-bold">TW</i>
+                <div class="h-12 w-12 bg-ww-blue-100 rounded-lg mr-2 flex items-center justify-center">
+                    <p class="text-lg text-ww-blue-300 font-bold">TW</i>
                 </div>
                 <h3 class="font-medium ml-4">Thomas Whitfield</h3><span
-                    class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Owner</span>
+                    class="bg-ww-blue-100 text-ww-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">Owner</span>
             </div>
 
             <div class="flex space-x-2">
@@ -79,7 +79,7 @@
                 <button><i
                         class="las la-copy text-gray-600 font-lg border border-gray-200 hover:bg-gray-100 p-1.5 rounded-lg"></i></button>
                 <button><i
-                        class="las la-envelope text-white font-lg bg-blue-500 hover:bg-blue-600 p-1.5 rounded-lg"></i></button>
+                        class="las la-envelope text-white font-lg bg-ww-blue-600 hover:bg-ww-blue-700 p-1.5 rounded-lg"></i></button>
             </div>
 
         </div>
@@ -89,7 +89,7 @@
         <div class="w-full flex justify-end items-center mt-4 mb-auto mr-4">
             <!-- Adjusted the right margin to mr-4 -->
             <button type="button"
-                class=" px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                class=" px-3 py-2 text-sm font-medium text-center inline-flex items-center text-white bg-ww-blue-600 rounded-lg hover:bg-ww-blue-700 focus:ring-4 focus:outline-none focus:ring-ww-blue-300">
                 <i class="las la-mail-bulk text-xl mr-2"></i>
                 Mail All
             </button>

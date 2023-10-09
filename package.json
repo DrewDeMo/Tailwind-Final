@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tailwindcss build -i src/input.css -o dist/output.css"
   },
@@ -11,8 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "autoprefixer": "^10.4.16",
     "boxicons": "^2.1.4",
     "flowbite": "^1.8.1",
+    "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^4.15.1"
   }
 }

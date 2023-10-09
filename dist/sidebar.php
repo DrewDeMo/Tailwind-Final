@@ -20,9 +20,9 @@
                        <ul class="space-y-2 font-medium">
                            <li id="activeNav" class="group">
                                <a href="index.php"
-                                   class="flex items-center p-2 bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 group">
+                                   class="flex items-center p-2 bg-tcl-orange-100/70 text-tcl-orange-800 rounded-lg hover:bg-tcl-orange-10 group">
                                    <i
-                                       class="las la-tachometer-alt text-orange-700 group-hover:text-orange-900  text-2xl"></i>
+                                       class="las la-tachometer-alt text-tcl-orange-800 group-hover:text-tcl-orange-900  text-2xl"></i>
                                    <span class="ml-3 font-semibold">Dashboard</span>
                                </a>
                            </li>
@@ -138,7 +138,7 @@
                                <div id="dropdown-cta" class="p-4 mt-6 rounded-lg bg-blue-50 " role="alert">
                                    <div class="flex items-center mb-3">
                                        <span
-                                           class="bg-orange-100 text-orange-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-900">Time
+                                           class="bg-tcl-orange-100 text-tcl-orange-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-tcl-orange-200 dark:text-tcl-orange-900">Time
                                            Tracker</span>
                                        <button type="button"
                                            class="ml-auto -mx-1.5 -my-1.5 bg-blue-50 inline-flex justify-center items-center w-6 h-6 text-blue-900 rounded-lg focus:ring-2 focus:ring-blue-400 p-1 hover:bg-blue-200 h-6 w-6  dark:text-blue-400 "
