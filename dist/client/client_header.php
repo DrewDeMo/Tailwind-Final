@@ -17,7 +17,7 @@
                             <!-- Logo left fade in -->
                             <img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-8 h-8 mr-2 logo-fade-in" />
                             <input type="search" id="default-search" class="default-search-input block w-full p-4 pl-6  text-white border-0 bg-transparent focus:ring-transparent rounded-full" placeholder="Window World of Altoona" required>
-                            <div id="autocomplete-dropdown" class="hidden absolute mt-10 w-full bg-ww-navy-900 border border-ww-navy-700 border-opacity-50 rounded-md shadow-lg">
+                            <div id="autocomplete-dropdown" class="hidden absolute mt-10 w-full bg-ww-blue-800 border border-ww-blue-700 border-opacity-50 rounded-md shadow-lg">
                             </div>
                             <button type="submit" class="flex items-center justify-center bg-ww-blue-500 duration-800 hover:bg-ww-blue-600 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-full text-sm h-8 w-8 px-2 py-2 text-white ml-2">
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -32,7 +32,7 @@
 
         <!-- Right side: Details -->
         <div class="w-1/2 border-opacity-50 border-white pl-8">
-            <h1 class="mb-2 text-6xl font-extrabold text-white">Altoona</h1>
+            <h1 class="mb-2 text-6xl font-extrabold text-ww-blue-900">Altoona</h1>
             <div class="flex items-center justify-center w-2/3 px-4 py-1 text-center bg-white/5 border border-white/10 border-opacity-50 rounded-lg text-sm font-medium text-white">
                 <div class="mr-2 bg-green-500 w-2 h-2 rounded-full glow-dot"></div>
                 Full Service Customer
