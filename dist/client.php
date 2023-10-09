@@ -37,7 +37,7 @@
     </div>
 
     <!--Preload Colors-->
-    <div>
+    <div class="hidden">
         <div class="bg-rwu-red-50">a</div>
         <div class="bg-rwu-red-100">a</div>
         <div class="bg-rwu-red-200">a</div>
@@ -95,4 +95,6 @@
     <!--Tabs-->
     <script src="js/client_tabs.js"></script>
     <script src="client/js/client.js"></script>
+
+
 </body>

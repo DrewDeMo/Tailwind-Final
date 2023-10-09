@@ -10,9 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const searchInput = document.getElementById('default-search');
     const dropdown = document.getElementById('autocomplete-dropdown');
-    const logoImage = document.getElementById('clientLogo');
-    const clientLogoImage = document.getElementById('clientLogoSidebar');
 
+    // Dropdown Functionality
     searchInput.addEventListener('input', function () {
         dropdown.innerHTML = '';
         const searchTerm = searchInput.value.toLowerCase();
@@ -60,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Input Focus and Blur
     searchInput.addEventListener('focus', function () {
         document.querySelector('.logo-fade-in').classList.add('logo-active');
     });
@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.logo-fade-in').classList.remove('logo-active');
     });
 
+    // Close Dropdown on Document Click
     document.addEventListener('click', function (event) {
         if (!dropdown.contains(event.target) && event.target !== searchInput) {
             dropdown.style.opacity = '0';
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Update Client Information
     function updateClientInfo(data, selectedName) {
         const displayName = selectedName.replace(/^(Window World of )+/, '');
         document.querySelector('.w-1\\/2 > h1').textContent = displayName;
@@ -87,6 +89,20 @@ document.addEventListener('DOMContentLoaded', function () {
         // Replace every instance of "ww-navy" with "rwu-red"
         document.body.innerHTML = document.body.innerHTML.replace(/\bww-navy\b/g, 'rwu-red');
 
-        // ... (rest of your existing logic)
+        // Update the logo and other elements here
+        const logoImage = document.getElementById('clientLogo');
+        const clientLogoImage = document.getElementById('clientLogoSidebar');
+
+        if (displayName === "RoofWorks USA") {
+            // Change the logo source to RoofWorksUSA.svg
+            logoImage.src = 'img/logos/RoofWorksUSA2.svg';
+            clientLogoImage.src = 'img/logos/RoofWorksUSA2.svg';
+        } else {
+            // Change the logo source back to the default logo
+            logoImage.src = 'img/logos/ww_white.svg';
+            clientLogoImage.src = 'img/logos/ww_white.svg';
+        }
+
+        // Update other elements like address, phone number, and owners here
     }
 });
