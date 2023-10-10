@@ -17,7 +17,7 @@
             <div class="flex items-center space-x-2">
                 <!-- Grouped user icon and name -->
                 <div class="h-12 w-12 bg-ww-blue-2-50 rounded-lg mr-2 flex items-center justify-center">
-                    <p class="text-lg text-ww-blue-2-100 font-bold">BH</i>
+                    <p class="text-lg text-ww-blue-2-500 font-bold">BH</i>
                 </div>
                 <h3 class="font-medium ml-4">Benjamin Hartley</h3><span class="bg-ww-blue-50/40 text-ww-blue-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">Owner</span>
             </div>
