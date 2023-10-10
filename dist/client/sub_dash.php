@@ -13,33 +13,28 @@
         <h2 class="text-lg font-medium">Landing Pages</h2>
 
         <div class="flex flex-row gap-2 mt-4 mb-1.5">
-            <span
-                class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded flex items-center justify-center">PPC</span>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded flex items-center justify-center">PPC</span>
             <p>Branded</p>
         </div>
 
         <div class="flex flex-row gap-2 mt-4 mb-1.5">
-            <span
-                class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded flex items-center justify-center">PPC</span>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded flex items-center justify-center">PPC</span>
             <p>Non-Branded</p>
         </div>
 
         <div class="flex flex-row gap-2 mt-4 mb-1.5">
-            <span
-                class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded flex items-center justify-center">PPC</span>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded flex items-center justify-center">PPC</span>
             <p>Competitor Branded</p>
         </div>
 
         <div class="flex flex-row gap-2 mt-4 mb-1.5">
-            <div
-                class="bg-blue-100 text-blue-600 p-1 px-2.5 rounded-lg font-medium w-fit text-xs flex items-center justify-center">
+            <div class="bg-blue-100 text-blue-600 p-1 px-2.5 rounded-lg font-medium w-fit text-xs flex items-center justify-center">
                 FB</div>
             <p>Windows</p>
         </div>
 
         <div class="flex flex-row gap-2 mt-4 mb-1.5">
-            <div
-                class="bg-blue-100 text-blue-600 p-1 px-2.5 rounded-lg font-medium w-fit text-xs flex items-center justify-center">
+            <div class="bg-blue-100 text-blue-600 p-1 px-2.5 rounded-lg font-medium w-fit text-xs flex items-center justify-center">
                 FB</div>
             <p>Siding & Doors</p>
         </div>
@@ -87,9 +82,7 @@
     <div class="max-w-md mx-auto bg-white rounded-xl border border-gray-200 rounded-lg overflow-hidden md:max-w-2xl">
         <div class="relative">
             <!-- ArcGIS Embed without controls and search -->
-            <iframe class="w-full h-60"
-                src="https://t-c-l.maps.arcgis.com/apps/Embed/index.html?webmap=2a26bdfe99604d58acb85d6c98d3fb58&extent=-80.2175,39.6273,-76.1608,41.3546&zoom=false&previewImage=false&scale=true&search=false&searchextent=true&disable_scroll=false&theme=light"
-                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe class="w-full h-60" src="https://t-c-l.maps.arcgis.com/apps/Embed/index.html?webmap=2a26bdfe99604d58acb85d6c98d3fb58&extent=-80.2175,39.6273,-76.1608,41.3546&zoom=false&previewImage=false&scale=true&search=false&searchextent=true&disable_scroll=false&theme=light" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="p-4">
             <div class="tracking-wide text-lg font-medium">Store Location</div>

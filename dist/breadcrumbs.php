@@ -17,17 +17,17 @@
 
                 // Adjusting font color based on position in the breadcrumb
                 if ($i === count($crumbs) - 1) {
-                    $fontColor = 'text-gray-500'; // Current page
+                    $fontColor = 'breadcrumb1'; // Current page
                 } elseif ($i === 0) {
-                    $fontColor = 'text-gray-700'; // First page
+                    $fontColor = 'breadcrumb3'; // First page
                 } else {
-                    $fontColor = 'text-gray-600'; // Middle pages
+                    $fontColor = 'breadcrumb2'; // Middle pages
                 }
 
                 echo '<li class="inline-flex items-center">';
 
                 if ($i > 0) {
-                    echo '<svg class="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    echo '<svg class="w-3 h-3 breadcrumb2 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                     </svg>';
                 }
@@ -39,7 +39,7 @@
                     </svg>';
                     echo 'Home</a>';
                 } elseif ($i === count($crumbs) - 1) {
-                    echo '<span class="ml-1 text-sm ' . $fontWeight . ' ' . $fontColor . ' md:ml-2 dark:text-gray-400">' . ucfirst($cleanedCrumb) . '</span>';
+                    echo '<span class="ml-1 text-sm ' . $fontWeight . ' ' . $fontColor . ' md:ml-2 ">' . ucfirst($cleanedCrumb) . '</span>';
                 } else {
                     echo '<a href="' . $cumulativePath . '" class="ml-1 text-sm ' . $fontWeight . ' ' . $fontColor . ' hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">' . ucfirst($cleanedCrumb) . '</a>';
                 }

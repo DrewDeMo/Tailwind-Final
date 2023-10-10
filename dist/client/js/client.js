@@ -12,8 +12,9 @@ function clearDropdown(dropdown) {
 function handleItemClick(event, searchInput, dropdown) {
     const name = event.currentTarget.textContent.trim();
     searchInput.value = name;
-    searchInput.style.color = 'rgba(255, 255, 255, 1)'; // 100% opacity white when clicked
-    searchInput.style.textAlign = 'center'; // Centers the text
+    searchInput.style.color = 'rgba(255, 255, 255, 1)';
+    searchInput.style.textAlign = 'center';
+
     clearDropdown(dropdown);
     fetchClientInfo(name);
 }
@@ -36,20 +37,20 @@ function fetchClientInfo(name) {
 function updateClientInfo(data, selectedName) {
     const displayName = selectedName.replace(/^(Window World of )+/, '');
     document.querySelector('.w-1\\/2 > h1').textContent = displayName;
+    document.getElementById('clientAddress').textContent = data.location;
+    document.getElementById('clientPhone').textContent = data.phone;
 
-    if (displayName === "RoofWorks USA") {
-        // Replace color classes
-        document.body.innerHTML = document.body.innerHTML.replace(/ww-blue/g, 'rwu-theme-sub');
-        document.body.innerHTML = document.body.innerHTML.replace(/ww-blue-sub/g, 'rwu-theme');
+    const ownersList = document.querySelector('.w-2\\/3 > ul');
+    ownersList.innerHTML = '';
+    data.owners.forEach(owner => {
+        const li = document.createElement('li');
+        li.className = 'text-sm flex items-center';
+        li.innerHTML = `<i class='las la-user-circle text-ww-blue-sub-100 text-lg mr-2'></i>${owner}`;
+        ownersList.appendChild(li);
+    });
 
-        // Update logos
-        document.getElementById('clientLogo').src = 'img/logos/RoofWorksUSA_PrimaryLogo_White.svg';
-        document.getElementById('clientLogoSmall').src = 'img/logos/rwu_search_icon.svg';
-    } else {
-        // Restore default logos
-        document.getElementById('clientLogo').src = 'img/logos/ww_white.svg';
-        document.getElementById('clientLogoSmall').src = 'img/logos/ww_search_icon.svg';
-    }
+    document.getElementById('clientLogo').src = data.logo;
+    document.getElementById('clientLogoSmall').src = data.search_icon;
 }
 
 // Main code logic wrapped in DOMContentLoaded
@@ -61,10 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
     const searchInput = document.getElementById('default-search');
     const dropdown = document.getElementById('autocomplete-dropdown');
+    searchInput.style.color = 'rgba(255, 255, 255, 0.75)';
 
-    searchInput.style.color = 'rgba(255, 255, 255, 0.75)'; // 75% opacity white when inactive
-
-    // Input event
     searchInput.addEventListener('input', function () {
         dropdown.innerHTML = '';
         const searchTerm = searchInput.value.toLowerCase();
@@ -87,18 +86,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Focus and Blur events
     searchInput.addEventListener('focus', function () {
-        searchInput.style.color = 'rgba(255, 255, 255, 1)'; // 100% opacity white when active
+        searchInput.style.color = 'rgba(255, 255, 255, 1)';
         document.querySelector('.logo-fade-in').classList.add('logo-active');
     });
 
     searchInput.addEventListener('blur', function () {
-        searchInput.style.color = 'rgba(255, 255, 255, 0.75)'; // 75% opacity white when inactive
+        searchInput.style.color = 'rgba(255, 255, 255, 0.75)';
         document.querySelector('.logo-fade-in').classList.remove('logo-active');
     });
 
-    // Document click event to hide dropdown
     document.addEventListener('click', function (event) {
         if (!dropdown.contains(event.target) && event.target !== searchInput) {
             clearDropdown(dropdown);

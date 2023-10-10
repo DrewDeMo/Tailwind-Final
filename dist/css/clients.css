@@ -217,3 +217,129 @@
 #default-search {
     color: white;
 }
+
+/*! purgecss start ignore */
+:root {
+    --color-default: #0033a1;
+    --color-default-50: #E3ECFF;
+    --color-default-100: #C0D4FF;
+    --color-default-200: #78A3FF;
+    --color-default-300: #3172FF;
+    --color-default-400: #004AE8;
+    --color-default-500: #0033A1;
+    --color-default-600: #002982;
+    --color-default-700: #002064;
+    --color-default-800: #001645;
+    --color-default-900: #001645;
+    --color-default-950: #000717;
+}
+
+[data-theme='ww-blue'] {
+    --color-default: #0033a1;
+    --color-default-50: #E3ECFF;
+    --color-default-100: #C0D4FF;
+    --color-default-200: #78A3FF;
+    --color-default-300: #3172FF;
+    --color-default-400: #004AE8;
+    --color-default-500: #0033A1;
+    --color-default-600: #002982;
+    --color-default-700: #002064;
+    --color-default-800: #001645;
+    --color-default-900: #001645;
+    --color-default-950: #000717;
+    --color-default-headers: #002064;
+    --color-default-search: #0033A1;
+    --color-default-contactbg: #D4F4FF;
+    --color-default-contactfg: #59D5FF;
+    --color-default-breadcrumbs: #ffffffc9;
+    --color-default-breadcrumbs-100: #ffffffaf;
+    --color-default-breadcrumbs-200: #ffffff7c;
+    --color-default-headerbg: #1c233d;
+    --color-default-headertext: #ffffff;
+    --color-default-searchbg: #b6c8ef1b;
+    --color-default-searchborder: #6182c9ac;
+    --clientNav-active-color: #0033a1;
+    --clientNav-hover-color: #555;
+    --clientNav-track-color: #E5E7EB;
+    --clientNav-hover-line-color: #bfdbfe;
+}
+
+[data-theme='rwu'] {
+    --color-default: #9d1624;
+    --color-default-50: #FBE2E5;
+    --color-default-100: #F7C5CA;
+    --color-default-200: #EF8B95;
+    --color-default-300: #E75161;
+    --color-default-400: #D71E31;
+    --color-default-500: #9D1624;
+    --color-default-600: #7E121D;
+    --color-default-700: #5E0D16;
+    --color-default-800: #3F090E;
+    --color-default-900: #200407;
+    --color-default-950: #100204;
+    --color-default-headers: #020D2D;
+    --color-default-search: #03154A;
+    --color-default-contactbg: #D6E0FD;
+    --color-default-contactfg: #5981F8;
+    --color-default-breadcrumbs: #000000c9;
+    --color-default-breadcrumbs-100: #000000af;
+    --color-default-breadcrumbs-200: #0000007c;
+    --color-default-headerbg: #eaeaea;
+    --color-default-headertext: #090909;
+    --color-default-searchbg: #e5e7eb;
+    --color-default-searchborder: #d1d5db;
+    --clientNav-active-color: #9D1624;
+    --clientNav-hover-color: #555;
+    --clientNav-track-color: #E5E7EB;
+    --clientNav-hover-line-color: #febfbf;
+}
+
+#header_bg_swap {
+    background-color: var(--color-default-headerbg);
+}
+
+.clientCardHeadlines {
+    background-color: var(--color-default-headers);
+}
+
+.contactCard {
+    background-color: var(--color-default-contactbg);
+    color: var(--color-default-contactfg);
+}
+
+.mailButton {
+    background-color: var(--color-default);
+}
+
+.mailButton:hover {
+    background-color: var(--color-default-600);
+    transition: .5s;
+}
+
+.companyTag {
+    background-color: var(--color-default-50);
+    color: var(--color-default-600);
+}
+
+.headerText {
+    color: var(--color-default-headertext);
+}
+
+.breadcrumb1 {
+    color: var(--color-default-breadcrumbs);
+}
+
+.breadcrumb2 {
+    color: var(--color-default-breadcrumbs-100);
+}
+
+.breadcrumb3 {
+    color: var(--color-default-breadcrumbs-200);
+}
+
+.searchBox {
+    background-color: var(--color-default-searchbg);
+    border: 1px solid var(--color-default-searchborder);
+}
+
+/*! purgecss end ignore */
