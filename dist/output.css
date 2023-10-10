@@ -4177,6 +4177,11 @@ input:checked + .toggle-bg {
   color: rgb(182 196 247 / var(--tw-text-opacity));
 }
 
+.text-ww-blue-2-100 {
+  --tw-text-opacity: 1;
+  color: rgb(208 236 245 / var(--tw-text-opacity));
+}
+
 .text-ww-blue-300 {
   --tw-text-opacity: 1;
   color: rgb(72 114 234 / var(--tw-text-opacity));
