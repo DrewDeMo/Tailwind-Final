@@ -3368,6 +3368,10 @@ input:checked + .toggle-bg {
   background-color: rgb(127 161 240 / var(--tw-bg-opacity));
 }
 
+.bg-ww-blue-50\/60 {
+  background-color: rgb(127 161 240 / 0.6);
+}
+
 .bg-ww-blue-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(19 62 165 / var(--tw-bg-opacity));
