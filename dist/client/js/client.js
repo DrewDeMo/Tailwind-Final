@@ -85,9 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.w-1\\/2 > h1').textContent = displayName;
 
         // Replace every instance of "ww-blue" with "rwu-blue"
-        document.body.innerHTML = document.body.innerHTML.replace(/\bww-blue\b/g, 'rwu-blue');
+        document.body.innerHTML = document.body.innerHTML.replace(/\bww-blue\b/g, 'rwu-theme-2');
         // Replace every instance of "ww-navy" with "rwu-red"
-        document.body.innerHTML = document.body.innerHTML.replace(/\bww-navy\b/g, 'rwu-red');
+        document.body.innerHTML = document.body.innerHTML.replace(/\bww-blue-2\b/g, 'rwu-theme');
 
         // Update the logo and other elements here
         const logoImage = document.getElementById('clientLogo');
