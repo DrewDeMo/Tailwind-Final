@@ -12,11 +12,9 @@
 
             <!--Mast Header Background -->
             <div id="clientHeaderBG" class="bg-ww-blue-950">
-                <div id="main-nav"
-                    class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
+                <div id="main-nav" class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
                     <div class="w-full h-20 flex px-4 items-center mb-16 mt-8 justify-center">
-                        <img src="img/TCL_Logo_Black.svg" alt="TCL Logo"
-                            class="w-40 h-40 mt-6 rounded-full opacity-25 hover:opacity-80 transition-opacity duration-700 ease-in-out">
+                        <img src="img/TCL_Logo_Black.svg" alt="TCL Logo" class="w-40 h-40 mt-6 rounded-full opacity-25 hover:opacity-80 transition-opacity duration-700 ease-in-out">
                     </div>
 
 
@@ -50,6 +48,18 @@
         <div class="bg-rwu-theme-900">a</div>
         <div class="bg-rwu-theme-950">a</div>
         <!-- ... all other rwu-red classes ... -->
+        <div class="bg-rwu-theme-2-50">a</div>
+        <div class="bg-rwu-theme-2-100">a</div>
+        <div class="bg-rwu-theme-2-200">a</div>
+        <div class="bg-rwu-theme-2-300">a</div>
+        <div class="bg-rwu-theme-2-400">a</div>
+        <div class="bg-rwu-theme-2-500">a</div>
+        <div class="bg-rwu-theme-2-600">a</div>
+        <div class="bg-rwu-theme-2-700">a</div>
+        <div class="bg-rwu-theme-2-800">a</div>
+        <div class="bg-rwu-theme-2-900">a</div>
+        <div class="bg-rwu-theme-2-950">a</div>
+        <!-- ... all other rwu-red classes ... -->
         <div class="bg-ww-blue-50">a</div>
         <div class="bg-ww-blue-100">a</div>
         <div class="bg-ww-blue-200">a</div>
@@ -61,6 +71,18 @@
         <div class="bg-ww-blue-800">a</div>
         <div class="bg-ww-blue-900">a</div>
         <div class="bg-ww-blue-950">a</div>
+        <!-- ... all other ww-blue classes ... -->
+        <div class="bg-ww-blue-2-50">a</div>
+        <div class="bg-ww-blue-2-100">a</div>
+        <div class="bg-ww-blue-2-200">a</div>
+        <div class="bg-ww-blue-2-300">a</div>
+        <div class="bg-ww-blue-2-400">a</div>
+        <div class="bg-ww-blue-2-500">a</div>
+        <div class="bg-ww-blue-2-600">a</div>
+        <div class="bg-ww-blue-2-700">a</div>
+        <div class="bg-ww-blue-2-800">a</div>
+        <div class="bg-ww-blue-2-900">a</div>
+        <div class="bg-ww-blue-2-950">a</div>
         <!-- ... all other ww-blue classes ... -->
 
     </div>
