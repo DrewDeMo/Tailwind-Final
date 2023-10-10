@@ -1,12 +1,11 @@
 <!-- Owner Operator Information -->
 <section class="relative rounded-lg border w-full bg-white border-gray-300 overflow-hidden">
     <!-- Background Image and Overlay -->
-    <div class="relative top-0 left-0 right-0 h-16 bg-cover bg-center z-0"
-        style="background-image: url('img/photos/clients.webp');">
+    <div class="relative top-0 left-0 right-0 h-16 bg-ww-blue-950 bg-cover bg-center z-0">
         <div class="absolute inset-0 bg-ww-navy-700 opacity-90"></div>
         <!-- Headline -->
         <h2
-            class="px-4 drop-shadow-md absolute inset-x-0 bottom-0 h-full flex items-center text-2xl font-bold text-gray-100 shadow-md z-10">
+            class="px-4 absolute inset-x-0 bottom-0 h-full flex items-center text-2xl font-bold text-gray-100 shadow-md z-10">
             Resources
         </h2>
     </div>

@@ -19,7 +19,6 @@
                             class="w-40 h-40 mt-6 rounded-full opacity-25 hover:opacity-80 transition-opacity duration-700 ease-in-out">
                     </div>
 
-
                     <!--Nav Start-->
                     <?php include 'sidebar.php'; ?>
                 </div>
@@ -35,61 +34,6 @@
             </div>
         </div>
     </div>
-
-    <!--Preload Colors-->
-    <div class="">
-        <div class="bg-rwu-theme-50">a</div>
-        <div class="bg-rwu-theme-100">a</div>
-        <div class="bg-rwu-theme-200">a</div>
-        <div class="bg-rwu-theme-300">a</div>
-        <div class="bg-rwu-theme-400">a</div>
-        <div class="bg-rwu-theme-500">a</div>
-        <div class="bg-rwu-theme-600">a</div>
-        <div class="bg-rwu-theme-700">a</div>
-        <div class="bg-rwu-theme-800">a</div>
-        <div class="bg-rwu-theme-900">a</div>
-        <div class="bg-rwu-theme-950">a</div>
-        <!-- ... all other rwu-red classes ... -->
-        <div class="bg-rwu-theme-2-50">a</div>
-        <div class="bg-rwu-theme-2-100">a</div>
-        <div class="bg-rwu-theme-2-200">a</div>
-        <div class="bg-rwu-theme-2-300">a</div>
-        <div class="bg-rwu-theme-2-400">a</div>
-        <div class="bg-rwu-theme-2-500">a</div>
-        <div class="bg-rwu-theme-2-600">a</div>
-        <div class="bg-rwu-theme-2-700">a</div>
-        <div class="bg-rwu-theme-2-800">a</div>
-        <div class="bg-rwu-theme-2-900">a</div>
-        <div class="bg-rwu-theme-2-950">a</div>
-        <!-- ... all other rwu-red classes ... -->
-        <div class="bg-ww-blue-50">a</div>
-        <div class="bg-ww-blue-100">a</div>
-        <div class="bg-ww-blue-200">a</div>
-        <div class="bg-ww-blue-300">a</div>
-        <div class="bg-ww-blue-400">a</div>
-        <div class="bg-ww-blue-500">a</div>
-        <div class="bg-ww-blue-600">a</div>
-        <div class="bg-ww-blue-700">a</div>
-        <div class="bg-ww-blue-800">a</div>
-        <div class="bg-ww-blue-900">a</div>
-        <div class="bg-ww-blue-950">a</div>
-        <!-- ... all other ww-blue classes ... -->
-        <div class="bg-ww-blue-2-50">a</div>
-        <div class="bg-ww-blue-2-100">a</div>
-        <div class="bg-ww-blue-2-200">a</div>
-        <div class="bg-ww-blue-2-300">a</div>
-        <div class="bg-ww-blue-2-400">a</div>
-        <div class="bg-ww-blue-2-500">a</div>
-        <div class="bg-ww-blue-2-600">a</div>
-        <div class="bg-ww-blue-2-700">a</div>
-        <div class="bg-ww-blue-2-800">a</div>
-        <div class="bg-ww-blue-2-900">a</div>
-        <div class="bg-ww-blue-2-950">a</div>
-        <!-- ... all other ww-blue classes ... -->
-
-    </div>
-    <!--End Preload Colors-->
-
 
     <!--Tailwind Flowbite-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.js"></script>
