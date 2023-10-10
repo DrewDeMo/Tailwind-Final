@@ -11,8 +11,7 @@
             <div class="flex flex-row justify-center align-middle">
                 <!-- Adjusted width here -->
                 <form class="w-full flex justify-center relative">
-                    <label for="default-search"
-                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-ww-blue-2-100">Search</label>
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
                     <div
                         class="relative flex items-center w-full px-4 py-1 bg-white/5 border border-white/10 border-opacity-50 rounded-full text-sm font-medium text-ww-blue-2-100 border-fade-in">
                         <div class="flex items-center justify-center w-full">
