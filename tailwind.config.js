@@ -45,7 +45,7 @@ module.exports = {
           '600': '#10368A',
           '700': '#0D2D6E',
           '800': '#0A2353',
-          '900': '#ffffff', // Ensure this is intentional, as it's white for a typically dark variant.
+          '900': '#ffffff',
           '950': '#05132A',
         },
         'ww-blue-2': {
