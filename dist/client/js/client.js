@@ -19,6 +19,33 @@ function fetchAndUpdateClientContent() {
         .catch(err => console.error(err));
 }
 
+// Function to save the current theme to local storage
+function saveTheme(theme) {
+    localStorage.setItem('currentTheme', theme);
+}
+
+// Function to load the saved theme from local storage
+function loadTheme() {
+    const savedTheme = localStorage.getItem('currentTheme');
+    if (savedTheme) {
+        // Apply the saved theme
+        applyTheme(savedTheme);
+    }
+}
+
+// Function to apply the theme (WW or Altoona)
+function applyTheme(theme) {
+    if (theme === 'WW') {
+        // Apply WW theme
+        document.body.style.backgroundColor = 'white';
+        // Add any other WW theme styles here
+    } else if (theme === 'Altoona') {
+        // Apply Altoona theme
+        document.body.style.backgroundColor = 'lightblue';
+        // Add any other Altoona theme styles here
+    }
+}
+
 // Handle dropdown item click
 function handleItemClick(event, searchInput, dropdown) {
     const name = event.currentTarget.textContent.trim();
@@ -41,7 +68,7 @@ function handleItemClick(event, searchInput, dropdown) {
             if (data.status !== 'success') {
                 console.error(data.message);
             }
-            fetchAndUpdateClientContent();
+            fetchAndUpdateClientContent();  // Add this line
         })
         .catch(err => console.error(err));
 }
@@ -81,7 +108,8 @@ function updateClientInfo(data, selectedName) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('isNewSession').value = "false";
+    // Call loadTheme when the page loads to apply the saved theme
+    loadTheme();
 
     const names = [
         { displayName: "Window World of Altoona", value: "ww-blue" },
