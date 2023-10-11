@@ -15,6 +15,10 @@ function fetchAndUpdateClientContent() {
         .then(html => {
             const clientContentDiv = document.getElementById('clientContent');
             clientContentDiv.innerHTML = html;
+
+            // Dispatch the clientSwitched event here
+            const event = new Event('clientSwitched');
+            document.dispatchEvent(event);
         })
         .catch(err => console.error(err));
 }
@@ -91,28 +95,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('default-search');
     const dropdown = document.getElementById('autocomplete-dropdown');
 
-    // New function to fetch and update client content
-    function fetchAndUpdateClientContent() {
-        fetch('fetchClientContent.php')
-            .then(response => response.text())
-            .then(html => {
-                const clientContentDiv = document.getElementById('clientContent');
-                clientContentDiv.innerHTML = html;
-
-                // Dispatch the clientSwitched event here
-                const event = new Event('clientSwitched');
-                document.dispatchEvent(event);
-            })
-            .catch(err => console.error(err));
-    }
-
-
     // Fetch default client name from the server
     fetch('getDefaultClient.php')
         .then(response => response.text())
         .then(defaultClient => {
             // Set the default value for the search input
             searchInput.value = defaultClient;
+
+            // Add this block to set the theme and header
+            if (defaultClient === 'Window World of Altoona') {
+                document.documentElement.setAttribute('data-set-theme', 'ww-blue');
+                fetchClientInfo(defaultClient);
+            } else if (defaultClient === 'RoofWorks USA') {
+                document.documentElement.setAttribute('data-set-theme', 'rwu');
+                fetchClientInfo(defaultClient);
+            }
         })
         .catch(err => console.error(err));
 
@@ -157,24 +154,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
-// ... (previous code)
-
-// New function to fetch and update client content
-function fetchAndUpdateClientContent() {
-    fetch('fetchClientContent.php')
-        .then(response => response.text())
-        .then(html => {
-            console.log("Fetched HTML:", html);  // Debugging statement
-            const clientContentDiv = document.getElementById('clientContent');
-            clientContentDiv.innerHTML = html;
-
-            // Dispatch the clientSwitched event here
-            const event = new Event('clientSwitched');
-            document.dispatchEvent(event);
-        })
-        .catch(err => console.error(err));
-}
-
-// ... (rest of the code)
