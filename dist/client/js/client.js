@@ -1,103 +1,3 @@
-// Utility to clear dropdown
-function clearDropdown(dropdown) {
-    dropdown.innerHTML = '';
-    dropdown.style.opacity = '0';
-    dropdown.style.transform = 'translateY(-10px)';
-    setTimeout(() => {
-        dropdown.classList.add('hidden');
-    }, 300);
-}
-
-// New function to fetch and update client content
-function fetchAndUpdateClientContent() {
-    fetch('fetchClientContent.php')
-        .then(response => response.text())
-        .then(html => {
-            const clientContentDiv = document.getElementById('clientContent');
-            clientContentDiv.innerHTML = html;
-        })
-        .catch(err => console.error(err));
-}
-
-// Handle dropdown item click
-function handleItemClick(event, searchInput, dropdown) {
-    const name = event.currentTarget.textContent.trim();
-    searchInput.value = name;
-    searchInput.style.textAlign = 'center';
-
-    clearDropdown(dropdown);
-    fetchClientInfo(name);
-
-    // AJAX Call to Update PHP Session
-    fetch('updateActiveClient.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `clientName=${name}`
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status !== 'success') {
-                console.error(data.message);
-            }
-            fetchAndUpdateClientContent();
-        })
-        .catch(err => console.error(err));
-}
-
-// Fetch client information
-function fetchClientInfo(name, updateActiveClient = true) {
-    fetch(`getClientInfo.php?name=${encodeURIComponent(name)}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                console.error(data.error);
-            } else {
-                updateClientInfo(data, name);
-                if (updateActiveClient) {
-                    // AJAX Call to Update PHP Session
-                    fetch('updateActiveClient.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: `clientName=${name}`
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.status !== 'success') {
-                                console.error(data.message);
-                            }
-                            fetchAndUpdateClientContent();
-                        })
-                        .catch(err => console.error(err));
-                }
-            }
-        })
-        .catch(err => console.error(err));
-}
-
-// Update client information
-function updateClientInfo(data, selectedName) {
-    const displayName = selectedName.replace(/^(Window World of )+/, '');
-    document.querySelector('.w-1\\/2 > h1').textContent = displayName;
-    document.getElementById('clientAddress').textContent = data.location;
-    document.getElementById('clientPhone').textContent = data.phone;
-
-    const ownersList = document.querySelector('.w-2\\/3 > ul');
-    ownersList.innerHTML = '';
-    data.owners.forEach(owner => {
-        const li = document.createElement('li');
-        li.className = 'text-sm flex items-center';
-        li.innerHTML = `<i class='las la-user-circle headerText text-lg mr-2'></i>${owner}`;
-        ownersList.appendChild(li);
-    });
-
-    document.getElementById('clientLogo').src = data.logo;
-    document.getElementById('clientLogoSmall').src = data.search_icon;
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('isNewSession').value = "false";
 
@@ -120,9 +20,87 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (defaultClient === 'RoofWorks USA') {
                 document.documentElement.setAttribute('data-set-theme', 'rwu');
             }
-            fetchClientInfo(defaultClient, false); // Fetch client info without updating active client
+            fetchClientInfo(defaultClient, false);
         })
         .catch(err => console.error(err));
+
+    function clearDropdown(dropdown) {
+        dropdown.style.opacity = '0';
+        dropdown.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+            dropdown.classList.add('hidden');
+            dropdown.innerHTML = '';
+        }, 300);
+    }
+
+    function fetchAndUpdateClientContent() {
+        fetch('fetchClientContent.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('client-content').innerHTML = data;
+                window.themeChange(false);
+            })
+            .catch(err => console.error(err));
+    }
+
+    function handleItemClick(event, searchInput, dropdown) {
+        const selectedItem = event.target.closest('.searchBox');
+        const selectedName = selectedItem.textContent.trim();
+        searchInput.value = selectedName;
+        clearDropdown(dropdown);
+        fetchClientInfo(selectedName);
+    }
+
+    function fetchClientInfo(name, updateActiveClient = true) {
+        fetch(`getClientInfo.php?name=${encodeURIComponent(name)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error(data.error);
+                } else {
+                    updateClientInfo(data, name);
+                    if (updateActiveClient) {
+                        // AJAX Call to Update PHP Session
+                        fetch('updateActiveClient.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: `clientName=${name}`
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.status !== 'success') {
+                                    console.error(data.message);
+                                }
+                                fetchAndUpdateClientContent();
+                            })
+                            .catch(err => console.error(err));
+                    }
+
+                    // Update the data-set-theme attribute of the dropdown items
+                    const dropdownItems = document.querySelectorAll('.searchBox');
+                    dropdownItems.forEach(item => {
+                        const nameObj = names.find(obj => obj.displayName === item.textContent.trim());
+                        if (nameObj) {
+                            item.setAttribute('data-set-theme', nameObj.value);
+                        }
+                    });
+                }
+            })
+            .catch(err => console.error(err));
+    }
+
+    function updateClientInfo(data, name) {
+        document.getElementById('client-name').textContent = name;
+        document.getElementById('client-address').textContent = data.address;
+        document.getElementById('client-phone').textContent = data.phone;
+        document.getElementById('client-email').textContent = data.email;
+        document.getElementById('client-website').textContent = data.website;
+        document.getElementById('client-logo').setAttribute('src', `img/logos/${data.logo}`);
+    }
+
+    fetchAndUpdateClientContent();
 
     searchInput.addEventListener('input', function () {
         dropdown.innerHTML = '';
