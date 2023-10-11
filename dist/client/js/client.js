@@ -47,7 +47,7 @@ function handleItemClick(event, searchInput, dropdown) {
 }
 
 // Fetch client information
-function fetchClientInfo(name) {
+function fetchClientInfo(name, updateActiveClient = true) {
     fetch(`getClientInfo.php?name=${encodeURIComponent(name)}`)
         .then(response => response.json())
         .then(data => {
@@ -55,6 +55,24 @@ function fetchClientInfo(name) {
                 console.error(data.error);
             } else {
                 updateClientInfo(data, name);
+                if (updateActiveClient) {
+                    // AJAX Call to Update PHP Session
+                    fetch('updateActiveClient.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: `clientName=${name}`
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status !== 'success') {
+                                console.error(data.message);
+                            }
+                            fetchAndUpdateClientContent();
+                        })
+                        .catch(err => console.error(err));
+                }
             }
         })
         .catch(err => console.error(err));
@@ -102,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (defaultClient === 'RoofWorks USA') {
                 document.documentElement.setAttribute('data-set-theme', 'rwu');
             }
-            fetchClientInfo(defaultClient);
+            fetchClientInfo(defaultClient, false); // Fetch client info without updating active client
         })
         .catch(err => console.error(err));
 
