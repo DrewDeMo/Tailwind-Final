@@ -91,13 +91,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('default-search');
     const dropdown = document.getElementById('autocomplete-dropdown');
 
-
     // Fetch default client name from the server
     fetch('getDefaultClient.php')
         .then(response => response.text())
         .then(defaultClient => {
             // Set the default value for the search input
             searchInput.value = defaultClient;
+            if (defaultClient === 'Window World of Altoona') {
+                document.documentElement.setAttribute('data-set-theme', 'ww-blue');
+            } else if (defaultClient === 'RoofWorks USA') {
+                document.documentElement.setAttribute('data-set-theme', 'rwu');
+            }
+            fetchClientInfo(defaultClient);
         })
         .catch(err => console.error(err));
 
