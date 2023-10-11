@@ -28,7 +28,6 @@ function saveTheme(theme) {
 function loadTheme() {
     const savedTheme = localStorage.getItem('currentTheme');
     if (savedTheme) {
-        // Apply the saved theme
         applyTheme(savedTheme);
     }
 }
@@ -36,13 +35,9 @@ function loadTheme() {
 // Function to apply the theme (WW or Altoona)
 function applyTheme(theme) {
     if (theme === 'WW') {
-        // Apply WW theme
         document.body.style.backgroundColor = 'white';
-        // Add any other WW theme styles here
     } else if (theme === 'Altoona') {
-        // Apply Altoona theme
         document.body.style.backgroundColor = 'lightblue';
-        // Add any other Altoona theme styles here
     }
 }
 
@@ -51,11 +46,8 @@ function handleItemClick(event, searchInput, dropdown) {
     const name = event.currentTarget.textContent.trim();
     searchInput.value = name;
     searchInput.style.textAlign = 'center';
-
     clearDropdown(dropdown);
     fetchClientInfo(name);
-
-    // AJAX Call to Update PHP Session
     fetch('updateActiveClient.php', {
         method: 'POST',
         headers: {
@@ -68,7 +60,7 @@ function handleItemClick(event, searchInput, dropdown) {
             if (data.status !== 'success') {
                 console.error(data.message);
             }
-            fetchAndUpdateClientContent();  // Add this line
+            fetchAndUpdateClientContent();
         })
         .catch(err => console.error(err));
 }
@@ -93,7 +85,6 @@ function updateClientInfo(data, selectedName) {
     document.querySelector('.w-1\\/2 > h1').textContent = displayName;
     document.getElementById('clientAddress').textContent = data.location;
     document.getElementById('clientPhone').textContent = data.phone;
-
     const ownersList = document.querySelector('.w-2\\/3 > ul');
     ownersList.innerHTML = '';
     data.owners.forEach(owner => {
@@ -102,15 +93,12 @@ function updateClientInfo(data, selectedName) {
         li.innerHTML = `<i class='las la-user-circle headerText text-lg mr-2'></i>${owner}`;
         ownersList.appendChild(li);
     });
-
     document.getElementById('clientLogo').src = data.logo;
     document.getElementById('clientLogoSmall').src = data.search_icon;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Call loadTheme when the page loads to apply the saved theme
     loadTheme();
-
     const names = [
         { displayName: "Window World of Altoona", value: "ww-blue" },
         { displayName: "Window World of Binghamton", value: "ww-blue" },
@@ -118,12 +106,10 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
     const searchInput = document.getElementById('default-search');
     const dropdown = document.getElementById('autocomplete-dropdown');
-
     searchInput.addEventListener('input', function () {
         dropdown.innerHTML = '';
         const searchTerm = searchInput.value.toLowerCase();
         const matchingNames = names.filter(nameObj => nameObj.displayName.toLowerCase().includes(searchTerm));
-
         if (matchingNames.length) {
             dropdown.classList.remove('hidden');
             dropdown.style.opacity = '1';
@@ -131,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             clearDropdown(dropdown);
         }
-
         matchingNames.forEach(nameObj => {
             const item = document.createElement('div');
             item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
@@ -141,25 +126,24 @@ document.addEventListener('DOMContentLoaded', function () {
             item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
             dropdown.appendChild(item);
         });
-
-        // Refresh the theme-change library after creating the dropdown
         window.themeChange(false);
     });
-
     searchInput.addEventListener('focus', function () {
         document.querySelector('.logo-fade-in').classList.add('logo-active');
     });
-
     searchInput.addEventListener('blur', function () {
         document.querySelector('.logo-fade-in').classList.remove('logo-active');
     });
-
     document.addEventListener('click', function (event) {
         if (!dropdown.contains(event.target) && event.target !== searchInput) {
             clearDropdown(dropdown);
         }
     });
-
-    // Set default value for the input
     searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
+    const selectElement = document.getElementById("activeClient");
+    if (selectElement) {
+        selectElement.value = "WW Altoona";
+        const event = new Event("change", { bubbles: true });
+        selectElement.dispatchEvent(event);
+    }
 });
