@@ -244,6 +244,8 @@
     --clientNav-hover-color: #555;
     --clientNav-track-color: #E5E7EB;
     --clientNav-hover-line-color: #bfdbfe;
+    --color-default-dropdown: #000717;
+    --color-default-dropdown-hover: #001645;
 }
 
 [data-theme='ww-blue'] {
