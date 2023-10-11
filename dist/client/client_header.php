@@ -16,12 +16,12 @@
                         <div class="flex items-center justify-center w-full">
                             <!-- Logo left fade in -->
                             <img id="clientLogoSmall" src="img/logos/ww_search_icon.svg" alt="Logo" class="w-8 h-8 mr-2 logo-fade-in" />
-                            <input type="search" id="default-search" autocomplete="off" class="default-search-input block w-full p-4 pl-6  headerText border-0 bg-transparent focus:ring-transparent rounded-full" placeholder="Window World of Altoona" required>
+                            <input type="search" id="default-search" autocomplete="off" class="default-search-input block w-full p-4 pl-6 border-0 bg-transparent focus:ring-transparent rounded-full" placeholder="Window World of Altoona" required>
 
-                            <div id="autocomplete-dropdown" class="hidden absolute mt-10 w-full bg-ww-blue-800 border border-ww-blue-700 border-opacity-50 rounded-md shadow-lg">
+                            <div id="autocomplete-dropdown" class="hidden absolute mt-10 w-full dropdownMenu  rounded-md shadow-lg">
                             </div>
-                            <button type="submit" class="flex items-center justify-center mailButton duration-800 hover:bg-ww-blue-600 focus:ring-4 focus:outline-none focus:ring-ww-blue-300 font-medium rounded-full text-sm h-8 w-8 px-2 py-2 headerText ml-2">
-                                <svg class="w-6 h-6 headerText" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <button type="submit" class="flex items-center justify-center mailButton duration-800 focus:ring-4 focus:outline-none font-medium rounded-full text-sm h-8 w-8 px-2 py-2 headerText ml-2">
+                                <svg id="searchIcon" class="w-6 h-6 headerText " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                 </svg>
                             </button>
@@ -46,7 +46,7 @@
                 <i class="las la-phone text-lg pr-2"></i>
                 <div class="headerText" id="clientPhone">123-123-1234</div>
             </div>
-            <div class="p-1 my-4 w-2/3 text-sm font-medium rounded-full headerText border ownerTitleBox text-center">
+            <div class="p-1 my-4 w-2/3 text-sm font-medium rounded-full border ownerBox text-center">
                 Owners
             </div>
             <div class="w-2/3 pb-4">

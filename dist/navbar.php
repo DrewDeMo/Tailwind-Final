@@ -16,7 +16,7 @@
                             </button>
                         </span>
                         <input type="search" name="q"
-                            class="py-2 text-sm text-white bg-stone-50/10 border border-white/20 rounded-full pl-10 focus:outline-none focus:bg-stone-50/40 focus:text-stone-900"
+                            class="py-2 text-sm text-white searchBox  border rounded-full pl-10 focus:outline-none"
                             placeholder="Search..." autocomplete="on">
                     </div>
                 </form>

@@ -12,11 +12,26 @@ function clearDropdown(dropdown) {
 function handleItemClick(event, searchInput, dropdown) {
     const name = event.currentTarget.textContent.trim();
     searchInput.value = name;
-    searchInput.style.color = 'rgba(255, 255, 255, 1)';
     searchInput.style.textAlign = 'center';
 
     clearDropdown(dropdown);
     fetchClientInfo(name);
+
+    // AJAX Call to Update PHP Session
+    fetch('updateActiveClient.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `clientName=${name}`
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status !== 'success') {
+                console.error(data.message);
+            }
+        })
+        .catch(err => console.error(err));
 }
 
 // Fetch client information
@@ -45,7 +60,7 @@ function updateClientInfo(data, selectedName) {
     data.owners.forEach(owner => {
         const li = document.createElement('li');
         li.className = 'text-sm flex items-center';
-        li.innerHTML = `<i class='las la-user-circle text-ww-blue-sub-100 text-lg mr-2'></i>${owner}`;
+        li.innerHTML = `<i class='las la-user-circle headerText text-lg mr-2'></i>${owner}`;
         ownersList.appendChild(li);
     });
 
@@ -53,21 +68,19 @@ function updateClientInfo(data, selectedName) {
     document.getElementById('clientLogoSmall').src = data.search_icon;
 }
 
-// Main code logic wrapped in DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function () {
     const names = [
-        "Window World of Altoona",
-        "Window World of Binghamton",
-        "RoofWorks USA",
+        { displayName: "Window World of Altoona", value: "ww-blue" },
+        { displayName: "Window World of Binghamton", value: "ww-blue" },
+        { displayName: "RoofWorks USA", value: "rwu" }
     ];
     const searchInput = document.getElementById('default-search');
     const dropdown = document.getElementById('autocomplete-dropdown');
-    searchInput.style.color = 'rgba(255, 255, 255, 0.75)';
 
     searchInput.addEventListener('input', function () {
         dropdown.innerHTML = '';
         const searchTerm = searchInput.value.toLowerCase();
-        const matchingNames = names.filter(name => name.toLowerCase().includes(searchTerm));
+        const matchingNames = names.filter(nameObj => nameObj.displayName.toLowerCase().includes(searchTerm));
 
         if (matchingNames.length) {
             dropdown.classList.remove('hidden');
@@ -77,22 +90,25 @@ document.addEventListener('DOMContentLoaded', function () {
             clearDropdown(dropdown);
         }
 
-        matchingNames.forEach(name => {
+        matchingNames.forEach(nameObj => {
             const item = document.createElement('div');
-            item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${name}`;
-            item.className = 'p-2 cursor-pointer hover:bg-gray-100 flex items-center';
+            item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
+            item.className = `p-2 cursor-pointer searchBox flex items-center`;
+            item.setAttribute('data-set-theme', nameObj.value);
+            item.setAttribute('data-act-class', 'ACTIVECLASS');
             item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
             dropdown.appendChild(item);
         });
+
+        // Refresh the theme-change library after creating the dropdown
+        window.themeChange(false);
     });
 
     searchInput.addEventListener('focus', function () {
-        searchInput.style.color = 'rgba(255, 255, 255, 1)';
         document.querySelector('.logo-fade-in').classList.add('logo-active');
     });
 
     searchInput.addEventListener('blur', function () {
-        searchInput.style.color = 'rgba(255, 255, 255, 0.75)';
         document.querySelector('.logo-fade-in').classList.remove('logo-active');
     });
 
@@ -101,4 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearDropdown(dropdown);
         }
     });
+
+    // Set default value for the input
+    searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
 });

@@ -79,12 +79,12 @@
 }
 
 #autocomplete-dropdown .p-2 {
-    color: #fff; // White color
+    color: var(--color-default-headertext);
 }
 
 #autocomplete-dropdown .p-2:hover {
-    background-color: #333;
-    color: #f5f5f5;
+    background-color: var(--color-default-dropdown-hover);
+    color: var(--color-default-headertext);
 }
 
 #autocomplete-dropdown {
@@ -141,13 +141,11 @@
     transition: color 0.3s, font-weight 0.3s;
     position: relative;
     z-index: 2;
-    color: text-gray-600;
     /* Inactive color */
     font-weight: normal;
 }
 
 .clientNav-tab-link:hover {
-    color: text-gray-900;
     /* Hover color */
     font-weight: medium;
 }
@@ -165,7 +163,6 @@
 }
 
 .clientNav-tab-link.clientNav-active {
-    color: text-gray-900;
     /* Active text color */
     font-weight: medium;
 }
@@ -215,7 +212,7 @@
 }
 
 #default-search {
-    color: white;
+    color: var(--color-default-headertext);
 }
 
 /*! purgecss start ignore */
@@ -232,6 +229,21 @@
     --color-default-800: #001645;
     --color-default-900: #001645;
     --color-default-950: #000717;
+    --color-default-headers: #002064;
+    --color-default-search: #0033A1;
+    --color-default-contactbg: #D4F4FF;
+    --color-default-contactfg: #59D5FF;
+    --color-default-breadcrumbs: #ffffffc9;
+    --color-default-breadcrumbs-100: #ffffffaf;
+    --color-default-breadcrumbs-200: #ffffff7c;
+    --color-default-headerbg: #1c233d;
+    --color-default-headertext: #ffffff;
+    --color-default-searchbg: #b6c8ef1b;
+    --color-default-searchborder: #6182c9ac;
+    --clientNav-active-color: #0033a1;
+    --clientNav-hover-color: #555;
+    --clientNav-track-color: #E5E7EB;
+    --clientNav-hover-line-color: #bfdbfe;
 }
 
 [data-theme='ww-blue'] {
@@ -262,6 +274,8 @@
     --clientNav-hover-color: #555;
     --clientNav-track-color: #E5E7EB;
     --clientNav-hover-line-color: #bfdbfe;
+    --color-default-dropdown: #000717;
+    --color-default-dropdown-hover: #001645;
 }
 
 [data-theme='rwu'] {
@@ -279,6 +293,7 @@
     --color-default-950: #100204;
     --color-default-headers: #020D2D;
     --color-default-search: #03154A;
+    --color-default-search-icon: #ffffff;
     --color-default-contactbg: #D6E0FD;
     --color-default-contactfg: #5981F8;
     --color-default-breadcrumbs: #000000c9;
@@ -340,6 +355,26 @@
 .searchBox {
     background-color: var(--color-default-searchbg);
     border: 1px solid var(--color-default-searchborder);
+}
+
+#searchIcon {
+    color: var(--color-default-search-icon);
+}
+
+.ownerBox {
+    border: 1px solid var(--color-default-searchborder);
+    color: var(--color-default-headertext);
+}
+
+.dropdownMenu {
+    background-color: var(--color-default-dropdown);
+    border-radius: 8px;
+    border: 1px solid var(--color-default-searchborder);
+}
+
+.dropdownMenu:hover {
+    background-color: var(--color-default-dropdown-hover);
+    border-radius: 8px;
 }
 
 /*! purgecss end ignore */
