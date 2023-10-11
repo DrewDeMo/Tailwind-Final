@@ -34,13 +34,12 @@ function loadTheme() {
 
 // Function to apply the theme
 function applyTheme(theme) {
-    if (theme === 'WW') {
+    if (theme === 'Window World of Altoona') {
         window.changeTheme('ww-blue');
-    } else if (theme === 'Altoona') {
-        window.changeTheme('altoona-blue');
     } else if (theme === 'RoofWorks USA') {
         window.changeTheme('rwu');
     }
+    saveTheme(theme);
 }
 
 // Handle dropdown item click
@@ -51,7 +50,6 @@ function handleItemClick(event, searchInput, dropdown) {
     clearDropdown(dropdown);
     fetchClientInfo(name);
     applyTheme(name);
-    saveTheme(name);
     fetch('updateActiveClient.php', {
         method: 'POST',
         headers: {
@@ -105,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
     loadTheme();
     const names = [
         { displayName: "Window World of Altoona", value: "ww-blue" },
-        { displayName: "Window World of Binghamton", value: "ww-blue" },
         { displayName: "RoofWorks USA", value: "rwu" }
     ];
     const searchInput = document.getElementById('default-search');
@@ -125,8 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const item = document.createElement('div');
             item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
             item.className = `p-2 cursor-pointer searchBox flex items-center`;
-            item.setAttribute('data-set-theme', nameObj.value);
-            item.setAttribute('data-act-class', 'ACTIVECLASS');
             item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
             dropdown.appendChild(item);
         });
@@ -146,7 +141,6 @@ document.addEventListener('DOMContentLoaded', function () {
     searchInput.value = defaultClient;
     fetchClientInfo(defaultClient);
     applyTheme(defaultClient);
-    saveTheme(defaultClient);
     fetch('updateActiveClient.php', {
         method: 'POST',
         headers: {
