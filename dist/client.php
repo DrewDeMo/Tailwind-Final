@@ -1,14 +1,10 @@
 <?php
-session_start();  // Start the session at the top of your PHP file
-
-// Set the default client if the session variable is not set
-if (!isset($_SESSION['activeClient'])) {
-    $_SESSION['activeClient'] = 'Window World of Altoona';
+session_start();
+if (isset($_POST['isNewSession']) && $_POST['isNewSession'] === 'true') {
+    $_SESSION['activeClient'] = 'Window World';
 }
-
-// Or if you want to reset it every time the page loads, uncomment the line below
-// $_SESSION['activeClient'] = 'Window World of Altoona';
 ?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -18,6 +14,7 @@ if (!isset($_SESSION['activeClient'])) {
 </head>
 <link rel="stylesheet" href="css/clients.css" />
 <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+<input type="hidden" id="isNewSession" value="true">
 
 <body class="bg-gray-50">
     <div class="flex flex-wrap overflow-hidden">
@@ -40,14 +37,16 @@ if (!isset($_SESSION['activeClient'])) {
             <!-- End red background section -->
 
             <div class="w-[90%] mx-auto">
-                <?php
-                // Use the session variable to conditionally include the correct PHP file
-                if ($_SESSION['activeClient'] === 'RoofWorks USA') {
-                    include 'client/client_rwu.php';
-                } else {
-                    include 'client/client_ww.php';
-                }
-                ?>
+                <div id="clientContent">
+                    <?php
+                    // Use the session variable to conditionally include the correct PHP file
+                    if ($_SESSION['activeClient'] === 'RoofWorks USA') {
+                        include 'client/client_rwu.php';
+                    } else {
+                        include 'client/client_ww.php';
+                    }
+                    ?>
+                </div>
             </div>
 
             <div class="flex flex-row justify-between px-90">
