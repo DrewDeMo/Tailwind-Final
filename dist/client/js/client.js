@@ -157,3 +157,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+// ... (previous code)
+
+// New function to fetch and update client content
+function fetchAndUpdateClientContent() {
+    fetch('fetchClientContent.php')
+        .then(response => response.text())
+        .then(html => {
+            console.log("Fetched HTML:", html);  // Debugging statement
+            const clientContentDiv = document.getElementById('clientContent');
+            clientContentDiv.innerHTML = html;
+
+            // Dispatch the clientSwitched event here
+            const event = new Event('clientSwitched');
+            document.dispatchEvent(event);
+        })
+        .catch(err => console.error(err));
+}
+
+// ... (rest of the code)

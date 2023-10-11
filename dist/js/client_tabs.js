@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     function initClientTabs() {
+        console.log("Initializing client tabs");  // Debugging statement
+
         const clientNavTabs = document.querySelectorAll(".clientNav-tab-link");
+        console.log("Client Nav Tabs:", clientNavTabs);  // Debugging statement
+
         const clientNavContentPanes = document.querySelectorAll(".clientNav-tab-pane");
         const clientNavIndicator = document.querySelector(".clientNav-indicator");
 
@@ -18,8 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
         adjustClientNavIndicator(initialActiveTab);
 
         clientNavTabs.forEach(tab => {
+            console.log("Attaching click event to tab:", tab);  // Debugging statement
             tab.addEventListener('click', function (e) {
                 e.preventDefault();
+                console.log("Tab clicked:", this);  // Additional Debugging statement
 
                 let target = this.dataset.tab;
                 let targetContent = document.getElementById(target);
@@ -43,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Re-initialize client tabs when the client is switched
     document.addEventListener('clientSwitched', function () {
+        console.log("Client switched event fired");  // Debugging statement
         initClientTabs();
     });
 });
