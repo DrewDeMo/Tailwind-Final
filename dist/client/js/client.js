@@ -41,7 +41,7 @@ function handleItemClick(event, searchInput, dropdown) {
             if (data.status !== 'success') {
                 console.error(data.message);
             }
-            fetchAndUpdateClientContent();  // Add this line
+            fetchAndUpdateClientContent();
         })
         .catch(err => console.error(err));
 }
@@ -81,25 +81,57 @@ function updateClientInfo(data, selectedName) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Add this line to set the hidden input's value to "false"
     document.getElementById('isNewSession').value = "false";
 
-});
+    const names = [
+        { displayName: "Window World of Altoona", value: "ww-blue" },
+        { displayName: "Window World of Binghamton", value: "ww-blue" },
+        { displayName: "RoofWorks USA", value: "rwu" }
+    ];
+    const searchInput = document.getElementById('default-search');
+    const dropdown = document.getElementById('autocomplete-dropdown');
 
-searchInput.addEventListener('focus', function () {
-    document.querySelector('.logo-fade-in').classList.add('logo-active');
-});
+    searchInput.addEventListener('input', function () {
+        dropdown.innerHTML = '';
+        const searchTerm = searchInput.value.toLowerCase();
+        const matchingNames = names.filter(nameObj => nameObj.displayName.toLowerCase().includes(searchTerm));
 
-searchInput.addEventListener('blur', function () {
-    document.querySelector('.logo-fade-in').classList.remove('logo-active');
-});
+        if (matchingNames.length) {
+            dropdown.classList.remove('hidden');
+            dropdown.style.opacity = '1';
+            dropdown.style.transform = 'translateY(0)';
+        } else {
+            clearDropdown(dropdown);
+        }
 
-document.addEventListener('click', function (event) {
-    if (!dropdown.contains(event.target) && event.target !== searchInput) {
-        clearDropdown(dropdown);
-    }
-});
+        matchingNames.forEach(nameObj => {
+            const item = document.createElement('div');
+            item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
+            item.className = `p-2 cursor-pointer searchBox flex items-center`;
+            item.setAttribute('data-set-theme', nameObj.value);
+            item.setAttribute('data-act-class', 'ACTIVECLASS');
+            item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
+            dropdown.appendChild(item);
+        });
 
-// Set default value for the input
-searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
+        // Refresh the theme-change library after creating the dropdown
+        window.themeChange(false);
+    });
+
+    searchInput.addEventListener('focus', function () {
+        document.querySelector('.logo-fade-in').classList.add('logo-active');
+    });
+
+    searchInput.addEventListener('blur', function () {
+        document.querySelector('.logo-fade-in').classList.remove('logo-active');
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!dropdown.contains(event.target) && event.target !== searchInput) {
+            clearDropdown(dropdown);
+        }
+    });
+
+    // Set default value for the input
+    searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
 });
