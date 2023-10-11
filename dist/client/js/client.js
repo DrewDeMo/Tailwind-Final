@@ -140,10 +140,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
-    const selectElement = document.getElementById("activeClient");
-    if (selectElement) {
-        selectElement.value = "WW Altoona";
-        const event = new Event("change", { bubbles: true });
-        selectElement.dispatchEvent(event);
-    }
+    const defaultClient = "Window World of Altoona";
+    searchInput.value = defaultClient;
+    fetchClientInfo(defaultClient);
+    fetch('updateActiveClient.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `clientName=${defaultClient}`
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status !== 'success') {
+                console.error(data.message);
+            }
+            fetchAndUpdateClientContent();
+        })
+        .catch(err => console.error(err));
 });
