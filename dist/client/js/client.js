@@ -1,73 +1,3 @@
-// Utility to clear dropdown
-function clearDropdown(dropdown) {
-    dropdown.innerHTML = '';
-    dropdown.style.opacity = '0';
-    dropdown.style.transform = 'translateY(-10px)';
-    setTimeout(() => {
-        dropdown.classList.add('hidden');
-    }, 300);
-}
-
-// Handle dropdown item click
-function handleItemClick(event, searchInput, dropdown) {
-    const name = event.currentTarget.textContent.trim();
-    searchInput.value = name;
-    searchInput.style.textAlign = 'center';
-
-    clearDropdown(dropdown);
-    fetchClientInfo(name);
-
-    // AJAX Call to Update PHP Session
-    fetch('updateActiveClient.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `clientName=${name}`
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status !== 'success') {
-                console.error(data.message);
-            }
-        })
-        .catch(err => console.error(err));
-}
-
-// Fetch client information
-function fetchClientInfo(name) {
-    fetch(`getClientInfo.php?name=${encodeURIComponent(name)}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                console.error(data.error);
-            } else {
-                updateClientInfo(data, name);
-            }
-        })
-        .catch(err => console.error(err));
-}
-
-// Update client information
-function updateClientInfo(data, selectedName) {
-    const displayName = selectedName.replace(/^(Window World of )+/, '');
-    document.querySelector('.w-1\\/2 > h1').textContent = displayName;
-    document.getElementById('clientAddress').textContent = data.location;
-    document.getElementById('clientPhone').textContent = data.phone;
-
-    const ownersList = document.querySelector('.w-2\\/3 > ul');
-    ownersList.innerHTML = '';
-    data.owners.forEach(owner => {
-        const li = document.createElement('li');
-        li.className = 'text-sm flex items-center';
-        li.innerHTML = `<i class='las la-user-circle headerText text-lg mr-2'></i>${owner}`;
-        ownersList.appendChild(li);
-    });
-
-    document.getElementById('clientLogo').src = data.logo;
-    document.getElementById('clientLogoSmall').src = data.search_icon;
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     const names = [
         { displayName: "Window World of Altoona", value: "ww-blue" },
@@ -76,6 +6,18 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
     const searchInput = document.getElementById('default-search');
     const dropdown = document.getElementById('autocomplete-dropdown');
+
+    // Set default value for the input and fetch default client info
+    const defaultClient = names.find(nameObj => nameObj.value === 'ww-blue');
+    searchInput.value = defaultClient.displayName;
+    fetchClientInfo(defaultClient.displayName);
+    fetch('updateActiveClient.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `clientName=${defaultClient.displayName}`
+    });
 
     searchInput.addEventListener('input', function () {
         dropdown.innerHTML = '';
@@ -117,7 +59,76 @@ document.addEventListener('DOMContentLoaded', function () {
             clearDropdown(dropdown);
         }
     });
-
-    // Set default value for the input
-    searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
 });
+
+// Utility to clear dropdown
+function clearDropdown(dropdown) {
+    dropdown.innerHTML = '';
+    dropdown.style.opacity = '0';
+    dropdown.style.transform = 'translateY(-10px)';
+    setTimeout(() => {
+        dropdown.classList.add('hidden');
+    }, 300);
+}
+
+// Handle dropdown item click
+function handleItemClick(event, searchInput, dropdown) {
+    const name = event.currentTarget.textContent.trim();
+    searchInput.value = name;
+    searchInput.style.textAlign = 'center';
+
+    clearDropdown(dropdown);
+    fetchClientInfo(name);
+
+    // AJAX Call to Update PHP Session
+    fetch('updateActiveClient.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `clientName=${name}`
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status !== 'success') {
+                console.error(data.message);
+            }
+            // Refresh the page to reflect the new PHP include
+            location.reload();
+        })
+        .catch(err => console.error(err));
+}
+
+// Fetch client information
+function fetchClientInfo(name) {
+    fetch(`getClientInfo.php?name=${encodeURIComponent(name)}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error(data.error);
+            } else {
+                updateClientInfo(data, name);
+            }
+        })
+        .catch(err => console.error(err));
+}
+
+// Update client information
+function updateClientInfo(data, selectedName) {
+    const displayName = selectedName.replace(/^(Window World of )+/, '');
+    document.querySelector('.w-1\\/2 > h1').textContent = displayName;
+    document.getElementById('clientAddress').textContent = data.location;
+    document.getElementById('clientPhone').textContent = data.phone;
+
+    const ownersList = document.querySelector('.w-2\\/3 > ul');
+    ownersList.innerHTML = '';
+    data.owners.forEach(owner => {
+        const li = document.createElement('li');
+        li.className = 'text-sm flex items-center';
+        li.innerHTML = `<i class='las la-user-circle headerText text-lg mr-2'></i>${owner}`;
+        ownersList.appendChild(li);
+    });
+
+    document.getElementById('clientLogo').src = data.logo;
+    document.getElementById('clientLogoSmall').src = data.search_icon;
+}
