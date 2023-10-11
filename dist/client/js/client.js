@@ -32,14 +32,13 @@ function loadTheme() {
     }
 }
 
-// Function to apply the theme
+// Function to apply the theme (WW or Altoona)
 function applyTheme(theme) {
-    if (theme === 'Window World of Altoona') {
-        window.changeTheme('ww-blue');
-    } else if (theme === 'RoofWorks USA') {
-        window.changeTheme('rwu');
+    if (theme === 'WW') {
+        document.body.style.backgroundColor = 'white';
+    } else if (theme === 'Altoona') {
+        document.body.style.backgroundColor = 'lightblue';
     }
-    saveTheme(theme);
 }
 
 // Handle dropdown item click
@@ -49,7 +48,6 @@ function handleItemClick(event, searchInput, dropdown) {
     searchInput.style.textAlign = 'center';
     clearDropdown(dropdown);
     fetchClientInfo(name);
-    applyTheme(name);
     fetch('updateActiveClient.php', {
         method: 'POST',
         headers: {
@@ -103,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadTheme();
     const names = [
         { displayName: "Window World of Altoona", value: "ww-blue" },
+        { displayName: "Window World of Binghamton", value: "ww-blue" },
         { displayName: "RoofWorks USA", value: "rwu" }
     ];
     const searchInput = document.getElementById('default-search');
@@ -122,9 +121,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const item = document.createElement('div');
             item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
             item.className = `p-2 cursor-pointer searchBox flex items-center`;
+            item.setAttribute('data-set-theme', nameObj.value);
+            item.setAttribute('data-act-class', 'ACTIVECLASS');
             item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
             dropdown.appendChild(item);
         });
+        window.themeChange(false);
     });
     searchInput.addEventListener('focus', function () {
         document.querySelector('.logo-fade-in').classList.add('logo-active');
@@ -137,23 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
             clearDropdown(dropdown);
         }
     });
-    const defaultClient = "Window World of Altoona";
-    searchInput.value = defaultClient;
-    fetchClientInfo(defaultClient);
-    applyTheme(defaultClient);
-    fetch('updateActiveClient.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `clientName=${defaultClient}`
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status !== 'success') {
-                console.error(data.message);
-            }
-            fetchAndUpdateClientContent();
-        })
-        .catch(err => console.error(err));
+    searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
+    const selectElement = document.getElementById("activeClient");
+    if (selectElement) {
+        selectElement.value = "WW Altoona";
+        const event = new Event("change", { bubbles: true });
+        selectElement.dispatchEvent(event);
+    }
 });
