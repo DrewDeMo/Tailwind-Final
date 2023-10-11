@@ -15,9 +15,12 @@ function fetchAndUpdateClientContent() {
         .then(html => {
             const clientContentDiv = document.getElementById('clientContent');
             clientContentDiv.innerHTML = html;
+            // Re-initialize drawer here
+            // Example: YourDrawerLibrary.initialize('sidebar-multi-level-sidebar');
         })
         .catch(err => console.error(err));
 }
+
 
 // Handle dropdown item click
 function handleItemClick(event, searchInput, dropdown) {
