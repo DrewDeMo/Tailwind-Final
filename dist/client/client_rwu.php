@@ -272,12 +272,12 @@
             <!--End Dashboard Content-->
         </div>
         <!--Tab 2-->
-        <div class="clientNav-tab-pane" id="clientNav-tab8"><?php include 'client/sub_globalrev.php'; ?></div>
+        <div class="clientNav-tab-pane" id="clientNav-tab8"><?php include 'client/rwu/sub_globalrev.php'; ?></div>
         <!--Tab 3-->
-        <div class="clientNav-tab-pane" id="clientNav-tab9"><?php include 'client/sub_offers.php'; ?></div>
+        <div class="clientNav-tab-pane" id="clientNav-tab9"><?php include 'client/rwu/sub_offers.php'; ?></div>
         <!--Tab 4-->
-        <div class="clientNav-tab-pane" id="clientNav-tab10"><?php include 'client/sub_tracking.php'; ?></div>
+        <div class="clientNav-tab-pane" id="clientNav-tab10"><?php include 'client/rwu/sub_tracking.php'; ?></div>
         <!--Tab 5-->
-        <div class="clientNav-tab-pane" id="clientNav-tab11"><?php include 'client/sub_cred.php'; ?></div>
+        <div class="clientNav-tab-pane" id="clientNav-tab11"><?php include 'client/rwu/sub_cred.php'; ?></div>
     </div>
 </div>
