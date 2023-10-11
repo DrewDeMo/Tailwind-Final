@@ -1,10 +1,15 @@
 <?php
-if ($_SESSION['activeClient'] === 'Window World of Altoona') {
-    include 'path/to/window_world_header.php';
-} elseif ($_SESSION['activeClient'] === 'RoofWorks USA') {
-    include 'path/to/roofworks_header.php';
+session_start();
+if (!isset($_SESSION['client'])) {
+    $_SESSION['client'] = array();
 }
+if (!isset($_SESSION['activeClient'])) {
+    $_SESSION['activeClient'] = array();
+}
+$client = $_SESSION['client'];
+$activeClient = $_SESSION['activeClient'];
 ?>
+
 
 <!DOCTYPE html>
 
