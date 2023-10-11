@@ -32,12 +32,14 @@ function loadTheme() {
     }
 }
 
-// Function to apply the theme (WW or Altoona)
+// Function to apply the theme
 function applyTheme(theme) {
     if (theme === 'WW') {
-        document.body.style.backgroundColor = 'white';
+        window.changeTheme('ww-blue');
     } else if (theme === 'Altoona') {
-        document.body.style.backgroundColor = 'lightblue';
+        window.changeTheme('altoona-blue');
+    } else if (theme === 'RoofWorks USA') {
+        window.changeTheme('rwu');
     }
 }
 
@@ -48,6 +50,8 @@ function handleItemClick(event, searchInput, dropdown) {
     searchInput.style.textAlign = 'center';
     clearDropdown(dropdown);
     fetchClientInfo(name);
+    applyTheme(name);
+    saveTheme(name);
     fetch('updateActiveClient.php', {
         method: 'POST',
         headers: {
@@ -126,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
             item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
             dropdown.appendChild(item);
         });
-        window.themeChange(false);
     });
     searchInput.addEventListener('focus', function () {
         document.querySelector('.logo-fade-in').classList.add('logo-active');
@@ -139,10 +142,11 @@ document.addEventListener('DOMContentLoaded', function () {
             clearDropdown(dropdown);
         }
     });
-    searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
     const defaultClient = "Window World of Altoona";
     searchInput.value = defaultClient;
     fetchClientInfo(defaultClient);
+    applyTheme(defaultClient);
+    saveTheme(defaultClient);
     fetch('updateActiveClient.php', {
         method: 'POST',
         headers: {
