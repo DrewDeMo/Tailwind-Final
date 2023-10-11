@@ -91,6 +91,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('default-search');
     const dropdown = document.getElementById('autocomplete-dropdown');
 
+    // New function to fetch and update client content
+    function fetchAndUpdateClientContent() {
+        fetch('fetchClientContent.php')
+            .then(response => response.text())
+            .then(html => {
+                const clientContentDiv = document.getElementById('clientContent');
+                clientContentDiv.innerHTML = html;
+
+                // Dispatch the clientSwitched event here
+                const event = new Event('clientSwitched');
+                document.dispatchEvent(event);
+            })
+            .catch(err => console.error(err));
+    }
+
+
+    // Fetch default client name from the server
+    fetch('getDefaultClient.php')
+        .then(response => response.text())
+        .then(defaultClient => {
+            // Set the default value for the search input
+            searchInput.value = defaultClient;
+        })
+        .catch(err => console.error(err));
+
     searchInput.addEventListener('input', function () {
         dropdown.innerHTML = '';
         const searchTerm = searchInput.value.toLowerCase();
@@ -131,7 +156,4 @@ document.addEventListener('DOMContentLoaded', function () {
             clearDropdown(dropdown);
         }
     });
-
-    // Set default value for the input
-    searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
 });

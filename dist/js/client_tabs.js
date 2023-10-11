@@ -1,33 +1,48 @@
-const clientNavTabs = document.querySelectorAll(".clientNav-tab-link");
-const clientNavContentPanes = document.querySelectorAll(".clientNav-tab-pane");
-const clientNavIndicator = document.querySelector(".clientNav-indicator");
+document.addEventListener('DOMContentLoaded', function () {
+    function initClientTabs() {
+        const clientNavTabs = document.querySelectorAll(".clientNav-tab-link");
+        const clientNavContentPanes = document.querySelectorAll(".clientNav-tab-pane");
+        const clientNavIndicator = document.querySelector(".clientNav-indicator");
 
-function adjustClientNavIndicator(activeTab) {
-    let leftPos = activeTab.offsetLeft;
-    let width = activeTab.offsetWidth;
-    clientNavIndicator.style.left = `${leftPos}px`;
-    clientNavIndicator.style.width = `${width}px`;
-}
+        function adjustClientNavIndicator(activeTab) {
+            if (activeTab !== null) {
+                let leftPos = activeTab.offsetLeft;
+                let width = activeTab.offsetWidth;
+                clientNavIndicator.style.left = `${leftPos}px`;
+                clientNavIndicator.style.width = `${width}px`;
+            }
+        }
 
-// Initialize the indicator position
-adjustClientNavIndicator(document.querySelector('.clientNav-tab-link.clientNav-active'));
+        // Initialize the indicator position
+        const initialActiveTab = document.querySelector('.clientNav-tab-link.clientNav-active');
+        adjustClientNavIndicator(initialActiveTab);
 
-clientNavTabs.forEach(tab => {
-    tab.addEventListener('click', function (e) {
-        e.preventDefault();
+        clientNavTabs.forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
 
-        let target = this.dataset.tab;
-        let targetContent = document.getElementById(target);
+                let target = this.dataset.tab;
+                let targetContent = document.getElementById(target);
 
-        // Manage active classes for tabs
-        clientNavTabs.forEach(t => t.classList.remove("clientNav-active"));
-        this.classList.add("clientNav-active");
+                // Manage active classes for tabs
+                clientNavTabs.forEach(t => t.classList.remove("clientNav-active"));
+                this.classList.add("clientNav-active");
 
-        // Manage active classes for content
-        clientNavContentPanes.forEach(pane => pane.classList.remove("clientNav-active"));
-        targetContent.classList.add("clientNav-active");
+                // Manage active classes for content
+                clientNavContentPanes.forEach(pane => pane.classList.remove("clientNav-active"));
+                targetContent.classList.add("clientNav-active");
 
-        // Adjust the indicator
-        adjustClientNavIndicator(this);
+                // Adjust the indicator
+                adjustClientNavIndicator(this);
+            });
+        });
+    }
+
+    // Initialize client tabs
+    initClientTabs();
+
+    // Re-initialize client tabs when the client is switched
+    document.addEventListener('clientSwitched', function () {
+        initClientTabs();
     });
 });

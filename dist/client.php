@@ -3,6 +3,7 @@ session_start();
 unset($_SESSION['activeClient']);
 ?>
 
+<!DOCTYPE html>
 
 <head>
     <meta charset="UTF-8">
@@ -74,3 +75,5 @@ unset($_SESSION['activeClient']);
     <script src="js/client_tabs.js"></script>
     <script src="client/js/client.js"></script>
 </body>
+
+</html>
