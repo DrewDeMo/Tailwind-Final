@@ -7,7 +7,7 @@
         <!-- Left side: Logo and Search bar -->
         <div class="flex flex-col items-center mb-12 my-4 w-1/2">
             <!-- Add the id attribute here -->
-            <img id="clientLogo" class="h-40 px-8 mb-1" src="img/logos/ww_white.svg" alt="Logo" />
+            <img id="clientLogo" class="h-40 px-8 mb-1" src="#" alt="Logo" />
             <div class="flex flex-row justify-center align-middle">
                 <!-- Adjusted width here -->
                 <form class="w-full flex justify-center relative">
@@ -33,7 +33,7 @@
 
         <!-- Right side: Details -->
         <div class="w-1/2 border-opacity-50 border-white pl-8">
-            <h1 class="mb-2 text-6xl font-extrabold headerText">Altoona</h1>
+            <h1 class="mb-2 text-6xl font-extrabold headerText"></h1>
             <div class="flex headerText items-center justify-center w-2/3 px-4 py-1 text-center searchBox rounded-lg text-sm font-medium headerText">
                 <div class="mr-2  bg-green-500 w-2 h-2 rounded-full glow-dot"></div>
                 Full Service Customer
