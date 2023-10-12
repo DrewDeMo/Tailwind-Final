@@ -2,7 +2,8 @@
     <div class="mb-8">
         <nav class="clientNav-tab-nav">
             <a href="#" data-tab="clientNav-tab1" class="clientNav-tab-link clientNav-active font-medium pr-1">
-                <i class="las la-tachometer-alt text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i> WW
+                <i class="las la-tachometer-alt text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i>
+                Dashboard
             </a>
             <a href="#" data-tab="clientNav-tab3" class="clientNav-tab-link pr-1"><i class="las las la-tag text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i>Offers</a>
             <a href="#" data-tab="clientNav-tab2" class="clientNav-tab-link pr-1"><i class="las la-bullhorn text-xl mr-1" style="line-height: 1; vertical-align: bottom;"></i>Global
@@ -16,7 +17,7 @@
     <div class="clientNav-tab-content">
         <div class="clientNav-tab-pane clientNav-active" id="clientNav-tab1">
             <!--Start Dashboard Content-->
-            <div class="flex flex-row justify-between w-full gap-6 mt-4">
+            <div class="flex flex-row justify-between w-full gap-4 mt-4">
                 <!--Owners box left-->
                 <!-- Owner Operator Information -->
                 <section class="relative rounded-lg border w-full bg-white border-gray-300 overflow-hidden">
@@ -186,7 +187,7 @@
             <!--Second row - 3 cards-->
 
             <!--Card 1 CP Map-->
-            <div class="flex flex-row justify-between w-full gap-6 mt-6">
+            <div class="flex flex-row justify-between w-full gap-4 mt-4">
                 <div class="basis-1/5 flex-grow mx-auto bg-white rounded-xl border border-gray-300 rounded-lg overflow-hidden ">
                     <div class="relative">
                         <!-- Mapbox Embed without controls and search -->
@@ -196,15 +197,15 @@
                     </div>
                     <div class="p-4 ">
 
-                        <div class="tracking-wide text-lg font-medium mb-2 text-center">Store Location</div>
-                        <p class="mt-2 text-gray-900 text-center text-xl font-bold">
+                        <div class="tracking-wide text-lg font-medium mb-2">Store Location</div>
+                        <p class="mt-2 text-gray-900 font-medium">
                             <i class="las la-map-marker-alt text-center mb-4"></i>
                             1000 Plank Road, Duncansville, PA 16635
                         </p>
 
                         <div class="tracking-wide text-lg font-medium my-4">Counties Served</div>
                         <div class="bg-gray-50 justify-between text-gray-600 text-sm p-2 border border-gray-100 rounded-lg">
-                            <ul class="flex justify-between gap-2 pr-8 p-2 font-medium m-auto">
+                            <ul class="flex justify-evenly gap-2 pr-8 p-2 font-medium m-auto flex-wrap">
                                 <li><i class="las la-map-marker"></i> Bedford^</li>
                                 <li><i class="las la-map-marker"></i> Blair</li>
                                 <li><i class="las la-map-marker"></i>Cambria</li>
@@ -304,48 +305,77 @@
                         <h2 class="px-4 absolute inset-x-0 bottom-0 h-full flex items-center text-2xl font-bold text-gray-100  z-10">
                             Global Revisions</h2>
                     </div>
-                    <div class="p-4">
-                        <div id="alert-additional-content-1" class="p-4 mb-4 text-blue-800 border border-blue-300 rounded-lg bg-blue-50 " role="alert">
+
+                    <!--Global Revision 1-->
+                    <div class="px-4 pt-4">
+                        <div id="alert-additional-content-1" class="p-4 mb-4 text-gray-800 border border-grey-300 rounded-lg bg-gray-50" role="alert">
                             <div class="flex items-center">
-                                <svg class="flex-shrink-0 w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                                </svg>
+                                <!-- Red Circle with Lighter Border -->
+                                <span class="flex-shrink-0 w-2 h-2 mr-2 bg-red-500 border-2 border-red-300 rounded-full"></span>
+
                                 <span class="sr-only">Info</span>
-                                <h3 class="text-lg font-medium">This is a brand new global revision.</h3>
+                                <h3 class="text-base font-bold">Fake Brand New Revision</h3>
                             </div>
-                            <div class="mt-2 mb-4 text-sm">
-                                More info about this info alert goes here. This example text is going to run a bit
-                                longer so
-                                that you can see how spacing within an alert works with this kind of content.
+                            <div class="mt-4 mb-6 text-sm">
+                                Attention teams, a new product variant is being introduced in our Bethlehem branch.
+                                Please make the
+                                necessary updates on promotional materials.<br><br>
+                                <span class="font-medium">"Introducing the new deluxe espresso machine variant!"</span>
                             </div>
-                            <div class="flex">
-                                <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                    <svg class="-ml-0.5 mr-2 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
-                                        <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
-                                    </svg>
-                                    View more
-                                </button>
-                                <button type="button" class="text-blue-800 bg-transparent border border-blue-800 hover:bg-blue-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-blue-600 dark:border-blue-600 dark:text-blue-400 dark:hover:text-white dark:focus:ring-blue-800" data-dismiss-target="#alert-additional-content-1" aria-label="Close">
-                                    Dismiss
-                                </button>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400 italic">
+                                    <i class="las la-clock"></i>&nbsp; Last edited: 4:13 PM - 10/2/2021
+                                </span>
+
+                                <div class="flex items-center">
+                                    <button type="button" class="text-white bg-emerald-600 hover:bg-emerald-600 focus:ring-4 focus:outline-none focus:ring-emerald-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center">
+                                        <i class="lab la-google-drive"></i> View on Sheets
+                                    </button>
+                                    <button type="button" class="text-gray-800 bg-transparent border hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 text-center" data-dismiss-target="#alert-additional-content-1" aria-label="Close">
+                                        Dismiss
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!--Global Revision 2-->
+                    <div class="px-4 pt-4 mt-2">
+                        <div id="alert-additional-content-1" class="p-4 mb-4 text-gray-800 border border-grey-300 rounded-lg bg-gray-50" role="alert">
+                            <div class="flex items-center">
+                                <!-- Red Circle with Lighter Border -->
+                                <span class="flex-shrink-0 w-2 h-2 mr-2 bg-yellow-500 border-2 border-yellow-300 rounded-full"></span>
+
+                                <span class="sr-only">Info</span>
+
+                                <h3 class="text-base font-bold">Altoona - Business Hours Change</h3>
+                            </div>
+                            <div class="mt-4 mb-6 text-sm">
+                                Effective immediately, please make the following change to all print and digital (where
+                                applicable) for WW Altoona.<br><br>
+                                <span class="font-medium">"Change Saturday hours to by appointment only."</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400 italic">
+                                    <i class="las la-clock"></i>&nbsp; Last edited: 1:22PM - 9/1/2021
+                                </span>
+
+                                <div class="flex items-center">
+                                    <button type="button" class="text-white bg-emerald-600 hover:bg-emerald-600 focus:ring-4 focus:outline-none focus:ring-emerald-200 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center">
+                                        <i class="lab la-google-drive"></i> View on Sheets
+                                    </button>
+                                    <button type="button" class="text-gray-800 bg-transparent border hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 text-center" data-dismiss-target="#alert-additional-content-1" aria-label="Close">
+                                        Dismiss
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--End Dashboard Content-->
                 </div>
             </div>
-
-
-            <!--End Dashboard Content-->
         </div>
-
-
-
-
-
-
-
-
-
 
         <!--Tab 2-->
         <div class="clientNav-tab-pane" id="clientNav-tab2"><?php include 'client/sub_globalrev.php'; ?></div>
@@ -356,4 +386,3 @@
         <!--Tab 5-->
         <div class="clientNav-tab-pane" id="clientNav-tab6"><?php include 'client/sub_cred.php'; ?></div>
     </div>
-</div>

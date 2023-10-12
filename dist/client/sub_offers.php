@@ -1,4 +1,4 @@
-<div class="p-4 space-y-6 bg-gray-100">
+<div class="p-4 space-y-6 ">
     <!-- Offers Flex Container -->
     <div class="flex flex-wrap gap-6 ">
 
@@ -10,7 +10,7 @@
                 </h2>
             </div>
             <div class="p-6 space-y-4">
-                <p><span class="text-red-500 font-bold text-xl">15 Months 0% Interest²</span></p>
+                <p><span class="text-red-500 font-bold text-2xl">15 Months 0% Interest²</span></p>
                 <p class="text-sm text-gray-500">6000 series extreme only. Ask for details.</p>
                 <p class="text-xs text-gray-400 break-words">²No interest if paid in full within 15 months with regular
                     monthly payments. <br>Bank approval needed. Must qualify. Ask for details.</p>
@@ -25,7 +25,7 @@
                 </h2>
             </div>
             <div class="p-6 space-y-4">
-                <p><span class="text-red-500 text-xl font-bold">AS LOW AS $99 Per Month¹</span></p>
+                <p><span class="text-red-500 text-2xl font-bold">AS LOW AS $99 Per Month¹</span></p>
                 <ul class="list-disc pl-5 space-y-1">
                     <li>Any Size</li>
                     <li>4000 Series</li>
@@ -47,7 +47,7 @@
                 </h2>
             </div>
             <div class="p-6 space-y-4">
-                <p><span class="text-red-500 text-xl font-bold">$69 Per Month¹</span></p>
+                <p><span class="text-red-500 text-2xl font-bold">$69 Per Month¹</span></p>
                 <p class="text-xs text-gray-400 break-words">¹All payments based at 9.99% APR over 60 months. <br>Bank
                     approval needed. Must qualify. Ask for details.</p>
             </div>
@@ -61,7 +61,7 @@
                 </h2>
             </div>
             <div class="p-6 space-y-4">
-                <p><span class="text-red-500 text-xl font-bold">$199 Per Month³</span></p>
+                <p><span class="text-red-500 text-2xl font-bold">$199 Per Month³</span></p>
                 <ul class="list-disc pl-5 space-y-1">
                     <li>Industry-leading R-value up to 3.5</li>
                     <li>Increase R-value by 40% & More</li>
@@ -83,7 +83,7 @@
                 </h2>
             </div>
             <div class="p-6 space-y-4">
-                <p><span class="text-red-500 font-bold">Up To $100 Off Per Window</span></p>
+                <p><span class="text-red-500 text-2xl font-bold">Up To $100 Off Per Window</span></p>
                 <p class="text-sm text-gray-500">6000 series extreme only. Ask for details.</p>
             </div>
         </div>
