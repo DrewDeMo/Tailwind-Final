@@ -380,3 +380,11 @@
 }
 
 /*! purgecss end ignore */
+
+.hoverable-icon-container:hover .original-icon {
+    display: none;
+}
+
+.hoverable-icon-container:hover .new-icon {
+    display: block;
+}
