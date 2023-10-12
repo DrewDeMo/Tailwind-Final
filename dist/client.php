@@ -21,11 +21,9 @@ if (!isset($_SESSION['activeClient'])) {
         <div class="w-full pl-0 lg:pl-64 min-h-screen mb-12">
             <!--Mast Header Background -->
             <div id="header_bg_swap">
-                <div id="main-nav"
-                    class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
-                    <div class="w-full h-20 flex px-4 items-center mb-16 mt-8 justify-center">
-                        <img src="img/TCL_Logo_Black.svg" alt="TCL Logo"
-                            class="w-40 h-40 mt-6 rounded-full opacity-25 hover:opacity-80 transition-opacity duration-700 ease-in-out">
+                <div id="main-nav" class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
+                    <div class="w-full h-18 flex px-4 items-center mb-16 mt-8 justify-center">
+                        <img src="img\logos\TCL_Logo_Orange.svg" alt="TCL Logo" class="w-32 h-32 mt-6 rounded-full">
                     </div>
 
                     <!--Nav Start-->
@@ -55,8 +53,7 @@ if (!isset($_SESSION['activeClient'])) {
                 </div>
             </div>
 
-            <button id="loadAltoona" style="visibility: hidden; position: absolute;" data-set-theme="ww-blue"
-                data-act-class="ACTIVECLASS" onclick="triggerAltoonaClick()">Select Window
+            <button id="loadAltoona" style="visibility: hidden; position: absolute;" data-set-theme="ww-blue" data-act-class="ACTIVECLASS" onclick="triggerAltoonaClick()">Select Window
                 World of Altoona</button>
             <!--Helpful buttons for making themes don't remove incase we want to style more-->
             <!-- <div class="flex flex-row justify-between px-90">
@@ -71,8 +68,7 @@ if (!isset($_SESSION['activeClient'])) {
         </div>
     </div>
     </div>
-    <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex fixed bottom-0 left-0 transform translate-y-full opacity-0 transition-transform transition-opacity duration-300"
-        role="alert" id="slideAlert">
+    <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex fixed bottom-0 left-0 transform translate-y-full opacity-0 transition-transform transition-opacity duration-300" role="alert" id="slideAlert">
         <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
         <span class="font-semibold mr-2 text-left flex-auto">Get the coolest t-shirts from our brand new store</span>
         <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -86,12 +82,12 @@ if (!isset($_SESSION['activeClient'])) {
     <script src="js/client_tabs.js"></script>
     <script src="client/js/client.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const loadAltoonaButton = document.getElementById('loadAltoona');
-        if (loadAltoonaButton) {
-            loadAltoonaButton.click();
-        }
-    });
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadAltoonaButton = document.getElementById('loadAltoona');
+            if (loadAltoonaButton) {
+                loadAltoonaButton.click();
+            }
+        });
     </script>
 
 </body>

@@ -20,17 +20,15 @@
                        <ul class="space-y-2 font-medium">
                            <li id="activeNav" class="group">
                                <a href="index.php"
-                                   class="flex items-center p-2 bg-tcl-orange-100/70 text-tcl-orange-800 rounded-lg hover:bg-tcl-orange-10 group">
-                                   <i
-                                       class="las la-tachometer-alt text-tcl-orange-800 group-hover:text-tcl-orange-900  text-2xl"></i>
+                                   class="flex items-center p-2 rounded-lg hover:bg-tcl-orange-10 group">
+                                   <i class="las la-tachometer-alt text-2xl"></i>
                                    <span class="ml-3 font-semibold">Dashboard</span>
                                </a>
                            </li>
 
                            <li>
-                               <a href="client.php"
-                                   class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
-                                   <i class="las la-user-circle text-gray-600 group-hover:text-gray-900  text-2xl"></i>
+                               <a href="client.php" class="flex items-center p-2  rounded-lg hover:bg-gray-100 group">
+                                   <i class="las la-user-circle navIcon  text-2xl"></i>
                                    <span class="flex-1 ml-3 whitespace-nowrap">Client</span>
 
                                </a>
@@ -135,6 +133,11 @@
                                    </a>
                                </li>
 
+
+
+
+
+
                                <div id="dropdown-cta" class="p-4 mt-6 rounded-lg bg-blue-50 " role="alert">
                                    <div class="flex items-center mb-3">
                                        <span
@@ -159,7 +162,9 @@
                                    <a class="text-sm text-blue-800 underline font-medium hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
                                        href="#">View Time Tracker</a>
                                </div>
-
+                               <button
+                                   style="margin-top:40px; color:white; font:bold; background:#cc5500; padding:5px; border-radius:20%;"
+                                   data-set-theme="tcl-default" data-act-class="ACTIVECLASS">Window World Theme</button>
 
                        </ul>
                    </div>
