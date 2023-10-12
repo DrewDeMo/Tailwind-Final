@@ -1,9 +1,7 @@
 <?php
 session_start();
-// Existing code
-if (isset($_SESSION['activeClient'])) {
-    echo $_SESSION['activeClient'];
-} else {
+if (!isset($_SESSION['isNewSession']) || $_SESSION['isNewSession'] === true) {
     $_SESSION['activeClient'] = 'Window World of Altoona';
-    echo $_SESSION['activeClient'];
+    $_SESSION['isNewSession'] = false;
 }
+echo $_SESSION['activeClient'];

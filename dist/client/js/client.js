@@ -22,8 +22,13 @@ function fetchAndUpdateClientContent() {
 // Handle dropdown item click
 function handleItemClick(event, searchInput, dropdown) {
     const name = event.currentTarget.textContent.trim();
+    const theme = event.currentTarget.getAttribute('data-set-theme');
     searchInput.value = name;
     searchInput.style.textAlign = 'center';
+
+    // Update the theme directly
+    document.documentElement.setAttribute('data-set-theme', theme);
+    window.themeChange(true);  // Force the theme to update
 
     clearDropdown(dropdown);
     fetchClientInfo(name);
@@ -81,69 +86,68 @@ function updateClientInfo(data, selectedName) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('isNewSession').value = "false";
+    fetch('setNewSessionFlag.php', {
+        method: 'POST'
+    }).then(() => {
+        document.getElementById('isNewSession').value = "true";
 
-    const names = [
-        { displayName: "Window World of Altoona", value: "ww-blue" },
-        { displayName: "Window World of Binghamton", value: "ww-blue" },
-        { displayName: "RoofWorks USA", value: "rwu" }
-    ];
-    const searchInput = document.getElementById('default-search');
-    const dropdown = document.getElementById('autocomplete-dropdown');
+        const names = [
+            { displayName: "Window World of Altoona", value: "ww-blue" },
+            { displayName: "Window World of Binghamton", value: "ww-blue" },
+            { displayName: "RoofWorks USA", value: "rwu" }
+        ];
+        const searchInput = document.getElementById('default-search');
+        const dropdown = document.getElementById('autocomplete-dropdown');
 
-    // Fetch default client name from the server
-    fetch('getDefaultClient.php')
-        .then(response => response.text())
-        .then(defaultClient => {
-            // Set the default value for the search input
-            searchInput.value = defaultClient;
-            if (defaultClient === 'Window World of Altoona') {
-                document.documentElement.setAttribute('data-set-theme', 'ww-blue');
-            } else if (defaultClient === 'RoofWorks USA') {
-                document.documentElement.setAttribute('data-set-theme', 'rwu');
+        // Fetch default client name from the server
+        fetch('getDefaultClient.php')
+            .then(response => response.text())
+            .then(defaultClient => {
+                searchInput.value = defaultClient;
+                const matchedName = names.find(nameObj => nameObj.displayName === defaultClient);
+                if (matchedName) {
+                    document.documentElement.setAttribute('data-set-theme', matchedName.value);
+                    window.themeChange(true);  // Force the theme to update
+                }
+                fetchClientInfo(defaultClient);
+            })
+            .catch(err => console.error(err));
+
+        searchInput.addEventListener('input', function () {
+            dropdown.innerHTML = '';
+            const searchTerm = searchInput.value.toLowerCase();
+            const matchingNames = names.filter(nameObj => nameObj.displayName.toLowerCase().includes(searchTerm));
+
+            if (matchingNames.length) {
+                dropdown.classList.remove('hidden');
+                dropdown.style.opacity = '1';
+                dropdown.style.transform = 'translateY(0)';
+            } else {
+                clearDropdown(dropdown);
             }
-            fetchClientInfo(defaultClient);
-        })
-        .catch(err => console.error(err));
 
-    searchInput.addEventListener('input', function () {
-        dropdown.innerHTML = '';
-        const searchTerm = searchInput.value.toLowerCase();
-        const matchingNames = names.filter(nameObj => nameObj.displayName.toLowerCase().includes(searchTerm));
-
-        if (matchingNames.length) {
-            dropdown.classList.remove('hidden');
-            dropdown.style.opacity = '1';
-            dropdown.style.transform = 'translateY(0)';
-        } else {
-            clearDropdown(dropdown);
-        }
-
-        matchingNames.forEach(nameObj => {
-            const item = document.createElement('div');
-            item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
-            item.className = `p-2 cursor-pointer searchBox flex items-center`;
-            item.setAttribute('data-set-theme', nameObj.value);
-            item.setAttribute('data-act-class', 'ACTIVECLASS');
-            item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
-            dropdown.appendChild(item);
+            matchingNames.forEach(nameObj => {
+                const item = document.createElement('div');
+                item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
+                item.className = `p-2 cursor-pointer searchBox flex items-center`;
+                item.setAttribute('data-set-theme', nameObj.value);
+                item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
+                dropdown.appendChild(item);
+            });
         });
 
-        // Refresh the theme-change library after creating the dropdown
-        window.themeChange(false);
-    });
+        searchInput.addEventListener('focus', function () {
+            document.querySelector('.logo-fade-in').classList.add('logo-active');
+        });
 
-    searchInput.addEventListener('focus', function () {
-        document.querySelector('.logo-fade-in').classList.add('logo-active');
-    });
+        searchInput.addEventListener('blur', function () {
+            document.querySelector('.logo-fade-in').classList.remove('logo-active');
+        });
 
-    searchInput.addEventListener('blur', function () {
-        document.querySelector('.logo-fade-in').classList.remove('logo-active');
-    });
-
-    document.addEventListener('click', function (event) {
-        if (!dropdown.contains(event.target) && event.target !== searchInput) {
-            clearDropdown(dropdown);
-        }
+        document.addEventListener('click', function (event) {
+            if (!dropdown.contains(event.target) && event.target !== searchInput) {
+                clearDropdown(dropdown);
+            }
+        });
     });
 });
