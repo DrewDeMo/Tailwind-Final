@@ -8,13 +8,35 @@ function clearDropdown(dropdown) {
     }, 300);
 }
 
-// New function to fetch and update client content
+// Function to fetch and update client content
 function fetchAndUpdateClientContent() {
     fetch('fetchClientContent.php')
         .then(response => response.text())
         .then(html => {
             const clientContentDiv = document.getElementById('clientContent');
             clientContentDiv.innerHTML = html;
+            // Re-initialize client tabs when the client content is updated
+            initClientTabs();
+        })
+        .catch(err => console.error(err));
+}
+
+// Function to set the default client on page load
+function setDefaultClient() {
+    const defaultClient = "Window World of Altoona";
+    fetch('updateActiveClient.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `clientName=${defaultClient}`
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status !== 'success') {
+                console.error(data.message);
+            }
+            fetchAndUpdateClientContent();
         })
         .catch(err => console.error(err));
 }
@@ -22,13 +44,8 @@ function fetchAndUpdateClientContent() {
 // Handle dropdown item click
 function handleItemClick(event, searchInput, dropdown) {
     const name = event.currentTarget.textContent.trim();
-    const theme = event.currentTarget.getAttribute('data-set-theme');
     searchInput.value = name;
     searchInput.style.textAlign = 'center';
-
-    // Update the theme directly
-    document.documentElement.setAttribute('data-set-theme', theme);
-    window.themeChange(true);  // Force the theme to update
 
     clearDropdown(dropdown);
     fetchClientInfo(name);
@@ -85,69 +102,111 @@ function updateClientInfo(data, selectedName) {
     document.getElementById('clientLogoSmall').src = data.search_icon;
 }
 
+// Initialize client tabs
+function initClientTabs() {
+    console.log("Initializing client tabs");
+
+    const clientNavTabs = document.querySelectorAll(".clientNav-tab-link");
+    const clientNavContentPanes = document.querySelectorAll(".clientNav-tab-pane");
+    const clientNavIndicator = document.querySelector(".clientNav-indicator");
+
+    function adjustClientNavIndicator(activeTab) {
+        if (activeTab !== null) {
+            let leftPos = activeTab.offsetLeft;
+            let width = activeTab.offsetWidth;
+            clientNavIndicator.style.left = `${leftPos}px`;
+            clientNavIndicator.style.width = `${width}px`;
+        }
+    }
+
+    const initialActiveTab = document.querySelector('.clientNav-tab-link.clientNav-active');
+    adjustClientNavIndicator(initialActiveTab);
+
+    clientNavTabs.forEach(tab => {
+        tab.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            let target = this.dataset.tab;
+            let targetContent = document.getElementById(target);
+
+            clientNavTabs.forEach(t => t.classList.remove("clientNav-active"));
+            this.classList.add("clientNav-active");
+
+            clientNavContentPanes.forEach(pane => pane.classList.remove("clientNav-active"));
+            targetContent.classList.add("clientNav-active");
+
+            adjustClientNavIndicator(this);
+        });
+    });
+}
+
+function triggerAltoonaClick() {
+    const mockEvent = { currentTarget: { textContent: 'Window World of Altoona' } };
+    const searchInput = document.getElementById('default-search');
+    const dropdown = document.getElementById('autocomplete-dropdown');
+    handleItemClick(mockEvent, searchInput, dropdown);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('setNewSessionFlag.php', {
-        method: 'POST'
-    }).then(() => {
-        document.getElementById('isNewSession').value = "true";
+    const isNewSession = document.getElementById('isNewSession').value;
+    if (isNewSession === "true") {
+        setDefaultClient();
+    }
 
-        const names = [
-            { displayName: "Window World of Altoona", value: "ww-blue" },
-            { displayName: "Window World of Binghamton", value: "ww-blue" },
-            { displayName: "RoofWorks USA", value: "rwu" }
-        ];
-        const searchInput = document.getElementById('default-search');
-        const dropdown = document.getElementById('autocomplete-dropdown');
+    const names = [
+        { displayName: "Window World of Altoona", value: "ww-blue" },
+        { displayName: "Window World of Binghamton", value: "ww-blue" },
+        { displayName: "RoofWorks USA", value: "rwu" }
+    ];
+    const searchInput = document.getElementById('default-search');
+    const dropdown = document.getElementById('autocomplete-dropdown');
 
-        // Fetch default client name from the server
-        fetch('getDefaultClient.php')
-            .then(response => response.text())
-            .then(defaultClient => {
-                searchInput.value = defaultClient;
-                const matchedName = names.find(nameObj => nameObj.displayName === defaultClient);
-                if (matchedName) {
-                    document.documentElement.setAttribute('data-set-theme', matchedName.value);
-                    window.themeChange(true);  // Force the theme to update
-                }
-                fetchClientInfo(defaultClient);
-            })
-            .catch(err => console.error(err));
+    searchInput.addEventListener('input', function () {
+        dropdown.innerHTML = '';
+        const searchTerm = searchInput.value.toLowerCase();
+        const matchingNames = names.filter(nameObj => nameObj.displayName.toLowerCase().includes(searchTerm));
 
-        searchInput.addEventListener('input', function () {
-            dropdown.innerHTML = '';
-            const searchTerm = searchInput.value.toLowerCase();
-            const matchingNames = names.filter(nameObj => nameObj.displayName.toLowerCase().includes(searchTerm));
+        if (matchingNames.length) {
+            dropdown.classList.remove('hidden');
+            dropdown.style.opacity = '1';
+            dropdown.style.transform = 'translateY(0)';
+        } else {
+            clearDropdown(dropdown);
+        }
 
-            if (matchingNames.length) {
-                dropdown.classList.remove('hidden');
-                dropdown.style.opacity = '1';
-                dropdown.style.transform = 'translateY(0)';
-            } else {
-                clearDropdown(dropdown);
-            }
-
-            matchingNames.forEach(nameObj => {
-                const item = document.createElement('div');
-                item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
-                item.className = `p-2 cursor-pointer searchBox flex items-center`;
-                item.setAttribute('data-set-theme', nameObj.value);
-                item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
-                dropdown.appendChild(item);
-            });
+        matchingNames.forEach(nameObj => {
+            const item = document.createElement('div');
+            item.innerHTML = `<img src="img/logos/ww_search_icon.svg" alt="Logo" class="w-5 h-5 mr-2 opacity-20 hover:opacity-100 transition-opacity duration-300"> ${nameObj.displayName}`;
+            item.className = `p-2 cursor-pointer searchBox flex items-center`;
+            item.setAttribute('data-set-theme', nameObj.value);
+            item.setAttribute('data-act-class', 'ACTIVECLASS');
+            item.addEventListener('click', (event) => handleItemClick(event, searchInput, dropdown));
+            dropdown.appendChild(item);
         });
 
-        searchInput.addEventListener('focus', function () {
-            document.querySelector('.logo-fade-in').classList.add('logo-active');
-        });
+        // Refresh the theme-change library after creating the dropdown
+        window.themeChange(false);
+    });
 
-        searchInput.addEventListener('blur', function () {
-            document.querySelector('.logo-fade-in').classList.remove('logo-active');
-        });
+    searchInput.addEventListener('focus', function () {
+        document.querySelector('.logo-fade-in').classList.add('logo-active');
+    });
 
-        document.addEventListener('click', function (event) {
-            if (!dropdown.contains(event.target) && event.target !== searchInput) {
-                clearDropdown(dropdown);
-            }
-        });
+    searchInput.addEventListener('blur', function () {
+        document.querySelector('.logo-fade-in').classList.remove('logo-active');
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!dropdown.contains(event.target) && event.target !== searchInput) {
+            clearDropdown(dropdown);
+        }
+    });
+
+    // Set default value for the input
+    searchInput.value = names.find(nameObj => nameObj.value === 'ww-blue').displayName;
+
+    document.addEventListener('clientTabsInitialized', function () {
+        // Put the code that relies on the tabs being initialized here.
+        console.log('Client tabs have been initialized');
     });
 });

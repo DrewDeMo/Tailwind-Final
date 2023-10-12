@@ -1,15 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['client'])) {
-    $_SESSION['client'] = array();
-}
 if (!isset($_SESSION['activeClient'])) {
-    $_SESSION['activeClient'] = array();
+    $_SESSION['activeClient'] = 'Window World of Altoona';
 }
-$client = $_SESSION['client'];
-$activeClient = $_SESSION['activeClient'];
 ?>
-
 
 <!DOCTYPE html>
 
@@ -60,7 +53,8 @@ $activeClient = $_SESSION['activeClient'];
                 </div>
             </div>
 
-
+            <button id="loadAltoona" style="visibility: hidden; position: absolute;" data-set-theme="ww-blue" data-act-class="ACTIVECLASS" onclick="triggerAltoonaClick()">Select Window
+                World of Altoona</button>
             <!--Helpful buttons for making themes don't remove incase we want to style more-->
             <!-- <div class="flex flex-row justify-between px-90">
                 <button style="color:white; font:bold; background:blue; padding:5px; border-radius:20%;"
@@ -80,6 +74,15 @@ $activeClient = $_SESSION['activeClient'];
     <!--Tabs-->
     <script src="js/client_tabs.js"></script>
     <script src="client/js/client.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadAltoonaButton = document.getElementById('loadAltoona');
+            if (loadAltoonaButton) {
+                loadAltoonaButton.click();
+            }
+        });
+    </script>
+
 </body>
 
 </html>
