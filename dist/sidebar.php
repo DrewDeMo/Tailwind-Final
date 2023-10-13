@@ -1,8 +1,10 @@
 <div id="main-nav" class=" w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block z-30">
-    <div class="pleaseWork w-full h-18 flex px-4  items-center mb-16 mt-8 justify-center">
-
-        <img src="img\logos\TCL_Logo_Orange.svg" alt="TCL Logo" class="w-32 h-32 mt-6 rounded-full">
+    <div class="w-full h-18 flex px-4 items-center mb-16 mt-8 justify-center">
+        <div style="width:128px; height:128px; display:flex; align-items:center; justify-content:center;">
+            <img id="logoSwap" src="img\logos\TCL_Logo_Orange.svg" alt="TCL Logo" class="w-32 h-32 mt-6 rounded-full">
+        </div>
     </div>
+
     <!--Sidebar Start-->
     <button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar"
         aria-controls="sidebar-multi-level-sidebar" type="button"
@@ -142,15 +144,15 @@
 
 
                 <div class="flex flex-row w-full justify-between">
-                    <button
+                    <button id="defaultTheme"
                         style="margin-top:40px; color:white; font:bold; background:#fff; border:1px solid gray; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
                         data-set-theme="tcl-default" data-act-class="ACTIVECLASS">&nbsp;</button>
 
-                    <button
+                    <button id="darkTheme"
                         style="margin-top:40px; color:white; font:bold; background:#000; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
                         data-set-theme="tcl-dark" data-act-class="ACTIVECLASS">&nbsp;</button>
 
-                    <button
+                    <button id="orangeTheme"
                         style="margin-top:40px; color:white; font:bold; background:#cc5500; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
                         data-set-theme="tcl-orange" data-act-class="ACTIVECLASS">&nbsp;</button>
                 </div>
@@ -188,4 +190,7 @@
 
 </div>
 
+<script>
+
+</script>
 <!--End SideBar-->

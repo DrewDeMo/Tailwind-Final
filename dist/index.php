@@ -13,10 +13,7 @@
             <div id="main-nav"
                 class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
                 <!-- Logo -->
-                <div class="w-full h-20 flex px-4 items-center mb-16 mt-8 justify-center">
-                    <img src="img/TCL_Logo_Black.svg" alt="TCL Logo"
-                        class="w-40 h-40 mt-6 rounded-full opacity-25 hover:opacity-80 transition-opacity duration-700 ease-in-out">
-                </div>
+
 
                 <!--Nav Start-->
                 <?php include 'sidebar.php'; ?>
@@ -164,17 +161,47 @@
     <!--Script Start-->
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.js">
     </script>
-    <!-- ApexCharts JS -->
-    <script src="assets/apex_charts/apexcharts.js"></script>
     <!-- Loading Animation -->
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("progressBar").style.width = "29%";
     });
     </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const orangeButton = document.querySelector('[data-set-theme="tcl-orange"]');
+        const defaultButton = document.querySelector('[data-set-theme="tcl-default"]');
+        const darkButton = document.querySelector('[data-set-theme="tcl-dark"]');
+        const logo = document.getElementById('logoSwap');
+
+        let originalSrc = logo.src;
+        let originalAlt = logo.alt;
+
+        orangeButton.addEventListener('click', function() {
+            console.log("Orange Button Clicked!"); // Logging
+            logo.src = 'img/logos/TCL_Logo_Orange.svg';
+            logo.alt = 'TCL Orange Theme Logo';
+        });
+
+        darkButton.addEventListener('click', function() {
+            console.log("Dark Button Clicked!"); // Logging
+            logo.src = 'img/logos/TCL_Logo_Dark.svg';
+            logo.alt = 'TCL Dark Theme Logo';
+        });
+
+        defaultButton.addEventListener('click', function() {
+            console.log("Default Button Clicked!"); // Logging
+            logo.src = originalSrc;
+            logo.alt = originalAlt;
+        });
+    });
+    </script>
+
     <!-- Loading End -->
 
     <!--Custom-->
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
     <script src="js/popover.js"></script>
     <script src="js/carousel.js"></script>
 </body>
