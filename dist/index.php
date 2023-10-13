@@ -10,24 +10,27 @@
 <body>
     <div class="flex flex-wrap overflow-hidden bg-gray-100">
         <div class="w-full bg-gray-100 pl-0 lg:pl-64 min-h-screen mb-12 ">
-            <div id="main-nav"
-                class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
+            <div id="main-nav" class="w-1/2 md:w-1/3 lg:w-64 fixed md:top-0 md:left-0 h-screen lg:block bg-white border-r z-30 hidden">
                 <!-- Logo -->
 
+                <style>
 
+                </style>
                 <!--Nav Start-->
                 <?php include 'sidebar.php'; ?>
             </div>
-            <?php include 'navbar.php'; ?>
-            <!--Nav Stop-->
+            <div id="" class="dashMastHead w-full">
+                <?php include 'navbar.php'; ?>
+                <!--Nav Stop-->
 
 
-            <!--Content Start-->
+                <!--Content Start-->
+
+            </div>
+
+
             <div class="flex flex-wrap">
-                <?php include 'breadcrumbs.php'; ?>
-
-
-                <div class="flex items-stretch w-full space-x-4 ml-8 mr-8">
+                <div class="flex items-stretch w-full space-x-4 ml-8 mr-8 mt-6">
                     <!-- Blog Post type Widget - Start-->
                     <?php include 'event_post.php'; ?>
                     <!-- Blog Post type Widget - Stop-->
@@ -51,8 +54,7 @@
 
         <div class="flex flex-col bg-white -lg rounded-lg border border-gray-200 h-[400px] relative" style="flex: 1;">
             <!-- Background image -->
-            <div class="absolute inset-0 rounded-lg bg-cover bg-center z-0"
-                style="background-image: url('img/events/halloween_event.webp');"></div>
+            <div class="absolute inset-0 rounded-lg bg-cover bg-center z-0" style="background-image: url('img/events/halloween_event.webp');"></div>
 
             <!-- Gradient overlay -->
             <div class="absolute inset-0 bg-gradient-to-tr from-black to-transparent z-10 rounded-lg"></div>
@@ -61,13 +63,10 @@
             <div class="flex-grow p-4 flex flex-col items-center justify-center relative z-20">
                 <!-- Icon -->
                 <div class="flex justify-center items-center mb-3">
-                    <div class="flex justify-center items-center rounded-full bg-transparent"
-                        style="width: 6em; height: 6em; border: 2px solid rgba(255, 255, 255, 0.3); mix-blend-mode: overlay;">
-                        <svg fill="white" height="2.5em" xmlns="http://www.w3.org/2000/svg" height="1em"
-                            viewBox="0 0 320 512">
+                    <div class="flex justify-center items-center rounded-full bg-transparent" style="width: 6em; height: 6em; border: 2px solid rgba(255, 255, 255, 0.3); mix-blend-mode: overlay;">
+                        <svg fill="white" height="2.5em" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
                             <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M32.1 29.3C33.5 12.8 47.4 0 64 0H256c16.6 0 30.5 12.8 31.9 29.3l14 168.4c6 72-42.5 135.2-109.9 150.6V448h48c17.7 0 32 14.3 32 32s-14.3 32-32 32H160 80c-17.7 0-32-14.3-32-32s14.3-32 32-32h48V348.4C60.6 333 12.1 269.8 18.1 197.8l14-168.4zm56 98.7H231.9l-5.3-64H93.4l-5.3 64z" />
+                            <path d="M32.1 29.3C33.5 12.8 47.4 0 64 0H256c16.6 0 30.5 12.8 31.9 29.3l14 168.4c6 72-42.5 135.2-109.9 150.6V448h48c17.7 0 32 14.3 32 32s-14.3 32-32 32H160 80c-17.7 0-32-14.3-32-32s14.3-32 32-32h48V348.4C60.6 333 12.1 269.8 18.1 197.8l14-168.4zm56 98.7H231.9l-5.3-64H93.4l-5.3 64z" />
                         </svg>
                     </div>
                 </div>
@@ -92,8 +91,7 @@
             <div class="flex justify-between items-center bg-gray-100 p-2 rounded-lg">
                 <div class="flex items-center">
                     <svg class="m-2" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-                        <path
-                            d="M176 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h16V98.4C92.3 113.8 16 200 16 304c0 114.9 93.1 208 208 208s208-93.1 208-208c0-41.8-12.3-80.7-33.5-113.2l24.1-24.1c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L355.7 143c-28.1-23-62.2-38.8-99.7-44.6V64h16c17.7 0 32-14.3 32-32s-14.3-32-32-32H224 176zm72 192V320c0 13.3-10.7 24-24 24s-24-10.7-24-24V192c0-13.3 10.7-24 24-24s24 10.7 24 24z" />
+                        <path d="M176 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h16V98.4C92.3 113.8 16 200 16 304c0 114.9 93.1 208 208 208s208-93.1 208-208c0-41.8-12.3-80.7-33.5-113.2l24.1-24.1c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L355.7 143c-28.1-23-62.2-38.8-99.7-44.6V64h16c17.7 0 32-14.3 32-32s-14.3-32-32-32H224 176zm72 192V320c0 13.3-10.7 24-24 24s-24-10.7-24-24V192c0-13.3 10.7-24 24-24s24 10.7 24 24z" />
                     </svg>
                     <span class="text-lg font-semibold text-gray-700">TimeTracker</span>
                 </div>
@@ -116,24 +114,20 @@
                             </span>
                         </div>
                         <div class="overflow-hidden h-[28px] text-xs flex rounded bg-teal-200">
-                            <div id="progressBar" style="width: 0%;"
-                                class="-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500 transition-all duration-1000 ease-in-out">
+                            <div id="progressBar" style="width: 0%;" class="-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500 transition-all duration-1000 ease-in-out">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-between">
                     <a href="time_tracker.php">
-                        <button type="button"
-                            class="py-2.5 px-5 mr-0 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
+                        <button type="button" class="py-2.5 px-5 mr-0 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             View Project
                         </button></a>
-                    <button type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 flex items-center gap-2">
+                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 flex items-center gap-2">
                         <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                             <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
                         </svg>
 
                         Add Time
@@ -150,8 +144,6 @@
 
         <!-- Empty Card 2 - Stop -->
     </div>
-
-
     </div>
     </div>
     </div>
@@ -163,45 +155,57 @@
     </script>
     <!-- Loading Animation -->
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("progressBar").style.width = "29%";
-    });
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("progressBar").style.width = "29%";
+        });
     </script>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const orangeButton = document.querySelector('[data-set-theme="tcl-orange"]');
-        const defaultButton = document.querySelector('[data-set-theme="tcl-default"]');
-        const darkButton = document.querySelector('[data-set-theme="tcl-dark"]');
-        const logo = document.getElementById('logoSwap');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Document is loaded and DOMContentLoaded event fired.");
 
-        let originalSrc = logo.src;
-        let originalAlt = logo.alt;
+            const logo = document.getElementById('logoSwap');
+            if (!logo) {
+                console.error("Logo element is not found!");
+            } else {
+                console.log("Logo element found:", logo);
+            }
 
-        orangeButton.addEventListener('click', function() {
-            console.log("Orange Button Clicked!"); // Logging
-            logo.src = 'img/logos/TCL_Logo_Orange.svg';
-            logo.alt = 'TCL Orange Theme Logo';
+            let originalSrc = logo.src;
+            let originalAlt = logo.alt;
+
+            // Set explicit width and height for the logo
+            logo.style.width = '125px'; // Adjust this value according to your needs
+            logo.style.height = '125px'; // Adjust this value according to your needs
+
+            document.body.addEventListener('click', function(event) {
+                if (event.target && event.target.hasAttribute('data-set-theme')) {
+                    const theme = event.target.getAttribute('data-set-theme');
+                    console.log(`Button with theme ${theme} clicked.`);
+
+                    switch (theme) {
+                        case 'tcl-orange':
+                            logo.src = 'img/logos/TCL_Logo_White2.svg';
+                            logo.alt = 'TCL Orange Theme Logo';
+                            break;
+                        case 'tcl-dark':
+                            logo.src = 'img/logos/TCL_Logo_Dark.svg';
+                            logo.alt = 'TCL Dark Theme Logo';
+                            break;
+                        case 'tcl-default':
+                            logo.src = originalSrc;
+                            logo.alt = originalAlt;
+                            break;
+                    }
+                }
+            });
         });
-
-        darkButton.addEventListener('click', function() {
-            console.log("Dark Button Clicked!"); // Logging
-            logo.src = 'img/logos/TCL_Logo_Dark.svg';
-            logo.alt = 'TCL Dark Theme Logo';
-        });
-
-        defaultButton.addEventListener('click', function() {
-            console.log("Default Button Clicked!"); // Logging
-            logo.src = originalSrc;
-            logo.alt = originalAlt;
-        });
-    });
     </script>
 
     <!-- Loading End -->
 
     <!--Custom-->
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
     <script src="js/popover.js"></script>
     <script src="js/carousel.js"></script>
 </body>

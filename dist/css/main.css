@@ -115,20 +115,6 @@ html {
     --clientNav-hover-line-color: #febfbf;
 }
 
-[data-theme='tcl-default'] {
-    --color-nav-hover-highlight: #fafafa;
-    --color-nav-orange-lightest: #FFF7ED;
-    --color-nav-orange-lighter: #FFDBC2;
-    --color-nav-orange-light: #FF9447;
-    --color-nav-orange: #FF700A;
-    --color-nav-orange-dark: #A34400;
-    --color-nav-orange-darkest: #522200;
-    --color-nav-white: #fff;
-    --color-nav-black: #1a1a1a;
-    --color-nav-hover-bg: #fff;
-    --color-nav-border: #e5e5e5;
-}
-
 [data-theme='tcl-orange'] {
     --color-nav-hover-highlight: #dc7b57;
     --color-nav-orange-lightest: #dc7b57;
@@ -159,10 +145,39 @@ html {
     --color-nav-border: #1b1b1b;
 }
 
-a
+[data-theme='tcl-default'] {
+    --color-nav-hover-highlight: #fafafa;
+    --color-nav-orange-lightest: #FFF7ED;
+    --color-nav-orange-lighter: #FFDBC2;
+    --color-nav-orange-light: #FF9447;
+    --color-nav-orange: #FF700A;
+    --color-nav-orange-dark: #A34400;
+    --color-nav-orange-darkest: #522200;
+    --color-nav-white: #fff;
+    --color-nav-black: #1a1a1a;
+    --color-nav-hover-bg: #fff;
+    --color-nav-border: #e5e5e5;
+    --color-mastheader-text: #fff;
+    --color-mastheader-bg-500: #18181b;
+    --color-mastheader-bg-400: #27272a;
+    --color-mastheader-bg-300: #3f3f46;
+    --color-mastheader-bg-200: #52525b;
+}
+
+/*Dashboard/Main Classes*/
+.dashMastHead {
+    background-color: var(--color-mastheader-bg-500);
+    color: var(--color-mastheader-text);
+}
+
+.dashMastHead input {
+    background-color: var(--color-mastheader-bg-400);
+    border-color: var(--color-mastheader-bg-300);
+}
+
+
+
 /*NAVBAR Classes*/
-
-
 .notificationCircle {
     background-color: var(--color-nav-orange-lighter);
     color: var(--color-nav-orange);
