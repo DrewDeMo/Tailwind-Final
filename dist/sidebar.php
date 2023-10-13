@@ -117,6 +117,20 @@
                             class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  font-normal text-sm">
                             Edit My Profile</a>
                     </li>
+                    <div style="position: absolute; bottom: 0;">
+                        <button
+                            style="margin-top:40px; color:white; font:bold; background:#fff; border:1px solid gray; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
+                            data-set-theme="tcl-default" data-act-class="ACTIVECLASS">&nbsp;</button>
+
+                        <button
+                            style="margin-top:40px; color:white; font:bold; background:#000; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
+                            data-set-theme="tcl-dark" data-act-class="ACTIVECLASS">&nbsp;</button>
+
+                        <button
+                            style="margin-top:40px; color:white; font:bold; background:#cc5500; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
+                            data-set-theme="tcl-orange" data-act-class="ACTIVECLASS">&nbsp;</button>
+                    </div>
+
                 </ul>
 
 
@@ -124,25 +138,20 @@
 
 
 
-                <li class="sideBarItem">
-                    <a href="time_tracker.php" class="flex items-center p-2  rounded-lg    group">
-                        <i class="las la-glasses   text-2xl"></i>
-                        <span class=" flex-1 ml-3 whitespace-nowrap">IT Support</span>
-                    </a>
-                </li>
+
 
 
                 <div class="flex flex-row w-full justify-between">
                     <button
-                        style="margin-top:40px; color:white; font:bold; background:#fff; border:1px solid gray; padding:5px; w-2 h-2 border-radius:50px;"
+                        style="margin-top:40px; color:white; font:bold; background:#fff; border:1px solid gray; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
                         data-set-theme="tcl-default" data-act-class="ACTIVECLASS">&nbsp;</button>
 
                     <button
-                        style="margin-top:40px; color:white; font:bold; background:#000; padding:5px; w-2 h-2 border-radius:50px;"
+                        style="margin-top:40px; color:white; font:bold; background:#000; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
                         data-set-theme="tcl-dark" data-act-class="ACTIVECLASS">&nbsp;</button>
 
                     <button
-                        style="margin-top:40px; color:white; font:bold; background:#cc5500; padding:5px; w-2 h-2 border-radius:50px;"
+                        style="margin-top:40px; color:white; font:bold; background:#cc5500; padding:5px; width: 20px; height: 20px; border-radius: 50%;"
                         data-set-theme="tcl-orange" data-act-class="ACTIVECLASS">&nbsp;</button>
                 </div>
 
