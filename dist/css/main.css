@@ -126,6 +126,7 @@ html {
     --color-nav-white: #fff;
     --color-nav-black: #1a1a1a;
     --color-nav-hover-bg: #fff;
+    --color-nav-border: #e5e5e5;
 }
 
 [data-theme='tcl-orange'] {
@@ -140,6 +141,7 @@ html {
     --color-nav-black: #1a1a1a;
     --color-nav-hover-bg: #d66439;
     --color-dark-text: #fff;
+    --color-nav-border: #d66439;
 }
 
 [data-theme='tcl-dark'] {
@@ -154,6 +156,7 @@ html {
     --color-nav-black: #1b1b1b;
     --color-nav-hover-bg: #1a1a1a;
     --color-dark-text: #fff;
+    --color-nav-border: #1b1b1b;
 }
 
 a
@@ -276,7 +279,7 @@ a
 
 #main-nav {
     background: var(--color-nav-hover-bg);
-    border-right: 1px solid var(--color-nav-hover-bg);
+    border-right: 1px solid var(--color-nav-border);
 }
 
 #main-nav li {
